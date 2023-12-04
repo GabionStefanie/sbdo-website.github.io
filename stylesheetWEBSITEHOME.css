@@ -3,6 +3,11 @@
 	height:1400px;	
 }
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 .header{
 	border: 1px solid black;
 	margin-bottom: 20px;
@@ -32,7 +37,6 @@ a:link {
   vertical-align:top;
 	background-color: white;
 	border-radius: 25px;
-
 }
 
 a:visited {
@@ -40,45 +44,19 @@ a:visited {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, a:active {
   color: white;
   text-decoration: underline;
 }
 
-a:active {
-  color: white;
-  text-decoration: underline;
-}
-
-.h_link1{
+.h_link1, .h_link2, .h_link3, .h_link4{
 	text-align: left;
 	margin-right: 20px;
 	float: right;
 	font-family: Tahoma, sans-serif;
 }
 
-.h_link2{
-	text-align: left;
-	margin-right: 20px;
-	float: right;
-	font-family: Tahoma, sans-serif;
-}
-
-.h_link3{
-	text-align: left;
-	margin-right: 20px;
-	float: right;
-	font-family: Tahoma, sans-serif;
-}
-
-.h_link4{
-	text-align: left;
-	margin-right: 20px;
-	float: right;
-	font-family: Tahoma, sans-serif;
-}
-
-.featured{
+.featured {
 	border: 1px solid black;
 	margin-bottom: 70px;
 	width: 100%;
@@ -86,7 +64,7 @@ a:active {
 	background-color: #22409A;
 }
 
-.featured_img{
+.featured_img {
 	opacity: 0.6;
 	width: 100%;
 	height: 500px
@@ -115,9 +93,15 @@ a:active {
 	justify-content: space-evenly;
 }
 
-.learn_more{
+.services_text {
+	font-weight: bold; font-size: 70px"
+}
+
+.learn_more_link{
 	width: 35%;
 	height: 50px;
+	margin-bottom: auto;
+	margin-top: auto;
 	padding: 10px;
 	font-weight: bold;
 	text-align: center;
@@ -126,8 +110,17 @@ a:active {
 	bottom: -50px;
 }
 
+.services_info a{
+	color: black;
+}
+
 .services_info{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
 	width: 50%;
+	padding: 20px;
 	text-align: left;
 	color: white;
 	font-family: Tahoma, sans-serif;
@@ -135,7 +128,6 @@ a:active {
 	top: 100px;
 	float: right;
 }
-
 
 .service_img{
 	width: 50%;
@@ -145,15 +137,32 @@ a:active {
 }
 
 .info{
-	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5%;
+	align-items: center;
 	margin-bottom: 150px;
-	width: 100%;
-	height: 500px;
+	padding-inline: 5%;
+	width: 90%;
+	height: 430px;
 	text-align: center;
 	background-color: #06486B;
-	color: white;
+	
 	font-family: Tahoma, sans-serif;
-	font-size: 25px;
+	font-size: 22px;
+	text-wrap: wrap;
+}
+
+.info h2 {
+	color: #FEEB6B;
+	width: 70%;
+}
+
+.info p {
+	color: white;
+	width: 70%;
+	text-wrap: wrap;
 }
 
 .footer{
