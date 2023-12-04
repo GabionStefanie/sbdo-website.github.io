@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
+
+.wrapper{
+	width:100%;
+	height:1400px;	
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 25px 5%;
+	background: #17245f;
+  }
+  
+  nav {
+	margin-left: auto;
+  }
+  
+  .nav_links {
+	list-style: none;
+  }
+  
+  .nav_links li {
+	display: inline-block;
+	padding: 0px 15px;
+  }
+  
+  li a {
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	color: #edf0f1;
+	text-decoration: none;
+  }
+  
+  .nav__link {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+  }
+  
+  .logo {
+	cursor: pointer;
+	width: 89px;
+	height: 80px;
+	background-color: white; 
+	margin-right: 1rem;
+	border-radius: 50%;
+  }
+  
+  .company_name {
+	width: 500px;
+	height: auto;
+  
+	color: #fff;
+	font-family: Lexend Deca;
+	font-size: 35px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+  }
+
+.featured {
+	border: 1px solid black;
+	margin-bottom: 70px;
+	margin-top: 25px;
+	width: 100%;
+	height: 600px;
+	background-color: #22409A;
+}
+
+.featured_img {
+	opacity: 0.6;
+	width: 100%;
+	height: 500px
+}
+
+.main_title{
+	text-align: center;
+	color: white;
+	font-family: Tahoma, sans-serif;
+	font-size: 35px;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.to_services{
+	border: 1px solid black;
+	margin-bottom: 70px;
+	width: 100%;
+	height: 500px;
+	background-color: #22409A;
+	color: white;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.services_text {
+	font-weight: bold; font-size: 70px"
+}
+
+.learn_more_link{
+	width: 35%;
+	height: 50px;
+	margin-bottom: auto;
+	margin-top: auto;
+	font-weight: bold;
+	text-align: center;
+	font-family: Tahoma, sans-serif;
+	position: relative;
+	bottom: -50px;
+	background-color: #FFF;
+	border-radius: 90px;
+	text-decoration: none;
+	padding: 8px 20px 0px 20px;
+}
+
+.services_info a{
+	color: black;
+}
+
+.services_info{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 50%;
+	padding: 20px;
+	text-align: left;
+	color: white;
+	font-family: Tahoma, sans-serif;
+	font-size: 30px;
+	top: 100px;
+	float: right;
+}
+
+.service_img{
+	width: 50%;
+	height: 370px;
+	float: left;
+	margin: 30px;
+}
+
+.info{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5%;
+	align-items: center;
+	margin-bottom: 150px;
+	padding-inline: 5%;
+	width: 90%;
+	height: 430px;
+	text-align: center;
+	background-color: #06486B;
+	
+	font-family: Tahoma, sans-serif;
+	font-size: 22px;
+	text-wrap: wrap;
+}
+
+.info h2 {
+	color: #FEEB6B;
+	width: 70%;
+}
+
+.info p {
+	color: white;
+	width: 70%;
+	text-wrap: wrap;
+}
+
+footer {
+  display: flex;
+  justify-content:space-around;
+  align-content: center;
+  padding: 15px 5%;
+  background: #17245f;
+  row-gap: 5px;
+}
+
+.LOREM_IPSUM {
+  color: #FFF;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.operating_hrs, .contact_details {
+  color: #FEEB6B;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer_list {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.company_name_footer {
+  color: #fff;
+  font-family: Lexend Deca;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.company_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 4px;
+}
+
+.footer_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.icon_link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 10px;
+
+}
