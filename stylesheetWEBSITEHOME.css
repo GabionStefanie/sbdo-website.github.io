@@ -38,6 +38,11 @@ header {
 	color: #edf0f1;
 	text-decoration: none;
   }
+
+  li a:hover{
+	color: #FEEB6B;
+        transition: 0.2s;
+  }
   
   .nav__link {
 	color: #FFF;
