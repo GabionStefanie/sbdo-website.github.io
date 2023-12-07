@@ -94,7 +94,6 @@ header {
   
   .featured_img {
 	display: block;
-	opacity: 0.6;
 	width: 100%;
 	height: 490px;
 	object-fit: cover;
