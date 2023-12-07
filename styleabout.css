@@ -1,0 +1,523 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 25px 5%;
+  background: #17245f;
+}
+
+nav {
+  margin-left: auto;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 15px;
+}
+
+li a {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+li a:hover{
+	color: #FEEB6B;
+        transition: 0.2s;
+}
+
+.nav__link {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.logo {
+  cursor: pointer;
+  width: 89px;
+  height: 80px;
+  background-color: white; 
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.company_name {
+  width: 500px;
+  height: auto;
+
+  color: #fff;
+  font-family: Lexend Deca;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.aboutUsBG{
+    width:100%;
+    height:434px;
+    background: #22409A;
+
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    margin-top: 25px;
+    flex-direction: column;
+}
+
+.aboutUsImg{
+  width:100%;
+  height:434px;
+
+  display: block;
+  object-fit: cover;
+  /* object-position: 100% 28%; */
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+}
+
+.aboutUsText{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    margin-top: 85px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+
+.aboutUsMotto{
+  color: #FEEB6B;
+  font-family: Inter;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 3;
+}
+
+.missionBG{
+  width:96%;
+  height:320px;
+  background: #22409A;
+
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin-left: 2%;
+  margin-top: 40px;
+  flex-direction: column;
+}
+
+.missionTitle{
+  color: #FEEB6B;
+  font-family: Inter;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+}
+
+.missionText{
+  color: #FEEB6B;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-bottom: 40px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.visionBG{
+  width:96%;
+  height:320px;
+  background: #22409A;
+
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin-left: 2%;
+  margin-top: 30px;
+  flex-direction: column;
+}
+
+.visionTitle{
+  color: #FEEB6B;
+  font-family: Inter;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+}
+
+.visionText{
+  color: #FEEB6B;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-bottom: 40px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.historyBG{
+  width:100%;
+  height:482px;
+  background: #06486B;
+  
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin-top: 70px;
+  flex-direction: column;
+}
+
+.historyTitle{
+  color: #FFF;
+  font-family: Inter;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+}
+
+.historyText{
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  margin-bottom: 10px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.teamBG{
+  width:100%;
+  height:434px;
+  background: #22409A;
+
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin-top: 40px;
+  flex-direction: column;
+}
+
+.teamImg{
+  width:100%;
+  height:434px;
+
+  display: block;
+  object-fit: cover;
+  /* object-position: 100% 28%; */
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+}
+
+.teamText{
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 2;
+}
+
+.dentist1BG{
+  width:85%;
+  height:500px;
+  background: #22409A;
+  
+  margin-left:7.5%;
+  margin-right: 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: nowrap;
+  margin-top: 50px;
+  flex-direction: row;
+}
+
+.dentist1ImgCont{
+  width: 347px;
+  height: 425px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #22409A;
+  margin-right: 15px;
+}
+
+.dentist1Img{
+  width: 347px;
+  height: 425px;
+}
+
+.dentist1TextCont{
+  width: 800px;
+  display: flex;
+  margin-top: 55px;
+  align-self: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.dentist1Name {
+  color: #FFF;
+  text-align: center;
+  font-family: Josefin Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dentist1Text {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: justify;
+
+}
+
+.dentist2BG{
+  width:85%;
+  height:500px;
+  background: #22409A;
+  
+  margin-left:7.5%;
+  margin-right: 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: nowrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  flex-direction: row;
+}
+
+.dentist2ImgCont{
+  width: 347px;
+  height: 425px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #22409A;
+  margin-right: 15px;
+}
+
+.dentist2Img{
+  width: 347px;
+  height: 425px;
+}
+
+.dentist2TextCont{
+  width: 800px;
+  display: flex;
+  margin-top: 55px;
+  align-self: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.dentist2Name {
+  color: #FFF;
+  text-align: center;
+  font-family: Josefin Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dentist2Text {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: justify;
+}
+
+footer {
+  display: flex;
+  justify-content:space-around;
+  align-content: center;
+  padding: 15px 5%;
+  background: #17245f;
+  row-gap: 5px;
+}
+
+.LOREM_IPSUM {
+  color: #FFF;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.operating_hrs, .contact_details {
+  color: #FEEB6B;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer_list {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.company_name_footer {
+  color: #fff;
+  font-family: Lexend Deca;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.company_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 4px;
+}
+
+.footer_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.icon_link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 10px;
+
+}
