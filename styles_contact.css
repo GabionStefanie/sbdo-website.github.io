@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 25px 5%;
+	background: #17245f;
+}
+
+nav {
+	margin-left: auto;
+}
+
+.nav_links {
+	list-style: none;
+}
+
+.nav_links li {
+	display: inline-block;
+	padding: 0px 15px;
+}
+
+li a {
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	color: #edf0f1;
+	text-decoration: none;
+}
+
+ li a:hover{
+	color: #FEEB6B;
+        transition: 0.2s;
+}
+
+.nav__link {
+  color: #FFF;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.logo {
+	cursor: pointer;
+	width: 89px;
+	height: 80px;
+	background-color: white; 
+	margin-right: 1rem;
+	border-radius: 50%;
+}
+
+.company_name {
+	width: 500px;
+	height: auto;
+	color: #fff;
+	font-family: Lexend Deca;
+	font-size: 35px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.title{
+	width:100%;
+    height:434px;
+    background: #22409A;
+
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    margin-top: 25px;
+    flex-direction: column;
+}
+
+.film {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 450px;
+	background: #22409A;
+	margin-top: 20px;
+	z-index: 1; 
+}
+
+.film2 {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 300px;
+	background: #22409A;
+	margin-top: 50px;
+	z-index: 1; 
+}
+
+.film3 {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 300px;
+	background: #22409A;
+	margin-top: 50px;
+	z-index: 1; 
+}
+
+.contactImg{
+	width:100%;
+	height:434px;
+  
+	display: block;
+	object-fit: cover;
+	/* object-position: 100% 28%; */
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: 2;
+  }
+
+.contactText {
+	color: #FFF;
+	position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+	font-size: 100px;
+	font-family: Montserrat;
+	font-weight: 600;
+	word-wrap: break-word;
+	z-index: 3;
+}
+
+.map iframe {
+	width: 100%;
+}
+
+.content2{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 30px;
+	font-family: Josefin Sans;
+	font-weight: 600;
+	text-align: center;
+}
+
+.content2-row2 {
+  margin-top: 20px; 
+}
+
+.content2-row2 p {
+	font-size: 30px;
+}
+
+footer {
+  display: flex;
+  justify-content:space-around;
+  align-content: center;
+  padding: 15px 5%;
+  background: #17245f;
+  row-gap: 5px;
+  margin-top: 50px;
+}
+
+.LOREM_IPSUM {
+  color: #FFF;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.operating_hrs, .contact_details {
+  color: #FEEB6B;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer_list {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.company_name_footer {
+  color: #fff;
+  font-family: Lexend Deca;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.company_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 4px;
+}
+
+.footer_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.icon_link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 10px;
+
+}
