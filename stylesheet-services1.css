@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
+
+.wrapper{
+	width:100%;
+	height: 800px;	
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 25px 5%;
+	background: #17245f;
+  }
+  
+  nav {
+	margin-left: auto;
+  }
+  
+  .nav_links {
+	list-style: none;
+  }
+  
+  .nav_links li {
+	display: inline-block;
+	padding: 0px 15px;
+  }
+  
+  li a {
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	color: #edf0f1;
+	text-decoration: none;
+  }
+
+  li a:hover{
+	color: #FEEB6B;
+        transition: 0.2s;
+  }
+  
+  .nav__link {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+  }
+  
+.service-list{
+	list-style: square;
+	list-style-position: inside;
+}
+  
+.flex-row1{
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+	margin-bottom: 15px;
+	justify-content: center;
+	width: 100%;
+}
+
+.flex-row2{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	
+}
+
+.icon{
+	width: 30%;
+	padding: 10px;
+	float: left;
+	margin-right: 20px;
+}
+
+.service-box{
+	width: 90%;
+	padding: 30px;
+	background-color: #4CBAF4;
+	color: white;
+	height: 550px;
+	margin: 10px;
+	justify-content: center;
+}
+
+.service-name{
+	font-family: 'Orbitron', sans-serif;
+	font-size: 45px;
+	font-weight: bold;
+
+}
+
+.list-text{
+	font-family: 'Inter', sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	margin-bottom: 15px;
+}
+
+.text{
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.learn_more_link{
+	color: white;
+	font-family: Inter;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	background-color: black;
+	border-radius: 90px;
+	text-decoration: none;
+	padding: 10px 30px 10px 30px;
+	margin: 30px;
+}
+  
+footer {
+  display: flex;
+  justify-content:space-around;
+  align-content: center;
+  padding: 15px 5%;
+  background: #17245f;
+  row-gap: 5px;
+  position: relative;
+}
+
+.LOREM_IPSUM {
+  color: #FFF;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.operating_hrs, .contact_details {
+  color: #FEEB6B;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer_list {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.company_name_footer {
+  color: #fff;
+  font-family: Lexend Deca;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.company_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 4px;
+}
+
+.footer_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.icon_link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 10px;
+
+}
