@@ -53,6 +53,28 @@ header {
 	line-height: normal;
   }
 
+ .logo {
+	cursor: pointer;
+	width: 89px;
+	height: 80px;
+	background-color: white; 
+	margin-right: 1rem;
+	border-radius: 50%;
+  }
+  
+  .company_name {
+	width: 500px;
+	height: auto;
+  
+	color: #fff;
+	font-family: Lexend Deca;
+	font-size: 35px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+  }
+
+
 .featured {
 	margin-top: 25px;
 	width: 100%;
