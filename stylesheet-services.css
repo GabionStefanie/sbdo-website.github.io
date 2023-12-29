@@ -55,7 +55,8 @@ header {
 
  .logo {
 	cursor: pointer;
-	height: 30px;
+	width: 89px;
+	height: 80px;
 	background-color: white; 
 	margin-right: 1rem;
 	border-radius: 50%;
