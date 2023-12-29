@@ -53,6 +53,10 @@ li a:hover {
   line-height: normal;
 }
 
+.services{ 
+  text-decoration: underline; 
+}
+
 .logo {
   cursor: pointer;
   width: 89px;
