@@ -38,10 +38,12 @@ nav {
 }
 
 li a {
-  font-family: "Lexend Deca", sans-serif;
-  font-size: 2.4rem;
-  font-weight: 500;
-  color: #edf0f1;
+  color: #fff;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   text-decoration: none;
 }
 
