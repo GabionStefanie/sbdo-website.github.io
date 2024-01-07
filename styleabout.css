@@ -121,7 +121,7 @@ li a:hover {
 .aboutUsMotto{
   color: #FEEB6B;
   font-family: Inter;
-  font-size: 5rem;
+  font-size: 3rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -138,7 +138,7 @@ li a:hover {
 @media screen and (max-width: 768px) {
 
   .aboutUsText {
-    font-size: 6rem;
+    font-size: 4rem;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -196,12 +196,12 @@ li a:hover {
 .missionText{
   color: #FEEB6B;
   font-family: Inter;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -217,15 +217,16 @@ li a:hover {
   }
   .missionTitle {
     margin-top: 20px;
-    font-size: 5rem;
+    font-size: 3.8rem;
     margin-bottom:20px;
   }
 
   .missionText {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
   }
 }
+
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
@@ -240,7 +241,7 @@ li a:hover {
   }
 
   .missionText {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
   }
 }
@@ -279,12 +280,12 @@ li a:hover {
 .visionText{
   color: #FEEB6B;
   font-family: Inter;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -300,12 +301,12 @@ li a:hover {
   }
   .visionTitle {
     margin-top: 20px;
-    font-size: 5rem;
+    font-size: 3.8rem;
     margin-bottom:20px;
   }
 
   .visionText {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
   }
 }
@@ -323,14 +324,14 @@ li a:hover {
   }
 
   .visionText {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
   }
 }
 
 .historyBG{
   width:100%;
-  height:32.090545938748335vw;
+  height:28vw;
   background: #06486B;
   
   display: flex;
@@ -361,7 +362,7 @@ li a:hover {
 .historyText{
   color: #FFF;
   font-family: Inter;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -382,14 +383,14 @@ li a:hover {
   }
 
   .historyTitle {
-    font-size: 6rem;
+    font-size: 3.8rem;
     margin-top:20px;
     text-align:center;
     margin-bottom:20px;
   }
 
   .historyText {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-bottom:20px;
   }
 }
@@ -401,14 +402,14 @@ li a:hover {
   }
 
   .historyTitle {
-    font-size: 9rem;
+    font-size: 4.5rem;
     margin-top:20px;
     text-align:center;
     margin-bottom:20px;
   }
 
   .historyText {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom:20px;
   }
 }
@@ -474,7 +475,7 @@ li a:hover {
 
 .dentist1BG{
   width:85%;
-  height:33.28894806924101vw;
+  height:28vw;
   background: #22409A;
   
   margin-left:7.5%;
@@ -488,8 +489,8 @@ li a:hover {
 }
 
 .dentist1ImgCont{
-  width: 23.102529960053264vw;
-  height: 28.29560585885486vw;
+  width: 20vw;
+  height: 25vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -505,7 +506,7 @@ li a:hover {
 .dentist1TextCont{
   width: 53.26231691078562vw;
   display: flex;
-  margin-top: 55px;
+  margin-top: 35px;
   align-self: flex-start;
   align-items: flex-start;
   justify-content: center;
@@ -517,7 +518,7 @@ li a:hover {
   color: #FFF;
   text-align: center;
   font-family: Josefin Sans;
-  font-size: 4rem;
+  font-size: 3.4rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -526,7 +527,7 @@ li a:hover {
 .dentist1Text {
   color: #FFF;
   font-family: Inter;
-  font-size: 2.7rem;
+  font-size: 2.4rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -536,7 +537,7 @@ li a:hover {
 
 .dentist2BG{
   width:85%;
-  height:33.28894806924101vw;
+  height:28vw;
   background: #22409A;
   
   margin-left:7.5%;
@@ -551,8 +552,8 @@ li a:hover {
 }
 
 .dentist2ImgCont{
-  width: 23.102529960053264vw;
-  height: 28.29560585885486vw;
+  width: 20vw;
+  height: 25vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -568,7 +569,7 @@ li a:hover {
 .dentist2TextCont{
   width: 53.26231691078562vw;
   display: flex;
-  margin-top: 55px;
+  margin-top: 35px;
   align-self: flex-start;
   align-items: flex-start;
   justify-content: center;
@@ -580,7 +581,7 @@ li a:hover {
   color: #FFF;
   text-align: center;
   font-family: Josefin Sans;
-  font-size: 4rem;
+  font-size: 3.4rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -589,11 +590,69 @@ li a:hover {
 .dentist2Text {
   color: #FFF;
   font-family: Inter;
-  font-size: 2.7rem;
+  font-size: 2.4rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   text-align: justify;
+}
+
+@media only screen and (min-width: 810px) and (max-width: 1080px) {
+  .dentist1BG, .dentist2BG{
+    height:auto;
+  }
+
+
+.dentist1ImgCont, .dentist2ImgCont {
+  height:auto;
+}
+
+.dentist1Img, .dentist2Img{
+  height:20vw;
+}
+
+.dentist1TextCont, .dentist2TextCont {
+  height:auto;
+}
+
+  .dentist1Name, .dentist2Name {
+    font-size: 3.5rem; 
+    margin-bottom: 20px; 
+  }
+
+  .dentist1Text, .dentist2Text {
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
+  }
+}
+
+@media only screen and (min-width: 1050px) and (max-width: 1500px) {
+  .dentist1BG, .dentist2BG{
+    height:auto;
+  }
+
+
+.dentist1ImgCont, .dentist2ImgCont {
+  height:auto;
+}
+
+.dentist1Img, .dentist2Img{
+  height:22vw;
+}
+
+.dentist1TextCont, .dentist2TextCont {
+  height:auto;
+}
+
+  .dentist1Name, .dentist2Name {
+    font-size: 3.5rem; 
+    margin-bottom: 20px; 
+  }
+
+  .dentist1Text, .dentist2Text {
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -646,12 +705,12 @@ li a:hover {
 
 
   .dentist1Name, .dentist2Name {
-    font-size: 4rem; 
+    font-size: 2.5rem; 
     margin-bottom: 20px; 
   }
 
   .dentist1Text, .dentist2Text {
-    font-size: 2rem; 
+    font-size: 1.5rem; 
     margin-bottom: 20px; 
   }
 }
