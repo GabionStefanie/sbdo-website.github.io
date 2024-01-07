@@ -471,3 +471,172 @@ footer {
     font-size: 30%;
   }
 }
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* TABLET-LANDSCAPE   */
+@media only screen and (max-width: 1375px) {
+  html {
+    font-size: 56.25%;
+    /* 1rem = 9px; 9px/16px = 56.25% */
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 155vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+  
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+
+/* TABLET-PORTRAIT */
+@media only screen and (max-width: 1060px) {
+  html {
+    font-size: 50%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 155vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+  
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .company_name {
+    font-size: 2.7rem;
+  }
+  
+    li a {
+    font-size: 1.7rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.65rem;
+  }
+  
+  header {
+    height: 6.510vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+
+  }
+
+  .logo
+  {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 38%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 13.542vw;
+    height: 13.542vw;
+  }
+
+  .text__container p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* PHONE */
+@media only screen and (max-width: 530px) {
+  html {
+    font-size: 37.5%;
+    /* 1rem = 6px; 6px/16px = 37.5% */
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 190vh;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+  
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+  }
+
+  header {
+    height: 6.510vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+
+  }
+
+  button {
+    width: 10.938vh;
+    height: 2.214vh;
+    font-size: 1.2rem;
+  }
+
+  li a {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.3rem;
+  }
+
+  .logo {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .company_name {
+    font-size: 2rem;
+  }
+
+  .service__logo{
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .company_name_footer {
+    width: 25vw;
+    font-size: 2rem;
+  }
+
+  .LOREM_IPSUM {
+    font-size: 1.4rem;
+  }
+
+}
+
+@media only screen and (max-width: 415px) {
+  html {
+    font-size: 30%;
+  }
+}
