@@ -135,6 +135,7 @@ li a:hover {
 }
 
 
+
 @media screen and (max-width: 768px) {
 
   .aboutUsText {
@@ -626,6 +627,8 @@ li a:hover {
   }
 }
 
+
+
 @media only screen and (min-width: 1050px) and (max-width: 1500px) {
   .dentist1BG, .dentist2BG{
     height:auto;
@@ -637,7 +640,7 @@ li a:hover {
 }
 
 .dentist1Img, .dentist2Img{
-  height:20vw;
+  height:22vw;
 }
 
 .dentist1TextCont, .dentist2TextCont {
@@ -666,7 +669,7 @@ li a:hover {
 }
 
 .dentist1Img, .dentist2Img{
-  height:auto;
+  height:21vw;
 }
 
 .dentist1TextCont, .dentist2TextCont {
