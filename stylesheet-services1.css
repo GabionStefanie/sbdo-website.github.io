@@ -422,6 +422,19 @@ footer {
   .LOREM_IPSUM {
     font-size: 1.4rem;
   }
+
+  .service-content{
+    padding: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 415px) {
