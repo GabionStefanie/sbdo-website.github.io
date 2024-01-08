@@ -37,6 +37,10 @@ html {
 	padding: 0px 1.5rem;
   }
   
+  .homeLink{
+	text-decoration:underline;
+  }
+
   li a {
 	color: #fff;
 	font-family: Inter;

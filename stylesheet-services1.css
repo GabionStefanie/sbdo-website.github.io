@@ -37,6 +37,10 @@ nav {
   padding: 0px 1.5rem;
 }
 
+.services{
+  text-decoration:underline;
+}
+
 li a {
   color: #fff;
   font-family: Inter;
