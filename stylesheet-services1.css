@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
 
+html {
+  font-size: 62.5%;
+}
+
 .wrapper {
   width: 100%;
   height: auto;
@@ -8,17 +12,16 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-html{
-  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 header {
+  height: 6.8vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 25px 5%;
+  padding-block: 2.831vh;
+  padding-inline: 2rem;
   background: #17245f;
 }
 
@@ -32,14 +35,16 @@ nav {
 
 .nav_links li {
   display: inline-block;
-  padding: 0px 15px;
+  padding: 0px 1.5rem;
 }
 
 li a {
-  font-family: "Lexend Deca", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  color: #edf0f1;
+  color: #fff;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   text-decoration: none;
 }
 
@@ -48,43 +53,32 @@ li a:hover {
   transition: 0.2s;
 }
 
-.nav__link {
-  color: #fff;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
 .services {
   text-decoration: underline;
 }
 
-.logo {
-  cursor: pointer;
-  width: 89px;
-  height: 80px;
+.logo,
+.footer_logo {
+  width: 6.9rem;
+  height: 6.9rem;
   background-color: white;
-  margin-right: 1rem;
   border-radius: 50%;
 }
 
+.logo {
+  margin-right: 1rem;
+}
+
 .company_name {
-  width: 500px;
+  width: auto;
   height: auto;
 
   color: #fff;
   font-family: Lexend Deca;
-  font-size: 35px;
+  font-size: 3.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-.service-list {
-  list-style: square;
-  list-style-position: inside;
 }
 
 .servicesBG {
@@ -115,7 +109,7 @@ li a:hover {
 .servicesText {
   color: #fff;
   font-family: Montserrat;
-  font-size: 7rem;
+  font-size: 10rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -131,10 +125,10 @@ li a:hover {
 .flex-row1 {
   display: flex;
   flex-direction: row;
-  margin: 10px;
-  margin-bottom: 15px;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .flex-row2 {
@@ -145,21 +139,24 @@ li a:hover {
 
 .icon {
   width: 30%;
-  padding: 10px;
+  padding: 1rem;
   float: left;
-  margin-right: 20px;
+  margin-right: 2rem;
+  position: sticky;
+  top: 40px;
 }
 
 .service-box {
   width: 90%;
   height: auto;
-  padding: 30px;
+  padding: 3rem;
   background-color: #4cbaf4;
   color: white;
-  
-  margin: 10px;
-  flex-direction: column;
+
+  margin: 1rem;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .service-content {
@@ -172,54 +169,53 @@ li a:hover {
 
 .service-name {
   font-family: "Orbitron", sans-serif;
-  font-size: 45px;
+  font-size: 4.5rem;
   font-weight: bold;
 }
 
 .list-text {
   font-family: "Inter", sans-serif;
   font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .text {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 2rem;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 
 .learn_more_link {
   color: white;
   font-family: Inter;
-  font-size: 30px;
+  font-size: 3rem;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
   background-color: black;
   border-radius: 90px;
   text-decoration: none;
-  padding: 10px 30px 10px 30px;
-  margin: 30px;
+  padding: 1rem 3rem 1rem 3rem;
+  margin: 3rem;
 }
 
 footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-content: center;
-  padding: 15px 5%;
+  padding: 1.5rem 5%;
   background: #17245f;
-  row-gap: 5px;
-  position: relative;
+  row-gap: 0.5rem;
 }
 
 .LOREM_IPSUM {
   color: #fff;
   text-align: center;
   font-family: JetBrains Mono;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -230,7 +226,7 @@ footer {
   color: #feeb6b;
   text-align: center;
   font-family: JetBrains Mono;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -239,6 +235,8 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
+  flex: 1 1 0;
+  width: 0;
 }
 
 .footer_list {
@@ -252,11 +250,12 @@ footer {
 .company_name_footer {
   color: #fff;
   font-family: Lexend Deca;
-  font-size: 28px;
+  font-size: 2.8rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 4px;
+  margin-bottom: 0.4rem;
+  text-align: center;
 }
 
 .company_logo {
@@ -264,7 +263,7 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 0.4rem;
 }
 
 .footer_buttons {
@@ -276,11 +275,265 @@ footer {
 }
 
 .icon_link {
-  width: 45px;
-  height: 45px;
+  width: max(3rem, 2.93vw);
+  height: max(3rem, 2.93vw);
   border-radius: 50%;
   object-fit: cover;
   background-color: white;
-  border-radius: 50%;
-  margin: 0 10px;
+  margin: 0 1rem;
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* TABLET-LANDSCAPE   */
+@media only screen and (max-width: 1375px) {
+  html {
+    font-size: 56.25%;
+    /* 1rem = 9px; 9px/16px = 56.25% */
+  }
+}
+
+/* TABLET-PORTRAIT */
+@media only screen and (max-width: 1060px) {
+  html {
+    font-size: 50%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .company_name {
+    font-size: 2.7rem;
+  }
+
+  li a {
+    font-size: 1.7rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.65rem;
+  }
+
+  header {
+    height: 6.51vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+
+  .logo {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 38%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 13.542vw;
+    height: 13.542vw;
+  }
+}
+
+/* PHONE */
+@media only screen and (max-width: 530px) {
+  html {
+    font-size: 37.5%;
+    /* 1rem = 6px; 6px/16px = 37.5% */
+  }
+
+  header {
+    height: 6.51vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+
+  li a {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.3rem;
+  }
+
+  .logo {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .company_name {
+    font-size: 2rem;
+  }
+
+  .service__logo {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .company_name_footer {
+    width: 25vw;
+    font-size: 2rem;
+  }
+
+  .LOREM_IPSUM {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* TABLET-LANDSCAPE   */
+@media only screen and (max-width: 1375px) {
+  html {
+    font-size: 56.25%;
+    /* 1rem = 9px; 9px/16px = 56.25% */
+  }
+}
+
+/* TABLET-PORTRAIT */
+@media only screen and (max-width: 1060px) {
+  html {
+    font-size: 50%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .company_name {
+    font-size: 2.7rem;
+  }
+
+  li a {
+    font-size: 1.7rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.65rem;
+  }
+
+  header {
+    height: 6.51vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+
+  .logo {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .servicesText {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .servicesText {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 38%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 13.542vw;
+    height: 13.542vw;
+  }
+}
+
+/* PHONE */
+@media only screen and (max-width: 530px) {
+  html {
+    font-size: 37.5%;
+    /* 1rem = 6px; 6px/16px = 37.5% */
+  }
+
+  header {
+    height: 6.51vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+
+  li a {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.3rem;
+  }
+
+  .logo {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .company_name {
+    font-size: 2rem;
+  }
+
+  .service__logo {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .company_name_footer {
+    width: 25vw;
+    font-size: 2rem;
+  }
+
+  .LOREM_IPSUM {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  html {
+    font-size: 30%;
+  }
+
+  .service-name {
+    font-size: 6rem;
+  }
+
+  .list-text {
+    font-size: 100px;
+    margin-bottom: 1.5rem;
+  }
 }
