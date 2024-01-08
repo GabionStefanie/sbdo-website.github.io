@@ -814,17 +814,6 @@ footer {
     /* 1rem = 9px; 9px/16px = 56.25% */
   }
 
-  .container {
-    display: grid;
-    width: 100%;
-    height: 155vw;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-block: 1rem;
-  
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-  }
 }
 
 
@@ -839,18 +828,6 @@ footer {
     margin-left: 2.5rem;
     width: 12vw;
     height: 12vw;
-  }
-
-  .container {
-    display: grid;
-    width: 100%;
-    height: 155vw;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-block: 1rem;
-  
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
   }
 
   .company_name {
@@ -903,18 +880,6 @@ footer {
   html {
     font-size: 37.5%;
     /* 1rem = 6px; 6px/16px = 37.5% */
-  }
-
-  .container {
-    display: grid;
-    width: 100%;
-    height: 190vh;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-block: 1rem;
-  
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(12, 1fr);
   }
 
   header {

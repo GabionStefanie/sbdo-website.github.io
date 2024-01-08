@@ -372,6 +372,7 @@ html {
 	flex-flow: nowrap;
 	margin-top: 4rem;
 	flex-direction: row;
+	padding-block: 2rem;
 }
 
 .beforeImgCont{
@@ -457,9 +458,11 @@ html {
 	align-content: flex-start;
 	justify-content: space-evenly;
 	flex-flow: wrap;
+
+	padding-block: 2rem;
 	margin-top: 4rem;
 	flex-direction: column;
-	margin-bottom: 2.5rem;
+	margin-bottom: 4rem;
   }
   
   .infoTitle{
@@ -551,6 +554,14 @@ html {
 	.infoText {
 		font-size: 2.5rem;
 		margin-bottom:20px;
+	}
+
+	.beforeBG{
+		padding-block: 3rem;
+	}
+
+	.infoBG{
+		padding-block: 5rem;
 	}
   }
 
