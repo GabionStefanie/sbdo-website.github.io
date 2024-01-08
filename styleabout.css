@@ -61,6 +61,7 @@ li a:hover {
   height: 8.9rem;
   background-color: white;
   border-radius: 50%;
+  color: white;
 }
 
 .logo{
@@ -99,10 +100,10 @@ li a:hover {
 
   display: block;
   object-fit: cover;
-  /* object-position: 100% 28%; */
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1;
+  color: white;
 }
 
 .aboutUsText{
@@ -431,6 +432,7 @@ li a:hover {
   flex-flow: wrap;
   margin-top: 4rem;
   flex-direction: column;
+  color: white;
 }
 
 .teamImg{
@@ -506,6 +508,8 @@ li a:hover {
 .dentist1Img{
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  color: white;
 }
 
 .dentist1TextCont{
@@ -569,6 +573,8 @@ li a:hover {
 .dentist2Img{
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  color: white;
 }
 
 .dentist2TextCont{
@@ -802,6 +808,7 @@ footer {
   object-fit: cover;
   background-color: white;
   margin: 0 1rem;
+  color: white;
 }
 
 

@@ -61,6 +61,7 @@ html {
 	height: 8.9rem;
 	background-color: white;
 	border-radius: 50%;
+	color: white;
   }
   
   .logo{
@@ -143,6 +144,7 @@ html {
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 2;
+	color: white;
   }
 
 .contactText {
@@ -370,6 +372,7 @@ html {
 	object-fit: cover;
 	background-color: white;
 	margin: 0 1rem;
+	color: white;
   }
   
   
