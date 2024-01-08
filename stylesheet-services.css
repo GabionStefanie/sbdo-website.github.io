@@ -641,4 +641,23 @@ footer {
   html {
     font-size: 30%;
   }
+
+  .service__logo{
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .text__container h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.3222rem;
+  }
+  
+  .text__container p {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    font-size: 2rem;
+  }
 }
