@@ -1,0 +1,609 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.servicesBG {
+  width: 100%;
+  height: 28.891vw;
+  background: #22409a;
+
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.servicesImg {
+  width: 100%;
+  height: 28.891vw;
+
+  display: block;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+}
+
+.servicesText {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 2;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  height: 102.214vw;
+  margin-top: 2rem;
+  padding-block: 2.5rem;
+  row-gap: 0.5rem;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.service {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.square {
+  width: 95%;
+  height: 95%;
+  background-color: #4cbaf4;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.service__logo {
+  margin-left: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  width: 8.9vw;
+  height: 8.9vw;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+  color: white;
+}
+
+.image__container {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text__container {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  padding-inline: 1rem;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.text__container h1 {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 2.9rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 0.3222rem;
+}
+
+.text__container p {
+  color: #fff;
+  font-family: Inter;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  width: 10.938vw;
+  height: 2.214vw;
+  background-color: #0c0c0c;
+  border-radius: 75px;
+
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: 1.5rem 5%;
+  background: #17245f;
+  row-gap: 0.5rem;
+}
+
+.LOREM_IPSUM {
+  color: #fff;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.operating_hrs,
+.contact_details {
+  color: #feeb6b;
+  text-align: center;
+  font-family: JetBrains Mono;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 1 1 0;
+  width: 0;
+}
+
+.footer_list {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.company_name_footer {
+  color: #fff;
+  font-family: Lexend Deca;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.company_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.footer_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.icon_link {
+  width: max(3rem, 2.930vw);
+  height: max(3rem, 2.930vw);
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  margin: 0 1rem;
+  color: white;
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* TABLET-LANDSCAPE   */
+@media only screen and (max-width: 1375px) {
+  html {
+    font-size: 56.25%;
+    /* 1rem = 9px; 9px/16px = 56.25% */
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 155vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+/* TABLET-PORTRAIT */
+@media only screen and (max-width: 1060px) {
+  html {
+    font-size: 50%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 155vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .company_name {
+    font-size: 2.7rem;
+  }
+
+  li a {
+    font-size: 1.7rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.65rem;
+  }
+
+  header {
+    height: 6.51vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+
+  .logo {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 38%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 13.542vw;
+    height: 13.542vw;
+  }
+
+  .text__container p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* PHONE */
+@media only screen and (max-width: 530px) {
+  html {
+    font-size: 37.5%;
+    /* 1rem = 6px; 6px/16px = 37.5% */
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 190vh;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+  }
+
+  header {
+    height: 6.51vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+
+  button {
+    width: 10.938vh;
+    height: 2.214vh;
+    font-size: 1.2rem;
+  }
+
+  li a {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.3rem;
+  }
+
+  .logo {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .company_name {
+    font-size: 2rem;
+  }
+
+  .service__logo {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .company_name_footer {
+    width: 25vw;
+    font-size: 2rem;
+  }
+
+  .LOREM_IPSUM {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* TABLET-LANDSCAPE   */
+@media only screen and (max-width: 1375px) {
+  html {
+    font-size: 56.25%;
+    /* 1rem = 9px; 9px/16px = 56.25% */
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 155vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  button {
+    width: 12vw;
+    height: 3vw;
+    font-size: 1.5rem;
+  }
+}
+
+/* TABLET-PORTRAIT */
+@media only screen and (max-width: 1060px) {
+  html {
+    font-size: 50%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 155vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .company_name {
+    font-size: 2.7rem;
+  }
+
+  li a {
+    font-size: 1.7rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.65rem;
+  }
+
+  header {
+    height: 6.51vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+
+  .logo {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  button {
+    width: 13vw;
+    height: 3.2vw;
+    font-size: 1.5rem;
+  }
+
+  .servicesText {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .servicesText {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 38%;
+    /* 1rem = 8px; 8px/16px = 50% */
+  }
+
+  .service__logo {
+    margin-left: 2.5rem;
+    width: 13.542vw;
+    height: 13.542vw;
+  }
+
+  .text__container p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* PHONE */
+@media only screen and (max-width: 530px) {
+  html {
+    font-size: 37.5%;
+    /* 1rem = 6px; 6px/16px = 37.5% */
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 195vh;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-block: 1rem;
+
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+  }
+
+  header {
+    height: 6.51vw;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+
+  button {
+    width: 10.938vh;
+    height: 2.214vh;
+    font-size: 1.5rem;
+  }
+
+  li a {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  .nav_links li {
+    padding: 0px 0.3rem;
+  }
+
+  .logo {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .company_name {
+    font-size: 2rem;
+  }
+
+  .service__logo {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .company_name_footer {
+    width: 25vw;
+    font-size: 2rem;
+  }
+
+  .LOREM_IPSUM {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  html {
+    font-size: 30%;
+  }
+
+  .service__logo{
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .text__container h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.3222rem;
+  }
+  
+  .text__container p {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    font-size: 1.7rem;
+  }
+}
