@@ -6,14 +6,35 @@
   <title>Sulit & Bagasan Dental Office</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" type="text/css" href="stylesheetWEBSITEHOME.css" />
-  <style>
-    <?php include 'header-footer/header-footer.css' ?>
-  </style>
 </head>
 
 <body>
   <div class="wrapper">
-  <?php include 'header-footer/header.php' ?>
+    <header>
+            <img class="logo" src="../header-footer/images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
+            <div class="company_name">Sulit & Bagasan Dental Office</div>
+            <nav>
+                <ul class="nav_links">
+                    <li class="nav__item">
+                        <a class="nav__link" href="../home-page/index.php">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="../about-us-page/about.php">About Us</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="../services-page/services.php">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="../contact-us-page/contact-us.php">Contact Us</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../acc-dashboard/account-dashboard-page.php" class="nav__link">
+                            <div class="profile-frame"></div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     <div class="featured">
       <img class="featured_img" src="images/Featured.png" alt="featured image: dental chair and equipment" />
       <div class="main_title">
@@ -66,7 +87,36 @@
         health.
       </div>
     </div>
-    <?php include 'header-footer/footer.php' ?>
+    <footer>
+			<div class="operating_hrs">
+				OPERATING HOURS
+				<p class="LOREM_IPSUM">MONDAY-SUNDAYS</p>
+				<p class="LOREM_IPSUM">11 AM</p>
+				<p class="LOREM_IPSUM">5 PM</p>
+			</div>
+			<div class="footer_list">
+				<div class="company_logo">
+					<img class="footer_logo" src="../header-footer/images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
+				</div>
+				<div class="company_name_footer">Sulit & Bagasan Dental Office</div>
+				<div class="footer_buttons">
+					<a href="../contact-us-page/contact-us.php">
+					<img class="icon_link phone" src="../header-footer/images/phone-icon.png" alt="phone icon" />
+					</a>
+					<a href="../contact-us-page/contact-us.php">
+					<img class="icon_link mail" src="../header-footer/images/mail-icon.png" alt="mail icon" />
+					</a>
+					<a href="../contact-us-page/contact-us.php">
+					<img class="icon_link location" src="../header-footer/images/location-icon.png" alt="location pin icon" />
+					</a>
+				</div>
+			</div>
+			<div class="contact_details">
+				CONTACT DETAILS
+				<p class="LOREM_IPSUM NUMBER">0917 110 3983 / 0999 884 0454</p>
+				<p class="LOREM_IPSUM EMAIL">sulitandbagasan@gmail.com</p>
+			</div>
+		</footer>
   </div>
 </body>
 
