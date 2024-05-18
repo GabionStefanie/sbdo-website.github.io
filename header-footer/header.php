@@ -27,7 +27,7 @@
                         <a class="nav__link" href="../contact-us-page/contact-us.php">Contact Us</a>
                     </li>
                     <li class="nav__item">
-                        <a href="../account-dashboard-page/account-dashboard-html.php" class="nav__link">
+                        <a href="../acc-dashboard/account-dashboard-page.php" class="nav__link">
                             <div class="profile-frame"></div>
                         </a>
                     </li>

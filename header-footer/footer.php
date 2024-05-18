@@ -20,13 +20,13 @@
 				</div>
 				<div class="company_name_footer">Sulit & Bagasan Dental Office</div>
 				<div class="footer_buttons">
-					<a href="contacts.html">
+					<a href="../contact-us-page/contact-us.php">
 					<img class="icon_link phone" src="../header-footer/images/phone-icon.png" alt="phone icon" />
 					</a>
-					<a href="contacts.html">
+					<a href="../contact-us-page/contact-us.php">
 					<img class="icon_link mail" src="../header-footer/images/mail-icon.png" alt="mail icon" />
 					</a>
-					<a href="contacts.html">
+					<a href="../contact-us-page/contact-us.php">
 					<img class="icon_link location" src="../header-footer/images/location-icon.png" alt="location pin icon" />
 					</a>
 				</div>
