@@ -1,97 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
+
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-.wrapper {
-	width: 100%;
-	height: auto;
+.wrapper-header-footer {
+  width: 100%;
+  height: auto;
 }
+
+
 
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	background-color: #DADADA;
+  background-color: #dadada;
 }
 
 header {
-	height: 6.510vw;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding-block: 2.831vh;
-	padding-inline: 2rem;
-	background: #17245f;
+  height: 6.51vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-block: 2.831vh;
+  padding-inline: 2rem;
+  background: #17245f;
 }
 
 nav {
-	margin-left: auto;
+  margin-left: auto;
 }
 
 .nav_links {
-	list-style: none;
-	display: flex;
-	align-items: center;
-
+  list-style: none;
+  display: flex;
+  align-items: center;
 }
 
 .nav_links li {
-	display: inline-block;
-	padding: 0px 1.5rem;
+  display: inline-block;
+  padding: 0px 1.5rem;
 }
 
 .contactUsLink {
-	text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .profile-frame {
-	display: inline-block;
-	width: 5rem;
-	height: 5rem;
-	background-color: gray;
-	border-radius: 50%;
-	margin-left: 20px;
-	align-self: center;
-
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  background-color: gray;
+  border-radius: 50%;
+  margin-left: 20px;
+  align-self: center;
 }
 
 li a {
-	color: #fff;
-	font-family: Inter;
-	font-size: 2rem;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	text-decoration: none;
+  color: #fff;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
 }
 
 li a:hover {
-	color: #feeb6b;
-	transition: 0.2s;
+  color: #feeb6b;
+  transition: 0.2s;
 }
 
-.logo,
-.footer_logo {
-	width: 8.9rem;
-	height: 8.9rem;
-	background-color: white;
-	border-radius: 50%;
-	color: white;
+.header-logo,
+.footer-logo {
+  width: 8.9rem;
+  height: 8.9rem;
+  background-color: white;
+  border-radius: 50%;
+  color: white;
 }
 
-.logo {
-	margin-right: 1rem;
+.header-logo {
+  margin-right: 1rem;
 }
 
 .company_name {
-	width: auto;
-	height: auto;
-	color: #fff;
-	font-family: Lexend Deca;
-	font-size: 3.5rem;
-	font-style: normal;
+  width: auto;
+  height: auto;
+  color: #fff;
+  font-family: "Lexend Deca";
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+footer {
+	display: flex;
+	justify-content: space-evenly;
+	align-content: center;
+	padding: 1.5rem 5%;
+	background: #17245f;
+	row-gap: 0.5rem;
+  }
+
+.footer_buttons > a > img {
+  width: max(3rem, 2.93vw);
+  height: max(3rem, 2.93vw);
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+
+.footer_list{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.footer_list>.company_name_footer{
+	color: white;
+	font-family: "Lexend Deca";
+	font-size: 1.5rem;
 	font-weight: 400;
-	line-height: normal;
+	margin: 0.5rem 0 0.5rem 0;
+}
+
+footer div.operating_hrs > span, 
+.contact_details > span{
+	font-size: 2.5rem;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+footer div.operating_hrs > p, .contact_details > p  {
+  color: #fff;
+  text-align: center;
+  font-family: "JetBrains Mono";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.operating_hrs,
+.contact_details {
+  color: #feeb6b;
+  text-align: center;
+  font-family: "JetBrains Mono";
+  display: flex;
+  justify-content: flex-start;
+  margin: auto 0;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 1 1 0;
+  height: 100%
 }

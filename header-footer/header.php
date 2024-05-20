@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +13,9 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper-header-footer"> 
         <header>
-            <img class="logo" src="../header-footer/images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
+            <img class="header-logo" src="../header-footer/images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
             <div class="company_name">Sulit & Bagasan Dental Office</div>
             <nav>
                 <ul class="nav_links">

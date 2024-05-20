@@ -6,17 +6,17 @@
 		<link rel="stylesheet" type="text/css" href="header-footer.css">
 	</head>
 	<body>
-    <div class="wrapper">
+    <div class="wrapper-header-footer">
     <footer>
 			<div class="operating_hrs">
-				OPERATING HOURS
-				<p class="LOREM_IPSUM">MONDAY-SUNDAYS</p>
-				<p class="LOREM_IPSUM">11 AM</p>
-				<p class="LOREM_IPSUM">5 PM</p>
+				<span>OPERATING HOURS</span>
+				<p>MONDAY-SUNDAYS</p>
+				<p>11 AM</p>
+				<p>5 PM</p>
 			</div>
 			<div class="footer_list">
 				<div class="company_logo">
-					<img class="footer_logo" src="../header-footer/images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
+					<img class="footer-logo" src="../header-footer/images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
 				</div>
 				<div class="company_name_footer">Sulit & Bagasan Dental Office</div>
 				<div class="footer_buttons">
@@ -32,9 +32,9 @@
 				</div>
 			</div>
 			<div class="contact_details">
-				CONTACT DETAILS
-				<p class="LOREM_IPSUM NUMBER">0917 110 3983 / 0999 884 0454</p>
-				<p class="LOREM_IPSUM EMAIL">sulitandbagasan@gmail.com</p>
+				<span>CONTACT DETAILS</span>
+				<p>0917 110 3983 / 0999 884 0454</p>
+				<p>sulitandbagasan@gmail.com</p>
 			</div>
 		</footer>
     </div>
