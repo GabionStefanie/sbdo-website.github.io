@@ -28,7 +28,7 @@
 
             <p><label>Password:</label><br>
 				<input type="password" id="passwordInput" name="password">
-				<button type="button" onclick="togglePasswordVisibility('passwordInput')">Toggle</button></p>
+				<input type="checkbox" onclick="togglePasswordVisibility('passwordInput')">Show Password</input></p>
 
 			<p><label>Confirm Password:</label><br>
 				<input type="password" id="confirmPassword" name="confirmPassword">

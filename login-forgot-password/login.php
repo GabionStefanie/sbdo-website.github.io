@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Sulit & Bagasan Dental Office</title>
-    <link rel="stylesheet" type="text/css" href="style_login.css">
+    <link rel="stylesheet" type="text/css" href="css/style_login.css">
     <style>
         <?php include '../header-footer/header-footer.css' ?>
     </style>
@@ -14,17 +14,16 @@
     <div class="wrapper">
         <div class="form">
             <form action="signup_OTP.php" method="post" onsubmit="return validateForm()">
-                <h1 class="title">WELCOME BACK</h1>
-				<h1 class="sub_title">LOGIN</h1>
+                <h1 class="title">LOGIN</h1>
                 <hr>
 				
 				<p><label>Username:</label></br>
                     <input type="text" name="user_Name">
                 </p>
 				
-				<p><label>Password:</label><br>
-				<input type="password" id="passwordInput" name="password">
-				<button type="button" onclick="togglePasswordVisibility('passwordInput')">Toggle</button>
+				<p><label>Password:</label><br></p>
+				<input type="password" id="passwordInput" name="password"><br>
+				<input type="checkbox" onclick="togglePasswordVisibility('passwordInput')"><label>Show Password</label>
 				<p class = "forgotPS_link"><a href="forgot-password-page.php">Forgot password?</a></p></p>
 				
 				<div class="button-container">

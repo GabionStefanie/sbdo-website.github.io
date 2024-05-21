@@ -3,46 +3,34 @@
 .wrapper {
     background-color: #4574FF;
     display: flex;
-	margin: 0px;
+	padding-block: 10rem;
+    justify-content: center;
 }
 
 .title {
-	font-size: 70px;
-    text-align: center; /* Center align title */
+	font-size: 4rem;
+    text-align: center; 
 	font-family: Montserrat;
 }
 
-.sub_title{
-	font-size: 50px;
-    text-align: center;
-    font-family: Montserrat;
-}
-
 .form {
-    margin-block: 4rem;
-    margin-left: 5rem;
-    margin-inline: auto;
-    padding: 10vh;
+    padding: 5vh;
     width: 65%;
     background: white;
-    border: 2px solid black;
-
+    border: 0.2rem solid black;
 }
 
 .form hr {
     border: none;
-    height: 2px; /* Adjust the height as needed */
-    background-color: black; /* Set the color of the hr */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    height: 0.2rem; 
+    background-color: black; 
     width: 100%; /* Set width to 100% to reach the border */
-	margin-bottom: 40px;
+	margin-bottom: 4rem;
 }
 
 label {
-	margin-right: 40px;
-	margin-bottom: 10px;
-	font-size: 25px;
+    margin: 4rem auto 1rem 5rem;
+	font-size: 2.2rem;
 	font-family: Montserrat;
 }
 

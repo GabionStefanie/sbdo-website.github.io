@@ -1,7 +1,7 @@
 .wrapper {
     background-color: #4574FF;
-    display: flex; /* Use flexbox for layout */
-	margin: 0px;
+    display: flex;
+	justify-content: center;
 }
 
 .logo{
@@ -29,7 +29,7 @@
 
 .form hr {
     border: none;
-    height: 2px; /* Adjust the height as needed */
+    height: 2px;
     background-color: black; /* Set the color of the hr */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -60,8 +60,8 @@ input[type="text"]{
 p.email-label {
 	font-size: 22px;
 	margin-left: 50px;
-margin-top: 20vh;	
-font-family: Montserrat;
+    margin-top: 20vh;	
+    font-family: Montserrat;
 }
 
 .button-container {

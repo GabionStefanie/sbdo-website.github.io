@@ -5,16 +5,6 @@
     display: flex;
 	padding-block: 10rem;
     justify-content: center;
-
-}
-
-.logo{
-	width: 13rem;
-	height: 13rem;
-	background-color: white;
-	border-radius: 50%;
-	margin-left: 70px;
-	margin-top: 140px;
 }
 
 .title {
@@ -24,31 +14,28 @@
 }
 
 .form {
-    margin: auto; /* Center the form */
-    padding: 5vh;
-    /* padding-left: 5rem; */
-	min-height: 40rem;
+    padding: 5vh;	
     width: 65%;
     background: white;
-    border: 2px solid black; /* Add solid border */
+    border: 0.2rem solid black; /* Add solid border */
 }
 
 .form hr {
     border: none;
-    height: 2px; /* Adjust the height as needed */
-    background-color: black; /* Set the color of the hr */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    height: 0.2rem; 
+    background-color: black; 
     width: 100%; /* Set width to 100% to reach the border */
-	margin-bottom: 40px;
 }
 
-label{
-	margin-left: 5rem;
-	margin-right: 4rem;
-	margin-bottom: 1rem;
+label {
+    display: block;
+    margin: 4rem auto 1rem 5rem;
 	font-size: 2.2rem;
 	font-family: Montserrat;
+}
+
+input[type = "checkbox"] + label {
+    margin: 0;
 }
 
 input[type="text"],
@@ -58,28 +45,21 @@ input[type="password"] {
     background-color: transparent; 
     width: 30rem;
     padding: 0.5rem;
-	margin-left: 5rem;
-	margin-bottom: 40px;
+	margin: 1rem;
 	font-size: 2.2rem;
-	 font-family: Montserrat;
+	font-family: Montserrat;
 }
 
 p.account-login-label, form a {
-	font-size: 22px;
-	margin-left: 50px;
+	font-size: 2.2rem;
+	margin-left: 5rem;
 	font-family: Montserrat;
     color: black;
 }
 
-/* p.account-login-label {
-	font-size: 22px;
-	margin-left: 50px;
-	font-family: Montserrat;
-} */
-
 .button-container {
     text-align: center;
-    margin-top: 50px; /* Adjust as needed */
+    margin-top: 50px;
 	margin-left: 690px;
 	display: flex; /* Use flexbox to arrange items horizontally */
     justify-content: space-between; 
@@ -107,7 +87,7 @@ input[type="submit"]{
     width: 210px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 28px; /* Font size */
     margin: 12px 16px; 
     border-radius: 25px;

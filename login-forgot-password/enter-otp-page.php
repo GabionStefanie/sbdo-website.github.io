@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password | Sulit & Bagasan Dental Office</title>
-    <link rel="stylesheet" type="text/css" href="style_OTP.css">
+    <link rel="stylesheet" type="text/css" href="css/style_OTP.css">
     <style>
         <?php include '../header-footer/header-footer.css' ?>
     </style>
