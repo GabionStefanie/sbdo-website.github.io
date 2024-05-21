@@ -49,8 +49,8 @@ $createScheduleTable = "CREATE TABLE IF NOT EXISTS SCHEDULE (
   scheduleDate DATE NOT NULL,
   scheduleTime VARCHAR (20) NOT NULL,
   Status VARCHAR (15) NOT NULL,
-  CONSTRAINT PK_ScheduleID PRIMARY KEY (Schedule_ID)
-  CONSTRAINT CHK_status CHECK Status IN ('Available', 'Not Available');";
+  CONSTRAINT PK_ScheduleID PRIMARY KEY (Schedule_ID),
+  CONSTRAINT CHK_Status CHECK (Status IN ('Available', 'Not Available')));";
 mysqli_query($conn, $createScheduleTable);
 
 $createServiceTable = "CREATE TABLE IF NOT EXISTS `SERVICE` (
