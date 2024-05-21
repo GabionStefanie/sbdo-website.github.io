@@ -1,6 +1,5 @@
 .wrapper {
     background-color: #4574FF;
-    height: 170vh; /* Use viewport height for full height */
     display: flex; /* Use flexbox for layout */
 	margin: 0px;
 }
@@ -21,13 +20,8 @@
 }
 
 .form {
-    margin: auto; /* Center the form */
-	margin-top: 80px;
-	margin-left: 60px;
-	margin-right: 30px;
+    margin: auto;
     padding: 20px;
-	min-height: 400px;
-	height: 90vh;
     width: 65%;
     background: white;
     border: 2px solid black; /* Add solid border */
@@ -92,6 +86,7 @@ input[type="button"]{
     font-family: Montserrat;
 }
 
+
 input[type="submit"]{
     border: 2; /* Remove default border */
     padding: 10px 15px; /* Add padding */
@@ -104,9 +99,4 @@ input[type="submit"]{
     margin: 12px 16px; /* Add margin */
     border-radius: 25px;
     font-family: Montserrat;
-}
-
-.Lorem_ipsum{
-	font-size: 2.2rem;
-	font-family: Montserrat;
 }

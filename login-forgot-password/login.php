@@ -25,7 +25,7 @@
 				<p><label>Password:</label><br>
 				<input type="password" id="passwordInput" name="password">
 				<button type="button" onclick="togglePasswordVisibility('passwordInput')">Toggle</button>
-				<p class = "forgotPS_link"><a href="forgot_PS.html">Forgot password?</a></p></p>
+				<p class = "forgotPS_link"><a href="forgot-password-page.php">Forgot password?</a></p></p>
 				
 				<div class="button-container">
                     <input type="submit" value="LOGIN">
