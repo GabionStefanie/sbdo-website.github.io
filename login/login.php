@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Sulit & Bagasan Dental Office</title>
     <link rel="stylesheet" type="text/css" href="style_login.css">
+    <style>
+        <?php include '../header-footer/header-footer.css' ?>
+    </style>
 </head>
 <body>
+<?php include '../header-footer/header.php' ?>
     <div class="wrapper">
-        <div class="side">
-		<img class="logo" src="img/Logo.jpeg" alt = "logo">
-		</div>
         <div class="form">
             <form action="signup_OTP.php" method="post" onsubmit="return validateForm()">
                 <h1 class="title">WELCOME BACK</h1>
@@ -30,10 +31,11 @@
                     <input type="submit" value="LOGIN">
                 </div>
 				<p class = "Lorem_ipsum">Don't have an account?</p>
-				<p class = "Signup_link"><a href="signup_page.html">Signup</a></p>
+				<p class = "Signup_link"><a href="../sign-up/signup-page.php">Signup</a></p>
 				
 	</form></div>
 	</div>
+    <?php include '../header-footer/footer.php' ?>
 	<script>
 	function togglePasswordVisibility(inputId) {
     var passwordInput = document.getElementById(inputId);

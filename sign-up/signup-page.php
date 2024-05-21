@@ -38,7 +38,7 @@
                     <input type="submit" value="SIGNUP">
                 </div>
 				<p class = "account-login-label">Already have an account?</p>
-				<a href="#">Login</a>
+				<a href="../login/login.php">Login</a>
             </form>
         </div>
         
