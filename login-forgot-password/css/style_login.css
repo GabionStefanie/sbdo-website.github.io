@@ -25,42 +25,59 @@
     height: 0.2rem; 
     background-color: black; 
     width: 100%; /* Set width to 100% to reach the border */
-	margin-bottom: 4rem;
 }
 
 label {
-    margin: 4rem auto 1rem 5rem;
+    display: block;
+    margin-top: 3rem;
+    margin-left: 5rem;
+	font-size: 2.2rem;
+	font-family: Montserrat;
+}
+
+input[type="checkbox"] {
+    margin-left: 5rem ;
+}
+
+input[type="checkbox"] + label{
+    display: contents;
+    margin-top: auto;
+    margin-left: 5rem;
 	font-size: 2.2rem;
 	font-family: Montserrat;
 }
 
 input[type="text"],
 input[type="password"] {
+    display: block;
     border: 0;
-	border-bottom: 1px solid black;
+	border-bottom: 0.1rem solid black;
     background-color: transparent; 
     width: 30rem;
     padding: 0.5rem;
-	/* margin-left: 5rem; */
-	margin-bottom: 40px;
+	margin-left: 5rem;
 	font-size: 2.2rem;
-	 font-family: Montserrat;
+	font-family: Montserrat;
 }
 
 form a {
-	font-size: 22px;
+	font-size: 2.2rem;
+	margin-left: 5rem;
 	font-family: Montserrat;
+    font-weight: bold;
     color: black;
 }
 
 .forgotPS_link{
 	color: #17245F;
 	font-size: 2.2rem;
-	margin-top: 2px;
+	margin-top: 3.5rem;
 	font-family: Montserrat;
 }
 
-.Lorem_ipsum{
+.text {
+	margin-top: 3rem;
+    margin-left: 5rem;
 	font-size: 2.2rem;
 	font-family: Montserrat;
 }

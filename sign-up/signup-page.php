@@ -26,19 +26,21 @@
                     <input type="text" name="email_address">
                 </p>
 
-            <p><label>Password:</label><br>
+            <label>Password:</label><br>
 				<input type="password" id="passwordInput" name="password">
-				<input type="checkbox" onclick="togglePasswordVisibility('passwordInput')">Show Password</input></p>
+                <input id="checkbox-pass1" type="checkbox" onclick="togglePasswordVisibility('passwordInput')"/>
+                <label for="checkbox-pass1"> Show Password</label><br>
 
-			<p><label>Confirm Password:</label><br>
+			<label>Confirm Password:</label><br>
 				<input type="password" id="confirmPassword" name="confirmPassword">
-				<button type="button" onclick="togglePasswordVisibility('confirmPassword')">Toggle</button></p>
+				<input id="checkbox-pass2" type="checkbox" onclick="togglePasswordVisibility('confirmPassword')"/>
+                <label for="checkbox-pass2"> Show Password</label>
 
                 <div class="button-container">
                     <input type="submit" value="SIGNUP">
                 </div>
 				<p class = "account-login-label">Already have an account?</p>
-				<a href="../login/login.php">Login</a>
+				<a class="login-link" "../login/login.php">Login</a>
             </form>
         </div>
         

@@ -28,24 +28,34 @@
 }
 
 label {
-    display: block;
-    margin: 4rem auto 1rem 5rem;
+    display: inline-block;
+    margin-top: 3rem;
+    margin-left: 5rem;
 	font-size: 2.2rem;
 	font-family: Montserrat;
 }
 
-input[type = "checkbox"] + label {
-    margin: 0;
+input[type="checkbox"] {
+    margin-left: 5rem ;
+}
+
+input[type="checkbox"] + label{
+    display: contents;
+    margin-top: auto;
+    margin-left: 5rem;
+	font-size: 2.2rem;
+	font-family: Montserrat;
 }
 
 input[type="text"],
 input[type="password"] {
+    display: block;
     border: 0;
-	border-bottom: 1px solid black;
+	border-bottom: 0.1rem solid black;
     background-color: transparent; 
     width: 30rem;
     padding: 0.5rem;
-	margin: 1rem;
+	margin-left: 5rem;
 	font-size: 2.2rem;
 	font-family: Montserrat;
 }
@@ -57,10 +67,15 @@ p.account-login-label, form a {
     color: black;
 }
 
+a.login-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .button-container {
     text-align: center;
-    margin-top: 50px;
-	margin-left: 690px;
+    margin-top: 5vh;
+    margin-left: 70%;
 	display: flex; /* Use flexbox to arrange items horizontally */
     justify-content: space-between; 
 }
