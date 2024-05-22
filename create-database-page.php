@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="database.php" method="post">
-        <button type="submit">SUBMIT</button>
+        <button type="submit">CREATE DATABASE</button>
     </form>
 </body>
 </html>
