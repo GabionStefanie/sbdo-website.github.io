@@ -1,3 +1,5 @@
+<?php $User_ID = 1; ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,78 +8,64 @@
     <title>Testimonials | Sulit & Bagasan Dental Office</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="style_testimonial.css">
-    <style>
-        <?php include '../header-footer/header-footer.css' ?>
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../header-footer/header-footer.css">
 </head>
 
 <body>
-<?php include '../header-footer/header.php' ?>
-    <div class="wrapper">     
+    <?php include '../header-footer/header.php' ?>
+    <div class="wrapper">
         <div class="title">
             <h1>TESTIMONIALS</h1>
         </div>
 
-        <form id="testimonialForm" action="fetch_comments.php" method="post">
+        <form id="testimonialForm">
             <div class="comment_form">
                 <div class="card">
-                    <div class="select-stars">
-                        <span onclick="setRating(1)" class="star">★</span>
-                        <span onclick="setRating(2)" class="star">★</span>
-                        <span onclick="setRating(3)" class="star">★</span>
-                        <span onclick="setRating(4)" class="star">★</span>
-                        <span onclick="setRating(5)" class="star">★</span>
+                    <div class="select-stars" id="star-rating-1">
+                        <span onclick="setRating(1, document.getElementById('star-rating-1'))" class="star">★</span>
+                        <span onclick="setRating(2, document.getElementById('star-rating-1'))" class="star">★</span>
+                        <span onclick="setRating(3, document.getElementById('star-rating-1'))" class="star">★</span>
+                        <span onclick="setRating(4, document.getElementById('star-rating-1'))" class="star">★</span>
+                        <span onclick="setRating(5, document.getElementById('star-rating-1'))" class="star">★</span>
                     </div>
+
                     <br>
-                    <textarea name="comment" placeholder="Write your comment here" required></textarea>
+                    <label for="comment"></label>
+                    <textarea id="comment" name="comment" placeholder="Write your comment here" required></textarea>
                     <input type="hidden" name="rating" id="rating" value="0">
 
-                    <label>
-                        <input type="checkbox" name="anonymous" id="anonymousCheckbox"> Comment anonymously
-                   </label>
+                    <div id="checkbox-container">
+                        <input id="anonymous" name="anonymous" type="checkbox" value="true">
+                        <label for="anonymous">Review Anonymously</label>
+                    </div>
 
                     <div class="button-container">
                         <input type="submit" value="SUBMIT">
-                        <input type="reset" value="RESET">
+                        <input type="reset" value="RESET" onclick=removeSelection();>
                     </div>
                 </div>
             </div>
         </form>
 
         <div id="commentsContainer">
-            <?php include 'fetch_comments.php'; ?>
+            <?php include 'backend/fetch_comments.php'; ?>
         </div>
 
     </div>
-    <?php include '../header-footer/footer.php' ?>
-    
+    <?php include '../header-footer/footer.php'
+    ?>
+
     <script>
-        let stars = document.getElementsByClassName("star");
-        let ratingInput = document.getElementById("rating");
-
-        function setRating(n) {
-            removeSelection();
-            for (let i = 0; i < n; i++) {
-                stars[i].classList.add("selected");
-            }
-            ratingInput.value = n;
-        }
-
-        function removeSelection() {
-            for (let i = 0; i < stars.length; i++) {
-                stars[i].classList.remove("selected");
-            }
-        }
-
-        document.getElementById("testimonialForm").addEventListener("submit", function (event) {
+        document.getElementById("testimonialForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
             let formData = new FormData(this);
 
-            fetch('testimonial.php', {
-                method: 'POST',
-                body: formData
-            })
+            fetch('backend/testimonial.php', {
+                    method: 'POST',
+                    body: formData
+                })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
@@ -94,26 +82,45 @@
                 });
         });
 
+        let stars = document.getElementsByClassName("star");
+        let ratingInput = document.getElementById("rating");
+
+        function setRating(n, starContainer) {
+            removeSelection(starContainer); // Pass the container to removeSelection
+            for (let i = 0; i < n; i++) {
+                starContainer.getElementsByClassName("star")[i].classList.add("selected");
+            }
+            ratingInput.value = n;
+        }
+
+        function removeSelection(starContainer) {
+            const stars = starContainer.getElementsByClassName("star");
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].classList.remove("selected");
+            }
+            ratingInput.value = 0;
+        }
+
+        let ratingDiv = document.createElement("div");
+        ratingDiv.className = "comment-rating";
+        for (let i = 0; i < comment.rating; i++) {
+            let starSpan = document.createElement("span");
+            starSpan.className = "star selected_comments";
+            starSpan.innerText = "★";
+            ratingDiv.appendChild(starSpan);
+        }
+        for (let i = comment.rating; i < 5; i++) {
+            let starSpan = document.createElement("span");
+            starSpan.className = "star_comments";
+            starSpan.innerText = "★";
+            ratingDiv.appendChild(starSpan);
+        }
+
         function addComment(comment) {
             let commentsContainer = document.getElementById("commentsContainer");
 
             let commentDiv = document.createElement("div");
             commentDiv.className = "comment";
-
-            let ratingDiv = document.createElement("div");
-            ratingDiv.className = "comment-rating";
-            for (let i = 0; i < comment.rating; i++) {
-                let starSpan = document.createElement("span");
-                starSpan.className = "star selected_comments";
-                starSpan.innerText = "★";
-                ratingDiv.appendChild(starSpan);
-            }
-            for (let i = comment.rating; i < 5; i++) {
-                let starSpan = document.createElement("span");
-                starSpan.className = "star_comments";
-                starSpan.innerText = "★";
-                ratingDiv.appendChild(starSpan);
-            }
 
             let authorDiv = document.createElement("div");
             authorDiv.className = "comment-author";
@@ -135,10 +142,8 @@
 
             commentsContainer.insertBefore(commentDiv, commentsContainer.firstChild);
         }
-
-
-        // Optional: Reset stars when form is reset
-        document.querySelector("form").addEventListener("reset", function () {
+   
+        document.querySelector("form").addEventListener("reset", function() {
             removeSelection();
             ratingInput.value = 0;
         });

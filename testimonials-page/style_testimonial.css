@@ -1,104 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
-/* .wrapper {
-  width: 100%;
-  height: 400%;
-} */
 
 * {
   margin: 0;
   padding: 0;
 }
 
-header {
-  height: 6.51vw;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-block: 2.831vh;
-  padding-inline: 2rem;
-  background: #17245f;
-}
-
-nav {
-  margin-left: auto;
-}
-
-.nav_links {
-  list-style: none;
-}
-
-.nav_links li {
-  display: inline-block;
-  padding: 0px 1.5rem;
-}
-
-.homeLink {
-  text-decoration: underline;
-}
-
-li a {
-  color: #fff;
-  font-family: Inter;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-decoration: none;
-}
-
-li a:hover {
-  color: #feeb6b;
-  transition: 0.2s;
-}
-
-.logo,
-.footer_logo {
-  width: 8.9rem;
-  height: 8.9rem;
-  background-color: white;
-  border-radius: 50%;
-}
-
-.logo {
-  margin-right: 1rem;
-}
-
-.company_name {
-  width: auto;
-  height: auto;
-  color: #fff;
-  font-family: Lexend Deca;
-  font-size: 3.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
 .title {
   background: #4cbaf4;
   color: white;
-  font-size: 50px;
+  font-size: 4.3rem;
   text-align: left;
-  /* margin-top: 70px;
-  margin-bottom: 70px;
-  padding: 20px; */
+  padding: 2rem;
   font-family: Montserrat;
 }
 
-/* .comment_form {
-  border: 2px solid;
-  height: 30vh;
-  width: 100%;
+.comment_form {
   background: white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+div.card {
   display: flex;
-  align-items: center;
-  padding: 4px;
-  margin-bottom: 60px;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  border: 0.2rem solid black;
 }
 
 .star {
-  font-size: 24px;
-  cursor: pointer;
+  font-size: 2.4rem;
   color: gray;
 }
 
@@ -111,18 +44,6 @@ li a:hover {
   text-align: center;
   display: flex;
   justify-content: center;
-  gap: 20px;
-} */
-
-div.card {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem;
-  border: 2px solid black;
-  margin: 2rem;
 }
 
 .select-stars {
@@ -132,18 +53,26 @@ div.card {
 }
 
 .card > textarea {
-  min-width: 100%;
-  max-width: 100%;
+  min-width: 98%;
+  max-width: 98%;
   min-height: 10rem;
+  font-family: Montserrat;
+  padding: 1.4rem;
+}
+
+#checkbox-container {
+  font-size: 1.4rem;
+  font-family: Montserrat;
+  display: flex;
+  align-items: center;
+  gap: 1rem ;
 }
 
 input[type="reset"] {
   border: 2px solid;
-  /* Remove default border */
-  padding: 10px 15px;
-  /* Add padding */
+  padding: 1rem 1.5rem;
   background-color: white;
-  width: 210px;
+  width: 21rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -155,14 +84,14 @@ input[type="reset"] {
   /* Adjust rounded corners */
 }
 
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
   border: 2px solid;
   /* Remove default border */
   padding: 10px 15px;
   /* Add padding */
   background-color: black;
   color: white;
-  width: 210px;
+  width: 21rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -221,85 +150,4 @@ input[type="submit"] {
   margin: 10px 0;
   font-size: 16px;
   line-height: 1.5;
-}
-
-footer {
-  display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  padding: 1.5rem 5%;
-  background: #17245f;
-  row-gap: 0.5rem;
-}
-
-.LOREM_IPSUM {
-  color: #fff;
-  text-align: center;
-  font-family: JetBrains Mono;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.operating_hrs,
-.contact_details {
-  color: #feeb6b;
-  text-align: center;
-  font-family: JetBrains Mono;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  flex: 1 1 0;
-  width: 0;
-}
-
-.footer_list {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.company_name_footer {
-  color: #fff;
-  font-family: Lexend Deca;
-  font-size: 2.8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: 0.4rem;
-  text-align: center;
-}
-
-.company_logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  margin-bottom: 0.4rem;
-}
-
-.footer_buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: nowrap;
-}
-
-.icon_link {
-  width: max(3rem, 2.93vw);
-  height: max(3rem, 2.93vw);
-  border-radius: 50%;
-  object-fit: cover;
-  background-color: white;
-  margin: 0 1rem;
 }

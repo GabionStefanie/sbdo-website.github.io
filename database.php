@@ -147,6 +147,7 @@ $createReviewsTable = "CREATE TABLE IF NOT EXISTS `REVIEWS` (
         `Review` TEXT NOT NULL,
         `Stars` INT NOT NULL,
         `User_ID` INT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         CONSTRAINT PK_ReviewID PRIMARY KEY (`Review_ID`),
         CONSTRAINT FK_UserReviewID FOREIGN KEY (`User_ID`) REFERENCES `ACCOUNT`(`User_ID`) ON UPDATE CASCADE ON DELETE SET NULL
       )";

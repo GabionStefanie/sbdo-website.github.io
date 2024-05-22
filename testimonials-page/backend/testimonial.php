@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "dental_office";
+$dbname = "sbdoDatabase";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,20 +15,27 @@ if ($conn->connect_error) {
 $response = ["success" => false, "message" => "Something went wrong."];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $rating = $_POST['rating'];
-    $comment = $_POST['comment'];
-    $anonymous = isset($_POST['anonymous']) ? 1 : 0;
+    $stars = $_POST['rating'];
+    $review = $_POST['comment'];
+    $Anonymous = $_POST['anonymous'];
 
-    $stmt = $conn->prepare("INSERT INTO testimonials (rating, comment, anonymous) VALUES (?, ?, ?)");
-    $stmt->bind_param("isi", $rating, $comment, $anonymous);
+    if($Anonymous == 'true'){
+        $UserID = null; 
+    }
+    else{
+        $UserID = 1; // dummy user id put session here
+    }
+
+    $stmt = $conn->prepare("INSERT INTO REVIEWS (Stars, Review, User_ID) VALUES (?, ?, ?)");
+    $stmt->bind_param("isi", $stars, $review, $UserID);
 
     if ($stmt->execute()) {
         $response = [
             "success" => true,
             "comment" => [
-                "rating" => $rating,
-                "comment" => $comment,
-                "anonymous" => $anonymous,
+                "rating" => $stars,
+                "comment" => $review,
+                "anonymous" => $UserID,
                 "created_at" => date("Y-m-d H:i:s")
             ]
         ];
