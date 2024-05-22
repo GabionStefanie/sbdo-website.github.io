@@ -20,13 +20,13 @@ session_start();
             <nav>
                 <ul class="nav_links">
                     <li class="nav__item">
-                        <a class="nav__link" href="../home-page/index.php">Home</a>
+                        <a class="nav__link" href="../static-home-page/index.php">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="../about-us-page/about.php">About Us</a>
+                        <a class="nav__link" href="../static-about-us-page/about.php">About Us</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="../services-page/services.php">Services</a>
+                        <a class="nav__link" href="../static-services-page/services.php">Services</a>
                     </li>
                     <li class="nav__item">
                         <a class="nav__link" href="../contact-us-page/contact-us.php">Contact Us</a>
