@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -23,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $UserID = null; 
     }
     else{
-        $UserID = 1; // dummy user id put session here
+        $UserID = $_SESSION["User_ID"]; // dummy user id put session here
     }
 
     $stmt = $conn->prepare("INSERT INTO REVIEWS (Stars, Review, User_ID) VALUES (?, ?, ?)");

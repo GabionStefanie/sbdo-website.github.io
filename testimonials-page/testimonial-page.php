@@ -1,5 +1,3 @@
-<?php $User_ID = 1; ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +11,10 @@
 </head>
 
 <body>
-    <?php include '../header-footer/header.php' ?>
+    <?php include '../header-footer/header.php' ;
+    $User_ID = 2;
+    $_SESSION["User_ID"] =  $User_ID;
+    ?>
     <div class="wrapper">
         <div class="title">
             <h1>TESTIMONIALS</h1>
@@ -124,7 +125,7 @@
 
             let authorDiv = document.createElement("div");
             authorDiv.className = "comment-author";
-            authorDiv.innerText = comment.anonymous ? "Anonymous" : "User";
+            authorDiv.innerText = comment.anonymous;
 
             let dateDiv = document.createElement("div");
             dateDiv.className = "comment-date";
@@ -142,7 +143,7 @@
 
             commentsContainer.insertBefore(commentDiv, commentsContainer.firstChild);
         }
-   
+
         document.querySelector("form").addEventListener("reset", function() {
             removeSelection();
             ratingInput.value = 0;
