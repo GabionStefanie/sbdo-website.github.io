@@ -31,17 +31,16 @@ if ($result->num_rows > 0) {
             echo "<span class='star'>★</span>";
         }
 
-        $dateTime = DateTime::createFromFormat('Y-m-d H:i:s', $row["created_at"]);
-        $formattedDate = date_format($dateTime, "M d, Y g:i A");
-        
+        $dateTime = new DateTime($row["created_at"]);
+        $formattedDate = $dateTime->format("M d, Y g:i A");
+
         echo "</div>";
-        echo "<div class='comment-text'>" . $row["Review"] . "</div>";
-        
+        echo "<div class='comment-text'><pre>" . $row["Review"] . "</pre></div>";
         echo "<div class='comment-author'>" . ($row["Username"]) . "</div>";
         echo "<div class='comment-date'>" . $formattedDate . "</div>";
         echo "</div>";
     }
 } else {
-    echo "No comments yet.";
+    echo "<div class='comment'>No comments yet.</div>";
 }
 $conn->close();

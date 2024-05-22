@@ -132,6 +132,11 @@ input[type="submit"], input[type="button"] {
   font-family: 'Montserrat';
 }
 
+.comment-text pre {
+  font-family: 'Montserrat';
+
+}
+
 .comment-rating {
   font-size: 18px;
   color: #ff9800;

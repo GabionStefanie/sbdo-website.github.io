@@ -139,8 +139,6 @@
             commentDiv.appendChild(authorDiv);
             commentDiv.appendChild(dateDiv);
             commentDiv.appendChild(textDiv);
-
-
             commentsContainer.insertBefore(commentDiv, commentsContainer.firstChild);
         }
 
