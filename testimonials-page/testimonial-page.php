@@ -42,7 +42,11 @@
                     </div>
 
                     <div class="button-container">
-                        <input type="submit" value="SUBMIT" id="submit-comment">
+                        <?php if(isset($_COOKIE[$cookie_name])) { //add cookie name ?> 
+                            <input type="submit" value="SUBMIT" id="submit-comment">
+                        <?php } else { ?>
+                            <input type="button" onclick="">
+                        <?php } ?>
                         <input type="reset" value="RESET" id="reset-rating-btn">
                     </div>
                 </div>
@@ -72,7 +76,7 @@
                     if (data.success) {
                         addComment(data.comment);
                         this.reset();
-                        removeSelection();
+                        removeSelection(starContainer);
                         ratingInput.value = 0;
                         console.log(data)
                     } else {
