@@ -20,7 +20,7 @@
             <h1>TESTIMONIALS</h1>
         </div>
 
-        <form id="testimonialForm" action = "backend/testimonal.php">
+        <form id="testimonialForm" action="backend/testimonal.php">
             <div class="comment_form">
                 <div class="card">
                     <div class="select-stars" id="star-rating-1">
@@ -37,13 +37,13 @@
                     <input type="hidden" name="rating" id="rating" value="0">
 
                     <div id="checkbox-container">
-                        <input id="anonymous" name="anonymous" type="checkbox" value = "true">
+                        <input id="anonymous" name="anonymous" type="checkbox" value="true">
                         <label for="anonymous">Review Anonymously</label>
                     </div>
 
                     <div class="button-container">
-                        <input type="submit" value="SUBMIT" id = "submit-comment">
-                        <input type="reset" value="RESET" onclick=removeSelection(5);>
+                        <input type="submit" value="SUBMIT" id="submit-comment">
+                        <input type="reset" value="RESET" id="reset-rating-btn">
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                         this.reset();
                         removeSelection();
                         ratingInput.value = 0;
-                        console.log(data)   
+                        console.log(data)
                     } else {
                         alert(data.message);
                     }
@@ -101,7 +101,12 @@
                 stars[i].classList.remove("selected");
             }
             ratingInput.value = 0;
-        }   
+        }
+
+        const resetRatingBtn = document.getElementById('reset-rating-btn');
+        resetRatingBtn.addEventListener('click', function() {
+            removeSelection(document.getElementById('star-rating-1')); // Assuming your star container has ID 'star-rating-1'
+        });
 
         function addComment(comment) {
             let commentsContainer = document.getElementById("commentsContainer");
