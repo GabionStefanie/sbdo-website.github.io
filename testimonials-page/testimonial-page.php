@@ -11,6 +11,19 @@
 </head>
 
 <body>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Login to Proceed</h2>
+            </div>
+            <div class="modal-body">
+                <p>It seems that you are not yet logged in.</p>
+                <p>Please log in to be able to submit a review.</p>
+                <button><a href="../login-forgot-password/login.php">LOG IN</a></button>
+            </div>
+        </div>
+    </div>
     <?php include '../header-footer/header.php';
     $User_ID = 1;
     $_SESSION["User_ID"] =  $User_ID; // remove once cookie is functional
@@ -19,6 +32,8 @@
         <div class="title">
             <h1>TESTIMONIALS</h1>
         </div>
+
+
 
         <form id="testimonialForm" action="backend/testimonal.php">
             <div class="comment_form">
@@ -42,11 +57,12 @@
                     </div>
 
                     <div class="button-container">
-                        <?php //if(isset($_COOKIE[$cookie_name])) { //add cookie name ?> 
+                        <?php if (isset($_COOKIE['User_ID'])) { 
+                        ?>
                             <input type="submit" value="SUBMIT" id="submit-comment">
-                        <?php //} else { ?>
-                            <!-- <input type="button" onclick=""> -->
-                        <?php //} ?>
+                        <?php } else { ?>
+                            <input type="button" id="login-button" value="SUBMIT">
+                        <?php } ?>
                         <input type="reset" value="RESET" id="reset-rating-btn">
                     </div>
                 </div>
@@ -155,10 +171,23 @@
             commentsContainer.insertBefore(commentDiv, commentsContainer.firstChild);
         }
 
-        document.querySelector("form").addEventListener("reset", function() {
-            removeSelection();
-            ratingInput.value = 0;
-        });
+        var modal = document.getElementById("loginModal");
+        var btn = document.getElementById("login-button");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "flex";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 

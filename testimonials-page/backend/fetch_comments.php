@@ -44,7 +44,5 @@ if ($result->num_rows > 0) {
         echo "<div class='comment-date'>" . $formattedDate . "</div>";
         echo "</div>";
     }
-} else {
-    echo "<div class='comment'>No comments yet.</div>";
 }
 $conn->close();
