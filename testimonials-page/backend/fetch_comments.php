@@ -11,17 +11,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = $conn->prepare("SELECT Username, Stars, Review, created_at 
+
+
+$sql = "SELECT Username, Stars, Review, created_at 
 FROM REVIEWS
 LEFT JOIN account USING (User_ID)
-ORDER BY created_at DESC");
+ORDER BY created_at DESC";
+$result = (mysqli_query($conn, $sql));
 
 // $sql->bind_param('i', $User_id);
-$sql->execute();
-$result = $sql->get_result();
+
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
+        $dateTime = new DateTime($row["created_at"]);
+        $formattedDate = $dateTime->format("M d, Y g:i A");
+
         echo "<div class='comment'>";
         echo "<div class='comment-rating'>";
         for ($i = 0; $i < $row["Stars"]; $i++) {
@@ -30,10 +35,6 @@ if ($result->num_rows > 0) {
         for ($i = $row["Stars"]; $i < 5; $i++) {
             echo "<span class='star'>★</span>";
         }
-
-        $dateTime = new DateTime($row["created_at"]);
-        $formattedDate = $dateTime->format("M d, Y g:i A");
-
         echo "</div>";
         echo "<div class='comment-text'><pre>" . $row["Review"] . "</pre></div>";
         echo "<div class='comment-author'>" . ($row["Username"]) . "</div>";

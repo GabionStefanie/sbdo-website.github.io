@@ -31,7 +31,7 @@ $createHealthSymptomsTable = "CREATE TABLE IF NOT EXISTS `HEALTH_SYMPTOMS` (
         `HealthSymptoms_ID` INT AUTO_INCREMENT NOT NULL,
         `Symptom_Name` VARCHAR (50) NOT NULL,
         CONSTRAINT PK_HealthSymptomsID PRIMARY KEY (`HealthSymptoms_ID`)
-      )";
+      );";
 mysqli_query($conn, $createHealthSymptomsTable);
 
 $createPxHealthSymptomsTable = "CREATE TABLE IF NOT EXISTS `PATIENT_HEALTH_SYMPTOMS` (

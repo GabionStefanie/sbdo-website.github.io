@@ -81,6 +81,7 @@ input[type="reset"] {
   margin: 12px 0;
   /* Adjust margin */
   border-radius: 25px;
+  cursor: pointer;
   /* Adjust rounded corners */
 }
 
@@ -100,6 +101,7 @@ input[type="submit"], input[type="button"] {
   margin: 12px 0;
   /* Adjust margin */
   border-radius: 25px;
+  cursor: pointer;
   /* Adjust rounded corners */
 }
 

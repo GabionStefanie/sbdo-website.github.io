@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <?php include '../header-footer/header.php' ;
-    $User_ID = 2;
+    <?php include '../header-footer/header.php';
+    $User_ID = 3;
     $_SESSION["User_ID"] =  $User_ID;
     ?>
     <div class="wrapper">
@@ -20,7 +20,7 @@
             <h1>TESTIMONIALS</h1>
         </div>
 
-        <form id="testimonialForm">
+        <form id="testimonialForm" action = "backend/testimonal.php">
             <div class="comment_form">
                 <div class="card">
                     <div class="select-stars" id="star-rating-1">
@@ -37,13 +37,13 @@
                     <input type="hidden" name="rating" id="rating" value="0">
 
                     <div id="checkbox-container">
-                        <input id="anonymous" name="anonymous" type="checkbox" value="true">
+                        <input id="anonymous" name="anonymous" type="checkbox" value = "true">
                         <label for="anonymous">Review Anonymously</label>
                     </div>
 
                     <div class="button-container">
-                        <input type="submit" value="SUBMIT">
-                        <input type="reset" value="RESET" onclick=removeSelection();>
+                        <input type="submit" value="SUBMIT" id = "submit-comment">
+                        <input type="reset" value="RESET" onclick=removeSelection(5);>
                     </div>
                 </div>
             </div>
@@ -74,6 +74,7 @@
                         this.reset();
                         removeSelection();
                         ratingInput.value = 0;
+                        console.log(data)   
                     } else {
                         alert(data.message);
                     }
@@ -100,25 +101,28 @@
                 stars[i].classList.remove("selected");
             }
             ratingInput.value = 0;
-        }
-
-        let ratingDiv = document.createElement("div");
-        ratingDiv.className = "comment-rating";
-        for (let i = 0; i < comment.rating; i++) {
-            let starSpan = document.createElement("span");
-            starSpan.className = "star selected_comments";
-            starSpan.innerText = "★";
-            ratingDiv.appendChild(starSpan);
-        }
-        for (let i = comment.rating; i < 5; i++) {
-            let starSpan = document.createElement("span");
-            starSpan.className = "star_comments";
-            starSpan.innerText = "★";
-            ratingDiv.appendChild(starSpan);
-        }
+        }   
 
         function addComment(comment) {
             let commentsContainer = document.getElementById("commentsContainer");
+
+            let ratingDiv = document.createElement("div");
+            ratingDiv.className = "comment-rating";
+
+            ratingDiv.className = "comment-rating";
+            for (let i = 0; i < comment.rating; i++) {
+                let starSpan = document.createElement("span");
+                starSpan.className = "star selected_comments";
+                starSpan.innerText = "★";
+                ratingDiv.appendChild(starSpan);
+            }
+
+            for (let i = comment.rating; i < 5; i++) {
+                let starSpan = document.createElement("span");
+                starSpan.className = "star_comments";
+                starSpan.innerText = "★";
+                ratingDiv.appendChild(starSpan);
+            }
 
             let commentDiv = document.createElement("div");
             commentDiv.className = "comment";
@@ -136,9 +140,9 @@
             textDiv.innerText = comment.comment;
 
             commentDiv.appendChild(ratingDiv);
+            commentDiv.appendChild(textDiv);
             commentDiv.appendChild(authorDiv);
             commentDiv.appendChild(dateDiv);
-            commentDiv.appendChild(textDiv);
             commentsContainer.insertBefore(commentDiv, commentsContainer.firstChild);
         }
 

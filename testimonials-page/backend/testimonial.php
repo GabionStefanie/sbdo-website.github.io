@@ -13,22 +13,30 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$response = ["success" => false, "message" => "Something went wrong."];
+// $response = ["success" => false, "message" => "Something went wrong."];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stars = $_POST['rating'];
     $review = $_POST['comment'];
-    $Anonymous = $_POST['anonymous'];
 
-    if($Anonymous == 'true'){
-        $UserID = null; 
-    }
-    else{
+    if (isset($_POST['Anonymous'])) {
+        $UserID = null;
+    } else {
         $UserID = $_SESSION["User_ID"]; // dummy user id put session here
+        $sql = "SELECT Username 
+        FROM account
+        LEFT JOIN reviews USING (User_ID)
+        WHERE User_ID = '$UserID' ";
+        $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+        $UserName = $result['Username'];
     }
 
     $stmt = $conn->prepare("INSERT INTO REVIEWS (Stars, Review, User_ID) VALUES (?, ?, ?)");
     $stmt->bind_param("isi", $stars, $review, $UserID);
+
+    date_default_timezone_set('Asia/Manila');
+    $dateTime = new DateTime(date("Y-m-d H:i:s"));
+    $formattedDate = $dateTime->format("M d, Y g:i A");
 
     if ($stmt->execute()) {
         $response = [
@@ -36,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "comment" => [
                 "rating" => $stars,
                 "comment" => $review,
-                "anonymous" => $UserID,
-                "created_at" => date("Y-m-d H:i:s")
+                "anonymous" => $UserName,
+                "created_at" => $formattedDate
             ]
         ];
     } else {
@@ -49,6 +57,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $conn->close();
 
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 echo json_encode($response);
-?>
