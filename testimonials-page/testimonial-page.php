@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="button-container">
-                        <?php if (isset($_COOKIE['User_ID'])) { //add cookie name 
+                        <?php if (isset($_COOKIE['User_ID'])) { 
                         ?>
                             <input type="submit" value="SUBMIT" id="submit-comment">
                         <?php } else { ?>
