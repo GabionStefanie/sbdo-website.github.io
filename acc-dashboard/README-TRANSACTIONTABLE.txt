@@ -30,3 +30,14 @@ INSERT INTO transactions (patient_id, date, name, amount, status) VALUES
 (1, '2023-06-15', 'Cavity Filling', 150.00, 'RESCHED'),
 (2, '2023-04-10', 'Root Canal', 300.00, 'CANCELLED'),
 (2, '2023-04-25', 'Tooth Extraction', 200.00, 'DONE');
+
+ALTER TABLE appointment
+ADD COLUMN Appointment_Date DATE,
+ADD COLUMN Appointment_Time TIME,
+ADD COLUMN Amount DECIMAL(10, 2);
+
+ALTER TABLE schedule
+ADD COLUMN Dentist_ID INT(11),
+ADD COLUMN Service_ID INT(11),
+ADD FOREIGN KEY (Dentist_ID) REFERENCES dentist(Dentist_ID),
+ADD FOREIGN KEY (Service_ID) REFERENCES service(Service_ID);

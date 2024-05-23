@@ -241,6 +241,16 @@ tr:hover {
 	width: 50%;
 }
 
+//*STYLE FOR MESSAGE FOR No upcoming-appointments *//
+.no-appointments {
+    font-size: 18px;
+    color: #888;
+    font-style: italic;
+    margin-top: 20px;
+	font-family: Montserrat;
+}
+
+
 .resched-form .form-group {
 	display: flex;
 	flex-direction: column;
