@@ -15,7 +15,7 @@
     <?php include '../header-footer/header.php' ?>
     <div class="wrapper">
         <div class="form">
-            <form action="signup_OTP.php" method="post" onsubmit="return validateForm()">
+            <form action="backend/process_login.php" method="post" onsubmit="return validateForm()">
                 <h1 class="title">LOGIN</h1>
                 <hr>
 

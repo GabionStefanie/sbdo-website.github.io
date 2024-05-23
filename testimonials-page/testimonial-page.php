@@ -42,11 +42,11 @@
                     </div>
 
                     <div class="button-container">
-                        <?php if(isset($_COOKIE[$cookie_name])) { //add cookie name ?> 
+                        <?php //if(isset($_COOKIE[$cookie_name])) { //add cookie name ?> 
                             <input type="submit" value="SUBMIT" id="submit-comment">
-                        <?php } else { ?>
-                            <input type="button" onclick="">
-                        <?php } ?>
+                        <?php //} else { ?>
+                            <!-- <input type="button" onclick=""> -->
+                        <?php //} ?>
                         <input type="reset" value="RESET" id="reset-rating-btn">
                     </div>
                 </div>

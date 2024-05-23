@@ -13,7 +13,7 @@
 <?php include '../header-footer/header.php' ?>
     <div class="wrapper">
         <div class="form">
-            <form action="backend/psword_OTP.php" method="post" onsubmit="return validateForm()">
+            <form action="" method="post" onsubmit="return validateForm()"> <!-- enter next step -->
                 <h1 class="title">FORGOT PASSWORD</h1>
                 <hr>
 				
