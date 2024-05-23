@@ -11,8 +11,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
-
 $sql = "SELECT Username, Stars, Review, created_at 
 FROM REVIEWS
 LEFT JOIN account USING (User_ID)
@@ -37,6 +35,11 @@ if ($result->num_rows > 0) {
         }
         echo "</div>";
         echo "<div class='comment-text'><pre>" . $row["Review"] . "</pre></div>";
+
+        if ($row["Username"] == null) {
+            $row["Username"] = "Anonymous";
+        }
+
         echo "<div class='comment-author'>" . ($row["Username"]) . "</div>";
         echo "<div class='comment-date'>" . $formattedDate . "</div>";
         echo "</div>";

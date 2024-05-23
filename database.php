@@ -257,10 +257,15 @@ VALUES
 ('2024-05-02', '3:00 PM - 4:00 PM', 'Available'),
 ('2024-05-02', '4:00 PM - 5:00 PM', 'Available');";
 
+$insertAccount = "INSERT INTO `ACCOUNT` (`Username`, `Password`, `Email`, `Account_Type`)
+VALUES
+      ('Arvie', 'arviearvie', 'sgabion.k12148528@umak.edu.ph', 'Admin');";
+
 mysqli_query($conn, $insertHealthSymptoms);
 mysqli_query($conn, $insertPainLevelList);
 mysqli_query($conn, $insertMedAllergenList);
 mysqli_query($conn, $insertServiceList);
 mysqli_query($conn, $insertSchedule);
+mysqli_query($conn, $insertAccount);
 
 $conn->close();

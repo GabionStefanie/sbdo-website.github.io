@@ -12,7 +12,7 @@
 
 <body>
     <?php include '../header-footer/header.php';
-    $User_ID = 3;
+    $User_ID = 1;
     $_SESSION["User_ID"] =  $User_ID;
     ?>
     <div class="wrapper">
@@ -105,7 +105,7 @@
 
         const resetRatingBtn = document.getElementById('reset-rating-btn');
         resetRatingBtn.addEventListener('click', function() {
-            removeSelection(document.getElementById('star-rating-1')); // Assuming your star container has ID 'star-rating-1'
+            removeSelection(document.getElementById('star-rating-1'));
         });
 
         function addComment(comment) {

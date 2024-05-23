@@ -13,14 +13,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// $response = ["success" => false, "message" => "Something went wrong."];
+// $UserName = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stars = $_POST['rating'];
     $review = $_POST['comment'];
 
-    if (isset($_POST['Anonymous'])) {
+    if (isset($_POST['anonymous'])) {
         $UserID = null;
+        $UserName = "Anonymous";
     } else {
         $UserID = $_SESSION["User_ID"];
         $sql = "SELECT Username 
