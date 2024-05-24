@@ -21,7 +21,7 @@
         <br>
         <br>
         <div class="prog_bar">
-         <center><img src="images/progress_bar[4-4].jpg" alt="progress bar 2-4" height="15%" width="50%"/></center>
+         <center><img src="images/progress_bar[4-4].jpg" alt="progress bar 4-4" height="15%" width="50%"/></center>
 
         </div>
 
