@@ -37,40 +37,20 @@ VALUES
 ('Prosthodontic'), ('Removable Applicables'), ('Orthodontics'), ('Root Canal Treatment'),
 ('Pediatric Dentistry'), ('Bleaching'), ('Emergency Treatment'), ('Retainers')";
 
-$insertSchedule = "INSERT INTO SCHEDULE (scheduleDate, scheduleTime,`Status`)
+$insertSchedule = "INSERT INTO SCHEDULE (scheduleDate,`Status`)
 VALUES 
-('2024-05-30', '8:00 AM - 9:00 AM', 'Available'),
-('2024-05-30', '9:00 AM - 10:00 AM', 'Available'), 
-('2024-05-30', '10:00 AM - 11:00 AM', 'Available'),
-('2024-05-30', '11:00 AM - 12:00 PM', 'Available'),
-('2024-05-30', '1:00 PM - 2:00 PM', 'Available'),
-('2024-05-30', '3:00 PM - 4:00 PM', 'Available'),
-('2024-05-30', '4:00 PM - 5:00 PM', 'Available'),
-('2024-05-31', '8:00 AM - 9:00 AM', 'Available'),
-('2024-05-31', '9:00 AM - 10:00 AM', 'Available'), 
-('2024-05-31', '10:00 AM - 11:00 AM', 'Available'),
-('2024-05-31', '11:00 AM - 12:00 PM', 'Available'),
-('2024-05-31', '1:00 PM - 2:00 PM', 'Available'),
-('2024-05-31', '3:00 PM - 4:00 PM', 'Available'),
-('2024-05-31', '4:00 PM - 5:00 PM', 'Available'),
-('2024-05-01', '8:00 AM - 9:00 AM', 'Available'),
-('2024-05-01', '9:00 AM - 10:00 AM', 'Available'), 
-('2024-05-01', '10:00 AM - 11:00 AM', 'Available'),
-('2024-05-01', '11:00 AM - 12:00 PM', 'Available'),
-('2024-05-01', '1:00 PM - 2:00 PM', 'Available'),
-('2024-05-01', '3:00 PM - 4:00 PM', 'Available'),
-('2024-05-01', '4:00 PM - 5:00 PM', 'Available'),
-('2024-05-02', '8:00 AM - 9:00 AM', 'Available'),
-('2024-05-02', '9:00 AM - 10:00 AM', 'Available'), 
-('2024-05-02', '10:00 AM - 11:00 AM', 'Available'),
-('2024-05-02', '11:00 AM - 12:00 PM', 'Available'),
-('2024-05-02', '1:00 PM - 2:00 PM', 'Available'),
-('2024-05-02', '3:00 PM - 4:00 PM', 'Available'),
-('2024-05-02', '4:00 PM - 5:00 PM', 'Available');";
+('2024-05-30 8:00', 'Available'),
+('2024-05-31 8:00', 'Available'),
+('2024-05-01 8:00', 'Available'),
+('2024-05-02 8:00', 'Available');";
 
 $insertAccount = "INSERT INTO `ACCOUNT` (`Username`, `Password`, `Email`, `Account_Type`)
 VALUES
       ('Arvie', 'arviearvie', 'sgabion.k12148528@umak.edu.ph', 'Admin');";
+
+$insertPatient = "INSERT INTO PATIENT (Name, email, phone) VALUES
+('JohnDoe', 'john.doe@example.com', '123-456-7890'),
+('JaneDoe', 'jane.doe@example.com', '098-765-4321');";
 
 mysqli_query($conn, $insertHealthSymptoms);
 mysqli_query($conn, $insertPainLevelList);
@@ -78,3 +58,4 @@ mysqli_query($conn, $insertMedAllergenList);
 mysqli_query($conn, $insertServiceList);
 mysqli_query($conn, $insertSchedule);
 mysqli_query($conn, $insertAccount);
+mysqli_query($conn, $insertPatient);

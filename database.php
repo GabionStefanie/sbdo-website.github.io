@@ -47,8 +47,7 @@ mysqli_query($conn, $createPxHealthSymptomsTable);
 
 $createScheduleTable = "CREATE TABLE IF NOT EXISTS SCHEDULE (
   Schedule_ID INT AUTO_INCREMENT,
-  scheduleDate DATE NOT NULL,
-  scheduleTime VARCHAR (20) NOT NULL,
+  scheduleDate DATETIME NOT NULL,
   Status VARCHAR (15) NOT NULL,
   CONSTRAINT PK_ScheduleID PRIMARY KEY (Schedule_ID),
   CONSTRAINT CHK_Status CHECK (Status IN ('Available', 'Not Available')));";
