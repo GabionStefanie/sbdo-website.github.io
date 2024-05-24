@@ -50,6 +50,15 @@
       </div>
     </div>
 
+    <div class="testimonials">
+      <h1>TESTIMONIALS</h1>
+      <div class="testimonials-content">
+      <p>Experience the exceptional care and expertise at our dental office - just ask our satisfied patients. <br>
+        Share your feedback and join our community of happy smiles!</p>
+      <button value="LEARN MORE"><a href="../testimonials-page/testimonial-page.php"></a></button>
+      </div>
+    </div>
+
     <div class="infoBG">
       <div class="infoTitle">Sulit and Bagasan Dental Office</div>
       <div class="infoText">

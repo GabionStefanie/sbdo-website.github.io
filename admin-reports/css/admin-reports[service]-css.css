@@ -17,25 +17,6 @@ html {
 body {
 	background-color: #DADADA;
 }
-h1{
-    padding-left:0.5em;
-	color: #fff;
-    font-size:5em;
-    font-weight:400;
-	font-family: Inter;
-}
-
-h2 {
-	padding:1rem;
-	color: #fff;
-    font-size:2.5em;
-    font-weight:400;
-    font-family: Inter;
-}
-
-.details h2{
-    font-size:2em;
-}
 
 .reports-title {
 	font-family: Inter;
@@ -44,7 +25,6 @@ h2 {
 	background-color: #22409A;
 	color: white;
 	padding: 3rem;
-	margin: 6rem 0;
 	text-align: center;
 }
 
@@ -61,15 +41,10 @@ h2 {
 .undercolor {
 	background-color: #4574FF;
 	height: 10rem;
-
 	border-radius: 0 0 50px 50px;
-
 	position: absolute;
-
 	width: 100%;
-
 	top: 100%;
-
 	z-index: -1;
 
 }
@@ -95,16 +70,15 @@ h2 {
 }
 
 .clients-text {
-	background-color: #4574FF;
+	background-color: #1E316A;
 	color: #fff;
 	z-index: 1;
-
 	position: relative;
-
 }
 
 .services-text {
-	background-color: #1E316A;
+	background-color: #4574FF;
+
 	color: #fff;
 	position: absolute;
 
@@ -122,13 +96,11 @@ h2 {
 }
 
 .clients-text:hover {
-	background-color: #3265fe;
-
+	background-color: #1b378c;
 }
 
 .services-text:hover {
-	background-color: #1b378c;
-
+	background-color: #3265fe;
 }
 
 .graphs {
@@ -141,49 +113,60 @@ h2 {
 
 }
 
-.firstlayer,
-.secondlayer,
-.thirdlayer{
-	/* height:50vh; */
+.lower{
 	width:96%;
-	margin-block:1rem;
-	display:flex;
 
+	display:block;
+	margin-block:1rem;
+}
+.table{
+	margin-top:3em;
+	width:100%;
+	height:100%;
 	
 }
-.firstlayer{
-	position:relative;
+
+.table table{
+    height:100%;
+	border-collapse: collapse;
+    margin:0 auto;
+        width: 90%;
+	
 }
-.firstlayer div{
-	position:static;
-	height:60%;
-	width:25%;
-	background-color: #0D98BA;
-	left:1rem;
-	top:5rem;
+table th{
+    font-weight: bold; 
+    text-align: left; 
+	font-family: inter;
+    padding: 8px; 
+    font-size:2.8rem;
+	color: white;
+    background-color: #d3d3d3;
+    border-bottom: 1px solid #ddd;
 }
 
-.secondlayer .details{
-	height:100%;
-	width:25%;
-
-}
-.thirdlayer .details{
-	height:100%;
-	width:25%;
+table td{
+	font-family: inter;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    font-size:2.8rem;
 }
 
-.details div{
-	margin: auto 2em;
-	background-color: #0D98BA;
+table tr:nth-child(even) {
+    background-color: #d3d3d3; 
 }
 
-.firstline{
-	width:75%;
-	height:100%;
+
+table tr:nth-child(odd) {
+    background-color: #f0f0f0; 
 }
 
-.secondline{
-	width:75%;
-	height:100%;
+table thead tr:first-child th:first-child {
+    background-color: #0D98BA;
+    text-align: center; 
+}
+.upper{
+	width: 96%;
+	
+	display:block;
+	margin-block:1rem;
 }
