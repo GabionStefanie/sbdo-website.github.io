@@ -152,15 +152,15 @@ body {
 	background-color: #efefef;
 }
 
-.status-done {
+.status-approved {
 	color: #00FF0A;
 }
 
-.status-resched {
+.status-pending {
 	color: #FFA800;
 }
 
-.status-cancelled {
+.status-rejected {
 	color: #FF1313;
 }
 
