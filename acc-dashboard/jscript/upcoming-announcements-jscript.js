@@ -30,17 +30,37 @@ function closeModal() {
     });
 }
 
-// Function to handle submission of the profile picture change form
+// Handle submission of the profile picture change form
 function submitProfilePicture(event) {
     event.preventDefault(); // Prevent default form submission
 
-    // Add your logic here to handle the form submission
-    // For example, you can upload the selected profile picture to the server
-
-    // After the profile picture is uploaded successfully, close the modal
-    closeModal();
+    // Get the form element
+    const form = document.getElementById('formChangeProfilePicture');
+    
+    // Create a FormData object from the form
+    const formData = new FormData(form);
+    
+    // Send the form data to the server using fetch
+    fetch('upload_profile_picture.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Profile picture uploaded successfully
+            console.log('Profile picture uploaded successfully:', data.message);
+            closeModal();
+            // Optionally, update the profile picture displayed on the page
+        } else {
+            // Handle upload error
+            console.error('Error uploading profile picture:', data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error uploading profile picture:', error);
+    });
 }
-
 
 
 // Function to show the change profile picture modal
