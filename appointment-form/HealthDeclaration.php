@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chief Complaint</title>
+    <title>Health Declaration</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="HealthDeclaration.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
 
         </div>
 
-        <center><form>
+        <center><form id="HD">
 
           
          
@@ -36,7 +36,7 @@
            </div>
 
              <div class ="q1">
-              <label for="CovidVaccine"><h2>COVID-19 VACCINE STATUS </h2></label>  
+              <label for="VaccineStatus"><h2>COVID-19 VACCINATION STATUS </h2></label>  
               <div class="CVSQ"style="size:30%;">
                 <select name="VaccineStatus" id="VaccineStatus" required>
               
@@ -47,26 +47,26 @@
               </div>
              </div>
               <div class="q2">
-                 <label for="SymptomsQ"><h2>At the moment, do you experience any of the following symptoms? </h2></label>
+                 <label for="Symptoms"><h2>At the moment, do you experience any of the following symptoms? </h2></label>
                 <br>
                 <div class="checkbox-label">
 
                     <label class="customizedCheck">
                     <ul>
                     
-                         <li>Fever&nbsp&nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Symptoms" value="FEVER"  style="width:1.5vw; height:1.5vw;" /></li>
+                         <li>Fever&nbsp&nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Symptoms" value="FEVER" required /></li>
                          <br>
-                         <li>Colds &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="checkbox" name="Symptoms" value="COLDS"  style="width:1.5vw; height:1.5vw;"/></li>
+                         <li>Colds &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="checkbox" name="Symptoms" value="COLDS" requireed /></li>
                          <br>
-                         <li>Cough&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="checkbox" name="Symptoms" value="COUGH"  style="width:1.5vw; height:1.5vw;"/></li>
+                         <li>Cough&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="checkbox" name="Symptoms" value="COUGH" required /></li>
                          <br>
-                         <li>Sore Throat &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Symptoms" value="SORE THROAT" style="width:1.5vw; height:1.5vw;"/></li>
+                         <li>Sore Throat &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Symptoms" value="SORE THROAT" required /></li>
                          <br>
-                         <li>Headache&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Symptoms" value="HEADACHE"  style="width:1.5vw; height:1.5vw;"/></li>
+                         <li>Headache&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Symptoms" value="HEADACHE" required /></li>
                         <br>
-                         <li>Diarrhea&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<input type="checkbox" name="Symptoms" value="DIARRHEA" style="width:1.5vw; height:1.5vw;"/></li>
+                         <li>Diarrhea&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<input type="checkbox" name="Symptoms" value="DIARRHEA" required/></li>
                         <br>
-                         <li>None&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Symptoms" value="NONE"  style="width:1.5vw; height:1.5vw;"/> </li>
+                         <li>None&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Symptoms" value="NONE" required/> </li>
                         <br>
                        
                     </ul>
@@ -89,7 +89,7 @@
              <div class="Agq">
               <label for="Agree"></label>
               <ul>
-                <li>  AGREE &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp                   <input type="checkbox" name="AGREEMENT" value="AGREE" style="width:1.5vw; height:1.5vw;"></li> 
+                <li>  AGREE &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp                   <input type="checkbox" name="Agree" value="AGREE" required></li>  
                 <br>
                </ul>
             </div>
@@ -101,8 +101,8 @@
 
         <div class="buttons" >
            <button id="b1"onclick= "location.href='MedicalHistory.php'" type="button"><div class = "buttontext1">PREVIOUS &nbsp </div></button>
-           <button id="b2" onclick= "location.href='appointments-end-html.php'" type="button"><div class="buttontext2">NEXT</div></button>
-         </div>
+           <button id="b2" onclick= "location.href='appointments-end-html.php'"><div class="buttontext2">NEXT</div></button>
+          </div>
 
 
 

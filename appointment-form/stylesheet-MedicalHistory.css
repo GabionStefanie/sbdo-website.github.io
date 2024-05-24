@@ -287,8 +287,8 @@ font-weight: 600;
 
 
 input[type=checkbox]{
-    font-family: 'Josefin Sans';
-	cursor:pointer;
+	width:1.5vw !important;
+	height:1.5vw !important;
 }
 
 
@@ -357,7 +357,6 @@ input[type="text"]{
 
 
 
-
 .buttons{
 border-radius: 1.5rem;
 padding:1.5rem 3.2rem;
@@ -414,6 +413,9 @@ font-size:20%;
 display: flex;
 justify-content: center !important;	
 }
+
+
+
 
   footer {
 	display: flex;

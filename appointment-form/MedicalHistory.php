@@ -27,10 +27,10 @@
 
         </div>
         <div class="body">
-        <center><form action="..." method="post">
+        <center><form id="MH" action="..." method="post">
 
         
-            
+            <script src="NONE1.js"></script>
             
         
             
@@ -41,10 +41,11 @@
             </div>
             
              
+
             <div class ="q1">
-                <label for = "DiabetesQ"><h2>DO YOU HAVE ANY FORM OF DIABETES?</h2></label>
+                <label for = "DiabQ"><h2>DO YOU HAVE ANY FORM OF DIABETES?</h2></label>
                 <div class="DiabetesQues" style="size:30%;">
-                 <select name="DiabQ" id="DiabQ">
+                 <select name="DiabQ" id="DiabQ" required>
               
                     <option value = "none"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp --------------   &nbsp &nbsp &nbsp </option>
                     <option value = "YES">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp YES</option>
@@ -54,9 +55,9 @@
             </div>
 
         <div class="q2">
-            <label for="HConditionQ"><h2>DO YOU HAVE ANY HEART CONDITIONS?</h2></label>
+            <label for="HconQ"><h2>DO YOU HAVE ANY HEART CONDITIONS?</h2></label>
               <div class="HCQ" style="size:30%;">
-                <select name="HconQ" id="HconQ">
+                <select name="HconQ" id="HconQ" required>
                   <option value = "none">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp --------------   &nbsp &nbsp &nbsp  </option>
                   <option value = "YES">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp YES</option>
                   <option value = "NO">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbspNO</option>
@@ -66,9 +67,9 @@
         </div>
               <div class="q3">
                 <br>
-                 <label for="HypertensiveQ"><h2>ARE YOU HYPERTENSIVE?(With high blood pressure)</h2></label>
+                 <label for="HypQ"><h2>ARE YOU HYPERTENSIVE?(With high blood pressure)</h2></label>
                    <div class="HyperTensQ" style="size:30%;">
-                      <select name="HypQ" id="HypQ">
+                      <select name="HypQ" id="HypQ" required>
                         <option value = "none">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp --------------   &nbsp &nbsp &nbsp   </option>
                         <option value = "YES">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp YES</option>
                         <option value = "NO">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbspNO</option>
@@ -79,28 +80,28 @@
           <div class="q5">
             <br>
             <br>
-            <label for= "AllergyQ"><h2>DO YOU EXPERIENCE AN ALLERGIC REACTION TO ANY OF THE FOLLOWING DRUGS/MEDICATIONS?</h2></label>
+            <label for= "Medication"><h2>DO YOU EXPERIENCE AN ALLERGIC REACTION TO ANY OF THE FOLLOWING DRUGS/MEDICATIONS?</h2></label>
 
             <div class="checkbox-label">
 
             <label class="customizedCheck">
             <ul>
             
-                 <li>Mefenamic Acid&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Mefenamic Acid"  style="width:1.5vw; height:1.5vw;"/></li>
+                 <li>Mefenamic Acid&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Mefenamic Acid"  required/></li>
                  <br>
-                 <li>Ibuprofen&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Ibuprofen"  style="width:1.5vw; height:1.5vw;"/></li>
+                 <li>Ibuprofen&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Ibuprofen"  required/></li>
                  <br>
-                 <li>Aspirin&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Aspirin"  style="width:1.5vw; height:1.5vw;"/></li>
+                 <li>Aspirin&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Aspirin"  required/></li>
                  <br>
-                 <li>Naproxen Sodium&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Naproxen Sodium"  style="width:1.5vw; height:1.5vw;"/></li>
+                 <li>Naproxen Sodium&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Naproxen Sodium"  required/></li>
                  <br>
-                <li>Paracetamol &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Mefenamic Acid" style="width:1.5vw; height:1.5vw;"/></li>
+                <li>Paracetamol &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Mefenamic Acid" required/></li>
                 <br>
-                <li> Amoxicilin/ Other types of Penicillin&nbsp &nbsp &nbsp<input type="checkbox" name="Medication" value="Amoxicilin / Other types of Penicillin"  style="width:1.5vw; height:1.5vw;"/></li>
+                <li> Amoxicilin/ Other types of Penicillin&nbsp &nbsp &nbsp<input type="checkbox" name="Medication" value="Amoxicilin / Other types of Penicillin"  required/></li>
                 <br>
-                <li> Others &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Others"  style="width:1.5vw; height:1.5vw;"/> </li>
+                <li> Others &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="checkbox" name="Medication" value="Others"  required/> </li>
                 <br>
-                <li>None that I know of &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<input type="checkbox" name="Medication" value="None"  style="width:1.5vw; height:1.5vw;"/></li>
+                <li>None that I know of &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<input type="checkbox" name="Medication" value="None"  required/></li>
                 <br>
             </ul>
           </label>
@@ -121,12 +122,12 @@
             </div>
             
             <div class="q7">
-              <label for="MedicationQ"><h2>DO YOU TAKE OTHER MAINTENANCE MEDICATION</h2></label>
+              <label for="MedQ" ><h2>DO YOU TAKE OTHER MAINTENANCE MEDICATION</h2></label>
                   <br>
                 <div class="rbLabel">
           
-                  <input type="radio" id="MedQ" name="MedQ" value="YES" />YES &nbsp
-                  <input type="radio" id="MedQ" name="MedQ" value="NO" />NO 
+                  <input type="radio" id="MedQ" name="MedQ" value="YES" required />YES &nbsp
+                  <input type="radio" id="MedQ" name="MedQ" value="NO" required />NO 
   
                  <br>
                  <br>
@@ -135,7 +136,7 @@
           </div>
 
           <div class ="q8">
-            <label for="SYSTOLICPRESSURE"> <h2>WHAT IS YOUR USUAL SYSTOLIC PRESSURE(First number in the blood pressure)</h2></label>
+            <label for="SPressure"> <h2>WHAT IS YOUR USUAL SYSTOLIC PRESSURE(First number in the blood pressure)</h2></label>
             <br>
              <input type="text" id="SPressure"name="SPressure" style="width: 60vw; height:1.5vw;" required/>
             <br>
@@ -143,7 +144,7 @@
           </div>
 
           <div class ="q9">
-            <label for="DIASTOLICPRESSURE"> <h2>WHAT IS YOUR USUAL DIASTOLIC PRESSURE(Second number in the blood pressure)</h2></label>
+            <label for="DPressure"> <h2>WHAT IS YOUR USUAL DIASTOLIC PRESSURE(Second number in the blood pressure)</h2></label>
             <br>
              <input type="text" id="DPressure"name="DPressure" style="width: 60vw; height:1.5vw;" required/>
             <br>
@@ -152,7 +153,7 @@
 
           <div class ="q10">
             <label class="Labelq10">
-              <label for="SignificantMedicalCondition"> <h2>DO YOU HAVE ANY OTHER SIGNIFICANT MEDICAL CONDITION?</h2></label>
+              <label for="SmedCondition"> <h2>DO YOU HAVE ANY OTHER SIGNIFICANT MEDICAL CONDITION?</h2></label>
             </label>
 
               
@@ -169,6 +170,7 @@
         <div class="buttons"> 
           <button id="b1"onclick= "location.href='ChiefComplaint.php'" type="button"><div class = "buttontext1">PREVIOUS &nbsp </div></button>
           <button id="b2" onclick= "location.href='HealthDeclaration.php'" type="button"><div class="buttontext2">NEXT</div></button>
+            
          </div>
 
         
