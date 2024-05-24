@@ -24,7 +24,7 @@ if ($conn->connect_error) {
 }
 
 $user_id = $_SESSION['user_id'];
-$sql = "SELECT Username, Email, PhoneNumber, ProfilePicture FROM account WHERE User_ID = ?";
+$sql = "SELECT Username, Email, PhoneNumber, ProfilePicture FROM account WHERE User_ID = 1";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
