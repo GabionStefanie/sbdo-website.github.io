@@ -52,9 +52,9 @@
         <div class="upcoming-appointments">
             <p>UPCOMING APPOINTMENTS</p>
             <div class="line1"></div>
-					<?php include 'upcoming-announcements-php.php'; ?>
-               
+					
             <div class="resched-cancel-wrapper">
+            <?php include 'upcoming-announcements-php.php'; ?>
                 <div class="text-resched">You can only reschedule appointments 1 week before the appointment date.</div>
                 <input type="submit" value="RESCHED" onclick="toggleModal('modal-container')">
                 <div class="text-cancel">You can only cancel appointments 2 weeks before the appointment date.</div>

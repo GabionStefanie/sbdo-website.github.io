@@ -166,6 +166,7 @@ tr:hover {
 }
 
 .text-resched {
+	margin-top: 1.3rem;
 	font-size: 1.5rem;
 	font-family: Lexend Deca;
 	color: #FF0000;
@@ -241,15 +242,14 @@ tr:hover {
 	width: 50%;
 }
 
-//*STYLE FOR MESSAGE FOR No upcoming-appointments *//
+/*STYLE FOR MESSAGE FOR No upcoming-appointments */
 .no-appointments {
-    font-size: 18px;
+    font-size: 1.8rem;
     color: #888;
     font-style: italic;
     margin-top: 20px;
 	font-family: Montserrat;
 }
-
 
 .resched-form .form-group {
 	display: flex;
@@ -771,6 +771,8 @@ input[type="submit"]:hover {
 	display: flex;
 	padding-bottom: 3rem;
 }
+
+
 
 @media screen and (max-width: 768px) {
 	.contactText {
