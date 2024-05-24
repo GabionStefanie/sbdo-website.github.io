@@ -43,10 +43,10 @@
                 </div>
                 <!-- Inside the "change-profile-picture-modal" div -->
                 <form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)">
-                    <label for="profilePicture">Please upload your new profile picture:</label>
-                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
-                    <input type="submit" value="UPLOAD">
-                </form>
+					<label for="profilePicture">Please upload your new profile picture:</label>
+					<input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
+					<input type="submit" value="UPLOAD">
+				</form>
             </div>
         </div>
         <div class="upcoming-appointments">
