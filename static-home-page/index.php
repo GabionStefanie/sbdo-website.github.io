@@ -51,11 +51,11 @@
     </div>
 
     <div class="testimonials">
-      <h1>TESTIMONIALS</h1>
       <div class="testimonials-content">
+      <h1>TESTIMONIALS</h1>
       <p>Experience the exceptional care and expertise at our dental office - just ask our satisfied patients. <br>
         Share your feedback and join our community of happy smiles!</p>
-      <button value="LEARN MORE"><a href="../testimonials-page/testimonial-page.php"></a></button>
+      <span>  <a href="../testimonials-page/testimonial-page.php"><button>LEARN MORE</button></a></span>
       </div>
     </div>
 
