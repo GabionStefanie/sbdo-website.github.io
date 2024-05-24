@@ -13,7 +13,8 @@
 
 <body>
   <div class="wrapper">
-  <?php include '../header-footer/header.php' ?>
+  <?php include '../header-footer/header.php'; 
+  ?>
     <div class="featured">
       <img class="featured_img" src="images/Featured.png" alt="featured image: dental chair and equipment" />
       <div class="main_title">

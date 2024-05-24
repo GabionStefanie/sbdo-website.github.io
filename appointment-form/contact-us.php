@@ -71,7 +71,7 @@
         </div>
         <div class="button-group">
           <button type="reset">RESET INFO</button>
-          <button type="button">NEXT</button>
+          <a href=""><button type="button">NEXT</button></a>
         </div>
       </form>
     </div>

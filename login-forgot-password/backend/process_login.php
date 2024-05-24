@@ -1,17 +1,22 @@
 <?php
 session_start();
 
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../../phpmailer/src/Exception.php';
-require '../../phpmailer/src/PHPMailer.php';
-require '../../phpmailer/src/SMTP.php';
+require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "sbdoDatabase";
+
+
+
 
 try {
     // Create a connection to the database
@@ -28,24 +33,24 @@ try {
         $password = $_POST["password"];
         
         // Prepare SQL statement to prevent SQL injection
-        $sql = "SELECT User_ID, Account_Type, Email, Password FROM ACCOUNT WHERE Username = ?";
+        $sql = "SELECT `User_ID`, `Account_Type`, `Email`, `Password` FROM ACCOUNT WHERE Username = ? AND Password = '?'";
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
             throw new Exception("Preparation failed: " . $conn->error);
         }
 
         // Bind parameters to the SQL query
-        $stmt->bind_param("s", $username);
+        $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
 
         // Get the result
         $result = $stmt->get_result();
 
         // Check if the user exists
-        if ($result->num_rows == 1) {
+        if (mysqli_num_rows($result) == 1) {
             $user = $result->fetch_assoc();
             
-            // Verify the password
+
             if (password_verify($password, $user["Password"])) {
                 // Set the session variable
                 $_SESSION["userID"] = $user['User_ID'];

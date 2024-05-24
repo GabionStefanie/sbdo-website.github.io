@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Sulit & Bagasan Dental Office</title>
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src = "validation.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/style_signup.css">
     <style>
         <?php include '../header-footer/header-footer.css' ?>
@@ -16,30 +14,30 @@
     <div class="wrapper">
     
         <div class="form">
-            <form action="process-signup.php"  method="post" id="signup" novalidate>
+            <form action="backend/send-OTP.php" method="post" onsubmit="return validateForm()">
                 <h1 class="title">SIGN UP</h1>
                 <hr>
 
                 <p><label>Username:</label></br>
-                    <input type="text" id ="username" name="username">
+                    <input type="text" name="user_Name">
                 </p>
 
                 <p><label>Email Address:</label></br>
-                    <input type="text" id ="email" name="email">
+                    <input type="text" name="email_address">
                 </p>
 
             <label>Password:</label><br>
-				<input type="password" id="password" name="password">
+				<input type="password" id="passwordInput" name="password">
                 <input id="checkbox-pass1" type="checkbox" onclick="togglePasswordVisibility('passwordInput')"/>
                 <label for="checkbox-pass1"> Show Password</label><br>
 
 			<label>Confirm Password:</label><br>
-				<input type="password" id="password_confirmation" name="password_confirmation">
+				<input type="password" id="confirmPassword" name="confirmPassword">
 				<input id="checkbox-pass2" type="checkbox" onclick="togglePasswordVisibility('confirmPassword')"/>
                 <label for="checkbox-pass2"> Show Password</label>
 
                 <div class="button-container">
-                <button>Sign up</button>
+                    <input type="submit" value="SIGNUP">
                 </div>
 				<p class = "account-login-label">Already have an account?</p>
 				<a class="login-link" href="../login-forgot-password/login.php">Login</a>
@@ -56,7 +54,21 @@
         passwordInput.type = "password";
     }
 }
-</script>
+
+	function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var errorDiv = document.getElementById("passwordError");
+
+    if (password !== confirmPassword) {
+        errorDiv.style.display = "block";
+        return false; // Prevent form submission
+    } else {
+        errorDiv.style.display = "none";
+        return true; // Allow form submission
+    }
+}
+	</script>
     <?php include '../header-footer/footer.php' ?>
 </body>
 </html>

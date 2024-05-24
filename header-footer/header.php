@@ -40,7 +40,9 @@ session_start();
                                     FROM account
                                     WHERE User_ID = '$UserID' ";
                             $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-                            $Account_Type = $result['Account_Type'];
+                            // $Account_Type = $result['Account_Type'];
+                            $Account_Type = $_COOKIE['User_Type'];
+
                             if ($Account_Type === 'Patient') { ?>
                                 <a href="../acc-dashboard/account-dashboard-page.php" class="nav__link">
                                     <div class="profile-frame"></div>
