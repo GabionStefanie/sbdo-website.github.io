@@ -13,7 +13,7 @@ session_start();
 </head>
 
 <body>
-    <div class="wrapper-header-footer"> 
+    <div class="wrapper-header-footer">
         <header>
             <img class="header-logo" src="../header-footer/images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
             <div class="company_name">Sulit & Bagasan Dental Office</div>
@@ -29,12 +29,35 @@ session_start();
                         <a class="nav__link" href="../static-services-page/services.php">Services</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="../contact-us-page/contact-us.php">Contact Us</a>
+                        <a class="nav__link" href="../appointment-form/contact-us.php">Contact Us</a>
                     </li>
                     <li class="nav__item">
-                        <a href="../acc-dashboard/account-dashboard-page.php" class="nav__link">
-                            <div class="profile-frame"></div>
-                        </a>
+                        <?php
+                        $conn = new mysqli("localhost", "root", "", "sbdoDatabase");
+                        if (isset($_COOKIE["User_ID"])) {
+                            $UserID = $_COOKIE['User_ID'];
+                            $sql = "SELECT Account_Type 
+                                    FROM account
+                                    WHERE User_ID = '$UserID' ";
+                            $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+                            $Account_Type = $result['Account_Type'];
+                            if ($Account_Type === 'Patient') { ?>
+                                <a href="../acc-dashboard/account-dashboard-page.php" class="nav__link">
+                                    <div class="profile-frame"></div>
+                                </a>
+                            <?php
+                            return;
+                            } elseif ($Account_Type === 'Admin') { ?>
+                                <a href="../admin-reports/admin--reports [clients]-page.php" class="nav__link">
+                                    <div class="profile-frame"></div>
+                                </a>
+                            <?php
+                            }
+                        } else { ?>
+                            <a href="../login-forgot-password/login.php" class="nav__link">
+                                <div class="profile-frame"></div>
+                            </a>
+                        <?php } ?>
                     </li>
                 </ul>
             </nav>
