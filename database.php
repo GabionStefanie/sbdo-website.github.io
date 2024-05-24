@@ -14,6 +14,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 $createPaymentTable = "CREATE TABLE IF NOT EXISTS PAYMENT (
         `PaymentDetails_ID` INT AUTO_INCREMENT,
+        `Amount` INT (10) NOT NULL,
         `ReferenceNo` INT (9) NOT NULL,
         `ProofOfPayment` BLOB NOT NULL,
         CONSTRAINT PK_PaymentDetailsID PRIMARY KEY (`PaymentDetails_ID`)
