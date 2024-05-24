@@ -121,11 +121,11 @@ mysqli_query($conn, $createPxPainLevelTable);
 $createAccountTable = "CREATE TABLE IF NOT EXISTS `ACCOUNT` (
         `User_ID` INT AUTO_INCREMENT,
         `Username` VARCHAR (20) NOT NULL,
-        `Password` VARCHAR (25) NOT NULL,
+        `Password` VARCHAR (255) NOT NULL,
         `Email` VARCHAR (30) NOT NULL,
         `ProfilePicture` BLOB NOT NULL,
         `Account_Type` VARCHAR (10) NOT NULL,
-        `account_activation_hash` VARCHAR (64), 
+        `account_activation_hash` VARCHAR (255), 
         `activation_expiry` DATETIME,
         CONSTRAINT PK_UserPatientID PRIMARY KEY (`User_ID`)
       )";
