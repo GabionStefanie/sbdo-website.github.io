@@ -20,7 +20,8 @@
             <div class="modal-body">
                 <p>It seems that you are not yet logged in.</p>
                 <p>Please log in to be able to submit a review.</p>
-                <button><a href="../login-forgot-password/login.php">LOG IN</a></button>
+                
+                <a href="../login-forgot-password/login.php"><button>LOG IN</button></a>
             </div>
         </div>
     </div>
