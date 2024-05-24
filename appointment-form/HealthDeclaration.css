@@ -168,6 +168,14 @@ html {
   
 		 }
 	
+
+
+	 .prog_bar{
+		   display:flex;
+		   justify-content:center;
+		   align-items: center;
+		  }
+		
 	
 	h1{
 
@@ -214,6 +222,15 @@ html {
         background-position: right .7em top 50%, 0 0;
         background-size: 3rem auto, 100%;
     } 
+
+
+	  
+
+
+	input[type="checkbox"]{
+     width:1.5vw;
+	 height:1.5vw;
+	}
 
     .CVSQ{
         display:flex;
@@ -316,7 +333,7 @@ html {
 		}
 
 
-
+		
 
 
 

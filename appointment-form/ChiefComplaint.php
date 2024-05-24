@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
     <style>
       <?php include '../header-footer/header-footer.css' ?></>
     </style>
@@ -25,7 +26,7 @@
 
         </div>
 
-        <center><form>
+        <center><form id="CC">
 
           
          
@@ -59,28 +60,30 @@
             <div class="q4">
               <label for="PLevel"><h2>WHAT IS YOUR PAIN LEVEL? 0 (NO PAIN) TO 10 (EXTREMELY PAINFUL)</h2></label>
                 <br>
-                 <input type="text" id="PLevel" name="PLevel" style="width: 60vw; height:1.5vw;" required/>
-            </div>
+                 <input type="text" id="PLevel" name="PLevel" class="Pain-lvl" style="width: 60vw; height:1.5vw;" maxlength="2" required/>
+                 <script src="painlevel.js"></script>
+                </div>
+
           <div class="q5">
               <br>
               <br>
       
                <label for="DTrauma"><h2>HAVE YOU EXPERIENCED DENTAL TRAUMA? (Injury to the mouth, teeth, or, other structures) </h2></label>
                   <div class="rbLabel">
-                      <input type="radio" id="DTrauma" name="DTrauma" value="YES" />YES &nbsp 
-                      <input type="radio" id="DTrauma" name="DTrauma" value="NO" />NO
+                      <input type="radio" id="DTrauma" name="DTrauma" value="YES" required/>YES &nbsp 
+                      <input type="radio" id="DTrauma" name="DTrauma" value="NO" required />NO
                       <br>
                      <br>
                     </div>
 
             </div>
             <div class="q6">
-               <label for="QUnconBleeding"><h2>HAVE YOU NOTICED ANY UNCONTROLLED BLEEDING FROM THE SOFT TISSUES OF YOUR MOUTH? </h2></label>
+               <label for="QUnconBleeding" required><h2>HAVE YOU NOTICED ANY UNCONTROLLED BLEEDING FROM THE SOFT TISSUES OF YOUR MOUTH? </h2></label>
             
                  <br>
                   <div class="rbLabel">
-                     <input type="radio" id="QUnconBleeding" name="QUnconBleeding" value="YES" />YES &nbsp 
-                     <input type="radio" id="QUnconBleeding" name="QUnconBleeding" value="NO" />NO
+                     <input type="radio" id="QUnconBleeding" name="QUnconBleeding" value="YES" required/>YES &nbsp 
+                     <input type="radio" id="QUnconBleeding" name="QUnconBleeding" value="NO" required />NO
                       <br>
                       <br>
                     </div>
@@ -91,8 +94,12 @@
 
         <div class="buttons" >
            <button id="b1"onclick= "location.href='contact-us.php'" type="button"><div class = "buttontext1">PREVIOUS &nbsp </div></button>
-           <button id="b2" onclick= "location.href='MedicalHistory.php'" type="button"><div class="buttontext2">NEXT</div></button>
-         </div>
+           <button id="b2" onclick= "location.href='MedicalHistory.php'" type="button" ><div class="buttontext2">NEXT</div></button>
+           <script src="CCnextButton.js"></script>
+         
+          </div>
+
+
 
 
 
