@@ -14,16 +14,11 @@
 		<div class="wrapper">
 		<?php include '../header-footer/header.php' ?>
 			<div class="profile-container">
-				<div class="profile-info">
-					<div class="profile-picture">
-						<p class="profile-label">PROFILE PICTURE</p>
-					</div>
-					<div class="profile-details">
-						<p class="profile-name">USERNAME</p>
-						<p class="profile-email">EMAIL ADDRESS</p>
-						<p class="profile-number">PHONE NUMBER</p>
-					</div>
-				</div>
+				<div class="profile-details">
+                    <p class="profile-name"><?php echo htmlspecialchars($username); ?></p>
+                    <p class="profile-email"><?php echo htmlspecialchars($email); ?></p>
+                    <p class="profile-number"><?php echo htmlspecialchars($phone_number); ?></p>
+                </div>
 				<a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">CHANGE</a>            
 				<div class="divider"></div>
 				<div class="row">
@@ -62,7 +57,7 @@
 						<div class="datas">
 							<ul>
 								<li>
-									<p class="username">Username: Lorem Ipsum</p>
+									<p class="username">Username: <?php echo htmlspecialchars($username); ?></p>
 									<button onclick="showModal('username')">Change</button>
 								</li>
 								<li>
@@ -70,12 +65,12 @@
 									<button onclick="showModal('password')">Change</button>
 								</li>
 								<li>
-									<p class="emailadd">Email Address: loremipsum@gmail.com</p>
+									<p class="emailadd">Email Address: <?php echo htmlspecialchars($email); ?></p>
 									<button onclick="showModal('email')">Change</button>
 								</li>
 							</ul>
 						</div>
-						<div class="logout-button" onclick="logout()">LOGOUT</div>
+						<div class = "logout-button"><a href="logout.php">Logout</a></div>
 					</div>
 				</div>
 				<!-- Overlay -->

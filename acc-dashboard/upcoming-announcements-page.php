@@ -19,9 +19,9 @@
                     <p class="profile-label">PROFILE PICTURE</p>
                 </div>
                 <div class="profile-details">
-                    <p class="profile-name">USERNAME</p>
-                    <p class="profile-email">EMAIL ADDRESS</p>
-                    <p class="profile-number">PHONE NUMBER</p>
+                    <p class="profile-name"><?php echo htmlspecialchars($username); ?></p>
+                    <p class="profile-email"><?php echo htmlspecialchars($email); ?></p>
+                    <p class="profile-number"><?php echo htmlspecialchars($phone_number); ?></p>
                 </div>
             </div>
             <a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">CHANGE</a>

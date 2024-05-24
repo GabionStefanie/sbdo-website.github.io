@@ -16,12 +16,12 @@
         <div class="profile-container">
             <div class="profile-info">
                 <div class="profile-picture">
-                    <p class="profile-label">PROFILE PICTURE</p>
+                    <!-- Profile picture display goes here -->
                 </div>
                 <div class="profile-details">
-                    <p class="profile-name">USERNAME</p>
-                    <p class="profile-email">EMAIL ADDRESS</p>
-                    <p class="profile-number">PHONE NUMBER</p>
+                    <p class="profile-name"><?php echo htmlspecialchars($username); ?></p>
+                    <p class="profile-email"><?php echo htmlspecialchars($email); ?></p>
+                    <p class="profile-number"><?php echo htmlspecialchars($phone_number); ?></p>
                 </div>
             </div>
             <a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">CHANGE</a>
@@ -41,10 +41,10 @@
                     <h2>CHANGE PROFILE PICTURE</h2>
                 </div>
                 <form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)">
-					<label for="profilePicture">Please upload your new profile picture:</label>
-					<input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
-					<input type="submit" value="UPLOAD">
-				</form>
+                    <label for="profilePicture">Please upload your new profile picture:</label>
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
+                    <input type="submit" value="UPLOAD">
+                </form>
             </div>
         </div>
         <div class="transac-history">
@@ -65,6 +65,7 @@
                         </tr>
                     </thead>
                     <tbody id="transactionHistoryBody">
+                        <!-- Transaction history rows will be dynamically generated here -->
                     </tbody>
                 </table>
             </div>
@@ -78,9 +79,5 @@
         </div>
         <?php include '../header-footer/footer.php'; ?>
     </div>
-
-    <script>
-        
-    </script>
 </body>
 </html>

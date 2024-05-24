@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "dental_office";
+$dbname = "sbdodatabase"; // Change this to your actual database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,18 +23,15 @@ if (isset($_GET['patient_id'])) {
     // SQL query to fetch appointment details for a specific patient
     $sql = "
         SELECT 
-            a.Appointment_ID, 
-            a.Patient_ID, 
-            a.Dentist_ID, 
-            a.Service_ID, 
-            a.Schedule_ID, 
-            a.Appointment_Note, 
-            a.Time_Created,
-            s.scheduleDate, 
-            s.scheduleTime, 
-            s.Status as Schedule_Status
+            CONCAT(p.Name) AS Full_Name,
+            a.Appointment_Note AS Appointment_Type,
+            a.Time_Created AS Date_Created,
+            s.scheduleDate AS Date_of_Appointment,
+            a.Service_ID AS Amount_Paid
         FROM 
             appointment a
+        INNER JOIN 
+            patient p ON a.Patient_ID = p.Patient_ID
         LEFT JOIN 
             schedule s ON a.Schedule_ID = s.Schedule_ID
         WHERE 
@@ -49,17 +46,19 @@ if (isset($_GET['patient_id'])) {
         $result = $stmt->get_result();
         
         if ($result->num_rows > 0) {
-            // Fetch and display the results
+            // Display the results in a table
+            echo "<table border='1'>";
+            echo "<tr><th>Full Name</th><th>Type of Appointment</th><th>Date Created</th><th>Date of Appointment</th><th>Amount Paid</th></tr>";
             while ($row = $result->fetch_assoc()) {
-                echo "Appointment ID: " . htmlspecialchars($row['Appointment_ID']) . "<br>";
-                echo "Service ID: " . htmlspecialchars($row['Service_ID']) . "<br>";
-                echo "Schedule ID: " . htmlspecialchars($row['Schedule_ID']) . "<br>";
-                echo "Appointment Note: " . htmlspecialchars($row['Appointment_Note']) . "<br>";
-                echo "Time Created: " . htmlspecialchars($row['Time_Created']) . "<br>";
-                echo "Schedule Date: " . htmlspecialchars($row['scheduleDate']) . "<br>";
-                echo "Schedule Time: " . htmlspecialchars($row['scheduleTime']) . "<br>";
-                echo "Schedule Status: " . htmlspecialchars($row['Schedule_Status']) . "<br><br>";
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row['Full_Name']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Appointment_Type']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Date_Created']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Date_of_Appointment']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Amount_Paid']) . "</td>";
+                echo "</tr>";
             }
+            echo "</table>";
         } else {
             echo "No appointments found for the specified patient ID.";
         }
