@@ -98,6 +98,28 @@ body {
 
 }
 
+/* Table styling */
+.top-services-table {
+    margin-top: 20px;
+}
+
+.top-services-table table {
+    width: 100%;
+    border-collapse: collapse;
+	font-family: Montserrat;
+}
+
+.top-services-table th, .top-services-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.top-services-table th {
+    background-color: #f2f2f2;
+}
+
+
 .clients-text a,
 .services-text a {
 	text-decoration: none !important;
