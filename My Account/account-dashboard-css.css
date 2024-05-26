@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
 
-html {
+
+.html{
 	font-size: 62.5%;
 }
 
@@ -20,88 +21,6 @@ body {
 	
 }
 
-
-
-
-header {
-	height: 6.510vw;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding-block: 2.831vh;
-	padding-inline: 2rem;
-	background: #17245f;
-}
-
-nav {
-	margin-left: auto;
-}
-
-.nav_links {
-	list-style: none;
-	display: flex;
-	align-items: center;
-
-}
-
-.nav_links li {
-	display: inline-block;
-	padding: 0px 1.5rem;
-}
-
-.contactUsLink {
-	text-decoration: none !important;
-}
-
-.profile-frame {
-	display: inline-block;
-	width: 5rem;
-	height: 5rem;
-	background-color: gray;
-	border-radius: 50%;
-	margin-left: 20px;
-	align-self: center;
-
-}
-
-li a {
-	color: #fff;
-	font-family: Inter;
-	font-size: 2rem;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	text-decoration: none;
-}
-
-li a:hover {
-	color: #feeb6b;
-	transition: 0.2s;
-}
-
-.logo,
-.footer_logo {
-	width: 8.9rem;
-	height: 8.9rem;
-	background-color: white;
-	border-radius: 50%;
-	color: white;
-}
-
-.logo {
-	margin-right: 1rem;
-}
-
-.company_name {
-	width: auto;
-	height: auto;
-	color: #fff;
-	font-family: Lexend Deca;
-	font-size: 3.5rem;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-}
 
 .profile-container {
 	background-color: #ffffff;
@@ -145,7 +64,7 @@ li a:hover {
 .profile-name,
 .profile-email,
 .profile-number {
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	margin-bottom: 2rem;
 }
 
@@ -563,37 +482,7 @@ input[type="button"]:hover, button:hover {
 	padding-bottom: 3rem;
 }
 
-@media screen and (max-width: 768px) {
-	.contactText {
-		font-size: 6rem;
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-}
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-	.contactText {
-		font-size: 8rem;
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-
-	.film2,
-	.film3 {
-		height: auto;
-	}
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-	.film2,
-	.film3 {
-		height: auto;
-	}
-}
 
 footer {
 	display: flex;
@@ -678,13 +567,13 @@ footer {
 
 @media only screen and (min-width: 1800px) {
 	html {
-		font-size: 16px;
+		/* font-size: 16px; */
 	}
 }
 
 @media only screen and (max-width: 1375px) {
 	html {
-		font-size: 56.25%;
+		/* font-size: 56.25%; */
 	}
 
 	.container {
@@ -701,7 +590,7 @@ footer {
 
 @media only screen and (max-width: 1060px) {
 	html {
-		font-size: 50%;
+		/* font-size: 50%; */
 	}
 
 	.service__logo {
@@ -748,7 +637,7 @@ footer {
 
 @media only screen and (max-width: 680px) {
 	html {
-		font-size: 38%;
+		/* font-size: 38%; */
 	}
 
 	.service__logo {
@@ -764,7 +653,7 @@ footer {
 
 @media only screen and (max-width: 530px) {
 	html {
-		font-size: 37.5%;
+		/* font-size: 37.5%; */
 	}
 
 	.container {
@@ -817,15 +706,11 @@ footer {
 		width: 25vw;
 		font-size: 2rem;
 	}
-
-	.LOREM_IPSUM {
-		font-size: 1.4rem;
-	}
 }
 
 @media only screen and (max-width: 415px) {
 	html {
-		font-size: 30%;
+		/* font-size: 30%; */
 	}
 }
 .profile-picture img {

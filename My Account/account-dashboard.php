@@ -1,5 +1,11 @@
+<html>
+<?php include  '../integrated/header-footer/header.php'; ?>
+<style> <?php include '../integrated/header-footer/header-footer.css'?> </style>
+</html>
+
+
+
 <?php
-session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -49,31 +55,7 @@ if ($result->num_rows == 1) {
 
 <body>
 	<div class="wrapper">
-		<header>
-			<img class="logo" src="images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
-			<div class="company_name">Sulit & Bagasan Dental Office</div>
-			<nav>
-				<ul class="nav_links">
-					<li class="nav__item">
-						<a class="nav__link" href="index.html">Home</a>
-					</li>
-					<li class="nav__item">
-						<a class="nav__link" href="about.html">About Us</a>
-					</li>
-					<li class="nav__item">
-						<a class="nav__link" href="services.html">Services</a>
-					</li>
-					<li class="nav__item">
-						<a class="nav__link contactUsLink" href="contact-us-1.html">Contact Us</a>
-					</li>
-					<li class="nav__item">
-						<a href="account-dashboard-html.php" class="nav__link">
-							<div class="profile-frame"></div>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+
 		<main>
 			<div class="profile-container">
 				<div class="profile-info">
