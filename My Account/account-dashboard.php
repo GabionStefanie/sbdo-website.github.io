@@ -6,7 +6,7 @@
 
 
 <?php
-$_SESSION["userID"] = 1;
+// $_SESSION["userID"] = 1;
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -75,9 +75,9 @@ if ($result->num_rows == 1) {
 						?>
 					</div>
 					<div class="profile-details">
-						<p class="profile-name">USERNAME: <?php //echo $user["Username"]; ?></p>
-						<p class="profile-email">EMAIL: stefanie@gmail.com <?php //echo $user["Email"]; ?></p>
-						<p class="profile-number">PHONE NUMBER: <?php //echo $user["PhoneNumber"]; 
+						<p class="profile-name">USERNAME: <?php echo $user["Username"]; ?></p>
+						<p class="profile-email">EMAIL: stefanie@gmail.com <?php echo $user["Email"]; ?></p>
+						<p class="profile-number">PHONE NUMBER: <?php echo $user["Phone"]; 
 																?></p>
 						<a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
 
