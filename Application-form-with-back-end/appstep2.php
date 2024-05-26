@@ -28,7 +28,8 @@
     </div>
 
     <div class="prog_bar">
-         <center><img src="images/whitebg-progress_bar[2-4].jpg" alt="progress bar 2-4" height="15%" width="50%"/></center>
+         
+    
     </div>
 
     <div class="APPOINTMENT-FORM-container">

@@ -21,8 +21,8 @@
         <?php include "../header-footer/header.php"; ?>
     </header>
 
-    <div class="prog_bar" style="text-align: center;">
-        <img src="images/whitebg-progress_bar[4-4].jpg" alt="progress bar 4-4" height="15%" width="50%"/>
+    <div class="prog_bar">
+      
     </div>
 
     <div class="APPOINTMENT-FORM-container">
