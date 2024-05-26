@@ -4,7 +4,7 @@ $token = $_GET["token"];
 
 $token_hash = hash("sha256", $token);
 
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = new mysqli("localhost", "root", "", "sbdodatabase");
 
 $sql = "SELECT * FROM account
         WHERE account_activation_hash = ?";
@@ -42,6 +42,7 @@ $stmt->bind_param("s", $user["id"]);
 $stmt->execute();
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -49,7 +50,7 @@ $stmt->execute();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Sulit & Bagasan Dental Office</title>
-    <link rel="stylesheet" type="text/css" href="css/style_OTP.css">
+    <link rel="stylesheet" type="text/css" href="style_OTP.css">
     <style>
         <?php include '../header-footer/header-footer.css' ?>
     </style>
@@ -71,7 +72,7 @@ $stmt->execute();
                 
     <h1>Account Activation</h1>
 
-<p> Account activated successfully. You can now <a href = "login.php"> log in </a>.</p>
+<p> Account activated successfully. You can now <a href = "../login-forgot-password/login.php"> log in </a>.</p>
 
 
 

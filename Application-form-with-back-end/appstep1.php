@@ -86,14 +86,14 @@
         </div>
 
         <div class="input-group" style="display: flex;">
-    <label for="date" style="    font-family: "Josefin Sans", "sans-serif";>Date: <br></label>
+    <label for="date" font-family: "Josefin Sans", "sans-serif";>Date: <br></label>
     <div style="display: flex;">
         <div>
             <select id="date" name="date" style="font-family: 'Inter', sans-serif; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; margin-left: 2rem;">
                 <option value="" disabled selected>Select schedule</option>
                 <!-- PHP code to fetch data from database -->
                 <?php
-                require __DIR__ . "/database.php";
+                $conn = new mysqli("localhost", "root", "", "sbdoDatabase");
                 $query = "SELECT scheduleDateTime FROM schedule WHERE status = 'available'";
                 $result = mysqli_query($conn, $query);
                 while ($row = mysqli_fetch_assoc($result)) {

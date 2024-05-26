@@ -36,31 +36,28 @@ $activation_token_hash = hash("sha256", $activation_token);
 
 $activation_expiry = date("Y-m-d H:i:s", time()+ 60 * 30);
 
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = new mysqli("localhost", "root", "", "sbdodatabase");
+
 
 $username = $_POST["username"];
 $email = $_POST["email"];
 
-$sql = "SELECT * FROM account WHERE email = ?";
+echo $email;
 
-$stmt = $mysqli->stmt_init();
+$SelectEmailSQL = "SELECT * FROM account WHERE email = '$email'";
 
-if ( ! $stmt->prepare($sql)) {
-    die("SQL error: " . $mysqli->error);
-}
 
-$stmt->bind_param("s", $email);
+$query = mysqli_query($mysqli, $SelectEmailSQL);
 
-$stmt->execute();
 
-$result = $stmt->get_result();
+$result = mysqli_fetch_assoc($query);
 
-if ($result->num_rows > 0) {
+if (mysqli_num_rows($query) > 0) {
     die("Email already taken"); 
 }
 
-$sql = "INSERT INTO account (username, email, password, account_activation_hash, activation_expiry)
-        VALUES (?, ?, ?, ?,?)";
+$sql = "INSERT INTO account (username, email, password, account_type, account_activation_hash, activation_expiry)
+        VALUES (?, ?, ?, ?, ?,?)";
         
 $stmt = $mysqli->stmt_init();
 
@@ -68,10 +65,12 @@ if ( ! $stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
-$stmt->bind_param("sssss",
+$Account_Type = 'Patient';
+$stmt->bind_param("ssssss",
                   $username,
                   $email, // Email should come before gender
                   $password_hash,
+                  $Account_Type,
                   $activation_token_hash,
                   $activation_expiry);
 
@@ -84,7 +83,7 @@ if ($stmt->execute()) {
     $mail->Subject = "Account Activation";
     $mail->Body = <<<END
 
-    Click <a href="http://localhost/DENTAL/activate-account.php?token=$activation_token">here</a> 
+    Click <a href="http://localhost/sbdo/sbdo-website.github.io/sign-up/activate-account.php?token=$activation_token">here</a> 
     to activate your account.
 
     END;

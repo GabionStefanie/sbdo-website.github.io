@@ -13,7 +13,8 @@
 	</head>
 	<body>
 		<div class="wrapper">
-		<?php include '../header-footer/header.php' ;		?>
+		<?php include '../header-footer/header.php' ;
+			?>
 			<div class="profile-container">
 				<div class="profile-details">
                     <p class="profile-name"><?php echo htmlspecialchars($username); ?></p>

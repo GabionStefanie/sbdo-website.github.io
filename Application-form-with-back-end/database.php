@@ -12,6 +12,7 @@ $conne->close();
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+
 $createPaymentTable = "CREATE TABLE IF NOT EXISTS PAYMENT (
         `PaymentDetails_ID` INT AUTO_INCREMENT,
         `Amount` INT (10) NOT NULL,

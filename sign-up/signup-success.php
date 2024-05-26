@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Sulit & Bagasan Dental Office</title>
-    <link rel="stylesheet" type="text/css" href="css/style_OTP.css">
+    <link rel="stylesheet" type="text/css" href="style_OTP.css">
     <style>
         <?php include '../header-footer/header-footer.css' ?>
     </style>
@@ -24,7 +24,7 @@
 
         
 
-                <p class="email-label">Signup successful.
+                <p class="email-label">Signup successful. <br>
        Please check your email to activate your account.</p>
 
 
