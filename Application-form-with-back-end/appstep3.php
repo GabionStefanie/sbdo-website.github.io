@@ -32,12 +32,12 @@
         <h1>Step 3-4:<br> <br>Medical History</h1>
 
         <div class="input-group">
-            <label>ARE YOU EXPERIENCING DENTAL PAIN?</label>
+            <label>DO YOU HAVE ANY FORM OF Diabetes?</label>
             <div class="flex-group">
-                <input type="radio" id="dentalpain_1" name="dentalpain" value="yes" required>
-                <label for="dentalpain_1">YES</label>
-                <input type="radio" id="dentalpain_2" name="dentalpain" value="no">
-                <label for="dentalpain_2">NO</label>
+                <input type="radio" id="diabetes_1" name="diabetes" value="yes" required>
+                <label for="diabetes_1">YES</label>
+                <input type="radio" id="diabetes_2" name="diabetes" value="no">
+                <label for="diabetes_2">NO</label>
             </div>
         </div> 
 
