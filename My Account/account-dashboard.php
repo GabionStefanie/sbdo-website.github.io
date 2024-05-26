@@ -9,7 +9,7 @@
 
 
 <?php
-
+// $_SESSION["userID"] = 1;
 $servername = "localhost";
 $username = "root";
 $password = "";
