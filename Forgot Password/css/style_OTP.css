@@ -49,7 +49,19 @@ margin-top: 3.5rem;
 font-family: Montserrat;
   margin-left: 5rem;
 }
-  
+
+input[type="text"] {
+  display: block;
+  border: 0;
+  border-bottom: 0.1rem solid black;
+  background-color: transparent;
+  width: 30rem;
+  padding: 0.5rem;
+  margin-left: 5rem;
+  font-size: 2.2rem;
+  font-family: Montserrat;
+}
+
 input[type="password"] {
   display: block;
   border: 0;

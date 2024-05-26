@@ -14,12 +14,14 @@ $password = "";
 $dbname = "sbdoDatabase";
 
 // Function to generate a random verification code
-function generateVerificationCode() {
+function generateVerificationCode()
+{
     return strval(rand(100000, 999999)); // Ensure the OTP is a string
 }
 
 // Function to send email for OTP
-function sendEmailForOTP($to, $subject, $message, $isResend = false) {
+function sendEmailForOTP($to, $subject, $message, $isResend = false)
+{
     $mail = new PHPMailer(true);
 
     try {
@@ -34,10 +36,10 @@ function sendEmailForOTP($to, $subject, $message, $isResend = false) {
 
         // Recipients
         $mail->setFrom('no.reply.sulitandbagasan@gmail.com', 'Sulit and Bagasan Dental Office');
-        
+
         // Change recipient based on whether it's a resend or initial email
         if ($isResend) {
-            $subject = $subject .  "(Resend)" ; // Add "Resend" indication to subject
+            $subject = $subject .  "(Resend)"; // Add "Resend" indication to subject
             $mail->addAddress($to); // Set recipient to the original recipient
         } else {
             $mail->addAddress($to);
@@ -51,7 +53,7 @@ function sendEmailForOTP($to, $subject, $message, $isResend = false) {
         if ($isResend) {
             $message .= "\n\n[This is a resend.]\n";
         }
-        
+
         $mail->Body = $message;
 
         // Send the email
@@ -81,7 +83,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $to = $_SESSION["email"]; // Retrieve email from session
         $verificationCode = generateVerificationCode(); // Generate new verification code
         $subject = "Password Reset Verification Code";
-        $message = "Your new verification code is: $verificationCode";
+        $message = 
+        "We have received your request for a single-use code to use to reset your password for your account.
+        
+        Your single use code is: $verificationCode
+        If you didn't request this code, you can safely ignore this email. Someone else might have typed your email address by mistake.
+        
+        Cordially yours,
+        Sulit and Bagasan Dental Office
+        [This is an automated email. Do not reply.] ";
 
         // Send email
         $emailSent = sendEmailForOTP($to, $subject, $message, true); // Pass true to indicate it's a resend
@@ -130,7 +140,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Send verification code email
             $to = $user["Email"];
             $subject = "Password Reset Verification Code";
-            $message = "Your verification code is: $verificationCode";
+            $message = 
+            "We have received your request for a single-use code to use to reset your password for your account.
+        
+            Your single use code is: $verificationCode
+            If you didn't request this code, you can safely ignore this email. Someone else might have typed your email address by mistake.
+            
+            Cordially yours,
+            Sulit and Bagasan Dental Office
+            [This is an automated email. Do not reply.] ";
 
             // Send email
             $emailSent = sendEmailForOTP($to, $subject, $message);
@@ -156,4 +174,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->close();
     }
 }
-?>

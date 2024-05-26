@@ -26,10 +26,10 @@
                     <label>Confirm Password</label><br>
                     <input type="password" name="confirm_password" required>
                 </p>
+                <div id="message" style="color:red;"></div>
                 <div class="button-container">
                     <input type="submit" value="SUBMIT">
                 </div>
-                <div id="message" style="color:red;"></div>
             </form>
         </div>
     </div>
@@ -52,7 +52,7 @@
                         messageElement.style.color = "green";
                         // Wait 3 seconds before redirecting to allow user to read the message
                         setTimeout(function() {
-                            window.location.href = "Login/login.php";
+                            window.location.href = "../Login/login.php";
                         }, 3000);
                     } else {
                         messageElement.style.color = "red";
@@ -62,16 +62,16 @@
                         }, 3000);
                     }
                 })
-                .catch(error => {
-                    console.error("Error:", error);
-                    var messageElement = document.getElementById("message");
-                    messageElement.textContent = "An unexpected error occurred.";
-                    messageElement.style.color = "red";
-                    // Reload the page after displaying the error message
-                    setTimeout(function() {
-                        location.reload();
-                    }, 3000);
-                });
+                // .catch(error => {
+                //     console.error("Error:", error);
+                //     var messageElement = document.getElementById("message");
+                //     messageElement.textContent = "An unexpected error occurred.";
+                //     messageElement.style.color = "red";
+                //     // Reload the page after displaying the error message
+                //     setTimeout(function() {
+                //         location.reload();
+                //     }, 3000);
+                // });
         });
     </script>
 </body>
