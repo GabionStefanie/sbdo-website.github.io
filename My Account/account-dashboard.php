@@ -1,7 +1,7 @@
 <html>
-<?php include  '../integrated/header-footer/header.php'; ?>
+<?php include  '../header-footer/header.php'; ?>
 <style>
-	<?php include '../integrated/header-footer/header-footer.css' ?>
+	<?php include '../header-footer/header-footer.css' ?>
 </style>
 
 </html>
