@@ -3,7 +3,7 @@
 <head>
     <title>Step 4</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="appstep4-css.css" />
+    <link rel="stylesheet" type="text/css" href="css/appstep4-css.css" />
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <script src="appstep4-validation.js" defer></script>
     <style>

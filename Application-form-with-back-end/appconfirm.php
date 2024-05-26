@@ -3,7 +3,7 @@
 <head>
     <title>Confirm Appointment</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="appconfirm-css.css" />
+    <link rel="stylesheet" type="text/css" href="css/appconfirm-css.css" />
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <script src = "appconfirm-validation.js" defer></script>
     <style>
