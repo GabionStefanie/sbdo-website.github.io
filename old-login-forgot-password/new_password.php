@@ -28,6 +28,7 @@
 				<div class="button-container">
                     <input type="submit" value="SUBMIT">
                 </div>
+                <div id="message" style="color:red;"></div>
 	</form></div>
 	</div>
     <?php include '../header-footer/footer.php' ?>
