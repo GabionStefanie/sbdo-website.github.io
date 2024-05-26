@@ -8,7 +8,7 @@ if (empty($_POST["symptoms"])) {
     die("Symptoms status is required");
 }
 
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = new mysqli("localhost", "root", "", "sbdoDatabase");
 
 $stmt = $mysqli->stmt_init();
 
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Save form inputs in session
     $_SESSION["covid"] = $_POST["covid"];
     $_SESSION["symptoms"] = $_POST["symptoms"];
-    header('Location: payments-html.php');
+    header('Location: ../payments.php');
 }
 
 $mysqli->close();

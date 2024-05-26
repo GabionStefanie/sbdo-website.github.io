@@ -4,8 +4,8 @@
     <title>Step 2</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/appstep2-css.css" />
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src="appstep2-validation.js" defer></script>
+    <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script> -->
+    <!-- <script src="jscript/appstep2-validation.js" defer></script> -->
     <style>
         .just-validate-error-label {
             margin-top: 5px;
@@ -32,7 +32,7 @@
     </div>
 
     <div class="APPOINTMENT-FORM-container">
-        <form action="process-appstep2.php" method="post" id="appstep2" novalidate>
+        <form action="backend/process-appstep2.php" method="post" id="appstep2" novalidate>
             <h1>Step 2-4: </h1>
             <div class="chief-complaint-title">Chief Complaint</div>
             <div class="input-group">

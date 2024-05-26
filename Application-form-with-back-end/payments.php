@@ -3,8 +3,8 @@
 <head>
     <title>Payment Details Form</title>
     <link rel="stylesheet" type="text/css" href="payments-css.css">
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src = "payments-validation.js" defer></script>
+    <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src = "jscript/payments-validation.js" defer></script> -->
     <style>
     <?php include '../header-footer/header-footer.css' ?>
   </style>

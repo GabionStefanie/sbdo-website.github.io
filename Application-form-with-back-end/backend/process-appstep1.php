@@ -32,11 +32,7 @@ if (empty($_POST["date"])) {
     die("Date is required");
 }
 
-if (empty($_POST["time"])) {
-    die("Time is required");
-}
-
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = new mysqli("localhost", "root", "", "sbdoDatabase");
 
 $stmt = $mysqli->stmt_init();
 
@@ -102,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["apptype"] = $_POST["apptype"];
     $_SESSION["date"] = $_POST["date"];
     $_SESSION["time"] = $_POST["time"];
-    header('Location: appstep2.php');
+    header('Location: ../appstep2.php');
 }
 
 $mysqli->close();
