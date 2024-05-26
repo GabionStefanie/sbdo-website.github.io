@@ -62,16 +62,16 @@
                         }, 3000);
                     }
                 })
-                // .catch(error => {
-                //     console.error("Error:", error);
-                //     var messageElement = document.getElementById("message");
-                //     messageElement.textContent = "An unexpected error occurred.";
-                //     messageElement.style.color = "red";
-                //     // Reload the page after displaying the error message
-                //     setTimeout(function() {
-                //         location.reload();
-                //     }, 3000);
-                // });
+                 .catch(error => {
+                     console.error("Error:", error);
+                     var messageElement = document.getElementById("message");
+                     messageElement.textContent = "An unexpected error occurred.";
+                     messageElement.style.color = "red";
+                     // Reload the page after displaying the error message
+                     setTimeout(function() {
+                         location.reload();
+                     }, 3000);
+                 });
         });
     </script>
 </body>
