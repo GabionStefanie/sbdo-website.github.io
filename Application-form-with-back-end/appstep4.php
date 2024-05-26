@@ -4,8 +4,8 @@
     <title>Step 4</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/appstep4-css.css" />
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src="appstep4-validation.js" defer></script>
+    <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="jscript/appstep4-validation.js" defer></script> -->
     <style>
         .just-validate-error-label {
           margin-top: 5px;
@@ -26,7 +26,7 @@
     </div>
 
     <div class="APPOINTMENT-FORM-container">
-        <form action="process-appstep4.php" method="post" id="appstep4" novalidate>
+        <form action="backend/process-appstep4.php" method="post" id="appstep4" novalidate>
             <h1>Step 4-4:<br> <br>Medical History</h1>
             <div class="input-group">
     <label>COVID-19 VACCINATION STATUS<br></label>

@@ -24,7 +24,7 @@ if (empty($_POST["bleedingtissues"])) {
     die("Bleeding from soft tissues response is required");
 }
 
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = new mysqli("localhost", "root", "", "sbdoDatabase");
 
 $stmt = $mysqli->stmt_init();
 
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["painlevel"] = $_POST["painlevel"];
     $_SESSION["dentaltrauma"] = $_POST["dentaltrauma"];
     $_SESSION["bleedingtissues"] = $_POST["bleedingtissues"];
-    header('Location: appstep3.php');
+    header('Location: ../appstep3.php');
 }
 
 $mysqli->close();

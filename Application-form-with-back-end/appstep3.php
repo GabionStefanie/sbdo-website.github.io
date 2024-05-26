@@ -4,8 +4,8 @@
     <title>Step 3</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/appstep3-css.css" />
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src="appstep3-validation.js" defer></script>
+    <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="jscript/appstep3-validation.js" defer></script> -->
     <style>
         .just-validate-error-label {
           margin-top: 5px;
@@ -28,7 +28,7 @@
     </div>
     <div class="APPOINTMENT-FORM-container">
     
-    <form action="process-appstep3.php" method="post" id="appstep3" novalidate>
+    <form action="backend/process-appstep3.php" method="post" id="appstep3" novalidate>
         <h1>Step 3-4:<br> <br>Medical History</h1>
 
         <div class="input-group">

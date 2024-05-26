@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/appstep1-css.css" />
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src="js/appstep1-validation.js" defer></script>
+    <script src="jscript/appstep1-validation.js" defer></script>
     <style>
         .just-validate-error-label {
             margin-top: 5px;
@@ -37,7 +37,7 @@
 <div class="APPOINTMENT-FORM-title"><p>Appointment Form</p></div>
 
 <div class="APPOINTMENT-FORM-container">
-    <form action="process-appstep1.php" method="post" id="appstep1" novalidate style="text-align: left;">
+    <form action="backend/process-appstep1.php" method="post" id="appstep1" novalidate style="text-align: left;">
         <div class="input-group">
             <div class="patient-information">Patient Information</div>
             <div class="flex-group">

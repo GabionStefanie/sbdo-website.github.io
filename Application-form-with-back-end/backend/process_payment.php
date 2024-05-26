@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Proof of Payment required");
     }
 
-    $mysqli = require __DIR__ . "/database.php";
+    $mysqli = new mysqli("localhost", "root", "", "sbdoDatabase");
 
     $_SESSION["referenceNo"] = $_POST["referenceNo"];
     $file = $_FILES['proofOfPayment'];
@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Transaction failed: " . $e->getMessage());
     }
 
-    header('Location: appconfirm.php');
+    header('Location: ../appconfirm.php');
 
     $mysqli->close();
 }

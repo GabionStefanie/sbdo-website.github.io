@@ -1,7 +1,7 @@
 <?php
 
-if (empty($_POST["diabetes"])) {
-    die("Diabetes status is required");
+if (empty($_POST["dentalpain"])) {
+    die("Dental Pain status is required");
 }
 
 if (empty($_POST["heartconditions"])) {
@@ -24,7 +24,7 @@ if (empty($_POST["diastolicpressure"])) {
     die("Diastolic Pressure status is required");
 }
 
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = new mysqli("localhost", "root", "", "sbdoDatabase");
 
 $stmt = $mysqli->stmt_init();
 
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["systolicpressure"] = $_POST["systolicpressure"];
     $_SESSION["diastolicpressure"] = $_POST["diastolicpressure"];
     $_SESSION["medicalconditions"] = $_POST["medicalconditions"];
-    header('Location: appstep4.php');
+    header('Location: ../appstep4.php');
 }
 
 $mysqli->close();
