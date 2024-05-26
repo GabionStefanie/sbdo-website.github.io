@@ -1,6 +1,9 @@
 <html>
 <?php include  '../integrated/header-footer/header.php'; ?>
-<style> <?php include '../integrated/header-footer/header-footer.css'?> </style>
+<style>
+	<?php include '../integrated/header-footer/header-footer.css' ?>
+</style>
+
 </html>
 
 
@@ -19,6 +22,8 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
+
+$_SESSION['userID'] = 1;
 
 // Prepare SQL statement to fetch the user data
 $sql = "SELECT * FROM ACCOUNT WHERE User_ID = ?";
@@ -41,6 +46,7 @@ if ($result->num_rows == 1) {
 } else {
 	echo 'No user found'; // Debug line
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,10 +81,8 @@ if ($result->num_rows == 1) {
 						?>
 					</div>
 					<div class="profile-details">
-						<p class="profile-name">USERNAME: <?php //echo $user["Username"]; ?></p>
-						<p class="profile-email">EMAIL: stefanie@gmail.com <?php //echo $user["Email"]; ?></p>
-						<p class="profile-number">PHONE NUMBER: <?php //echo $user["PhoneNumber"]; 
-																?></p>
+						<p class="profile-name"><b>USERNAME:</b> <?php echo $user["Username"]; ?></p>
+						<p class="profile-email"><b>EMAIL:</b> <?php echo $user["Email"]; ?></p>
 						<a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
 
 					</div>
@@ -125,7 +129,12 @@ if ($result->num_rows == 1) {
 									<button onclick="showModal('username')">Change</button>
 								</li>
 								<li>
-									<p class="password">Password: *******</p>
+
+									<div class="password">
+										<div>Password: <input type="password" readonly id = "showPassword" value="<?php echo $user["Password"] ?>"></div>
+										<div><input type="checkbox" name="" id="show-password" style="display: block" onclick = "showPassword('showPassword')"> <span><pre>  Show Password<pre></pre></span> </div> 
+									</div>
+
 									<button onclick="showModal('password')">Change</button>
 								</li>
 								<li>
@@ -336,6 +345,20 @@ if ($result->num_rows == 1) {
 			<p class="LOREM_IPSUM EMAIL">sulitandbagasan@gmail.com</p>
 		</div>
 	</footer>
+
+<script>
+	function showPassword(inputID){
+		var pw = document.getElementById(inputID);
+			if(pw.type === "password"){
+				pw.type = "text";
+			}else{
+				pw.type = "password";
+			}
+
+	}
+
+
+</script>
 </body>
 
 </html>

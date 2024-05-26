@@ -253,6 +253,36 @@ body {
 	font-family: inherit;
 }
 
+#showPassword{
+	pointer-events: none; 
+	border: none;
+	width: fit-content;
+	font-size: 1.6rem;
+	font-family: Inter;
+	font-weight: 500;
+}
+
+
+.password{
+	display:flex;
+	align-items: baseline;
+	height: fit-content;
+	flex-direction: column;
+}
+
+.password>div{
+	display: flex;
+	align-items: baseline;
+	/* gap: 1rem */
+}
+pre{
+	font-size: 1.6rem;
+	font-family: Inter;
+	font-weight: 500;
+}
+
+
+
 .modal {
 	position: fixed;
 	top: 50%;
@@ -318,7 +348,7 @@ body {
 	font-family: Inter;
 }
 
-label {
+form label {
 	color: #000000;
 	font-size: 2rem;
 	cursor: pointer;
