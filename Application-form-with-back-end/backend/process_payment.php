@@ -1,5 +1,7 @@
 <?php
 session_start();
+ini_set('mysql.connect_timeout', 300);
+ini_set('default_socket_timeout', 300);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["referenceNo"])) {
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if file is an image
     if (strpos($file_type, 'image') === false) {
         echo "<script>alert('File is not an image.');</script>";
-        echo "<script>window.location.replace('payments-html.php');</script>";
+        echo "<script>window.location.replace('payments.php');</script>";
         exit;
     }
 
@@ -42,18 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
 
 
-         // Get the patient_id of the last inserted patient
-         $patient_id = $mysqli->insert_id;
-
-         // Insert into appointment table
-         $sql = "INSERT INTO appointment (patient_id, service_id, schedule_id) VALUES (?, ?, ?)";
-         $stmt = $mysqli->prepare($sql);
-         if (!$stmt) {
-             throw new Exception("SQL error: " . $mysqli->error);
-         }
-         $stmt->bind_param("iii", $patient_id, $_SESSION["apptype"], $schedule_id);
-         $stmt->execute();
-         $stmt->close();
+        // Get the patient_id of the last inserted patient
+        $patient_id = $mysqli->insert_id;
 
         // Get schedule_id
         $sql = "SELECT schedule_id FROM schedule WHERE scheduleDateTime = ?";
@@ -65,6 +57,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $stmt->bind_result($schedule_id);
         $stmt->fetch();
+        $stmt->close();
+
+        // Insert into appointment table
+        $sql = "INSERT INTO appointment (patient_id, service_id, schedule_id) VALUES (?, ?, ?)";
+        $stmt = $mysqli->prepare($sql);
+        if (!$stmt) {
+            throw new Exception("SQL error: " . $mysqli->error);
+        }
+        $stmt->bind_param("iii", $patient_id, $_SESSION["apptype"], $schedule_id);
+        $stmt->execute();
         $stmt->close();
 
         // Update schedule table
@@ -119,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
 
         // Insert into health_declaration table
-        $sql = "INSERT INTO health_declaration (covidvaccine_status, healthsymptoms_id) VALUES (?, ?)";
+        $sql = "INSERT INTO health_declaration (covidvaccine_status, health_declaration_id) VALUES (?, ?)";
         $stmt = $mysqli->prepare($sql);
         if (!$stmt) {
             throw new Exception("SQL error: " . $mysqli->error);
@@ -149,4 +151,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mysqli->close();
 }
-?>

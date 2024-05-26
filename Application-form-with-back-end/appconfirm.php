@@ -58,8 +58,8 @@
 
                 <div class="center button">
                     <div class="button-group">
-
-                        <button type="submit">Done</button>
+                        <button type="button">Reject</button>
+                        <button type="submit">Confirm</button>
                     </div>
                 </div>
             </form>
