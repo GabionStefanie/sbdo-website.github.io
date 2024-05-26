@@ -42,14 +42,21 @@
             <div class="input-group">
             <label>At the moment, do you experience any of the following symptoms?<br></label>
             <div id="symptoms" style = "display: block;">
-                <div>
-                    <input type="checkbox" id="symptoms_1" name="symptoms" value="1" /> Fever <br>
-                    <input type="checkbox" id="symptoms_2" name="symptoms" value="2" /> Colds <br>
-                    <input type="checkbox" id="symptoms_3" name="symptoms" value="3" /> Cough <br>
-                    <input type="checkbox" id="symptoms_4" name="symptoms" value="4" /> Sore Throat <br>
-                    <input type="checkbox" id="symptoms_5" name="symptoms" value="5" /> Headache <br>
-                    <input type="checkbox" id="symptoms_6" name="symptoms" value="6" /> Diarrhea <br>
-                    <input type="checkbox" id="symptoms_7" name="symptoms" value="7" onclick="clearOtherSymptoms(this)"/> None <br>
+                <div class="grid">
+                    <label for="sypmtoms_1">Fever</label>
+                    <input type="checkbox" id="symptoms_1" name="symptoms" value="1" /> 
+                    <label for="sypmtoms_2">Colds</label>
+                    <input type="checkbox" id="symptoms_2" name="symptoms" value="2" /> 
+                    <label for="sypmtoms_3">Cough</label>
+                    <input type="checkbox" id="symptoms_3" name="symptoms" value="3" /> 
+                    <label for="sypmtoms_4">Sore Throat</label>
+                    <input type="checkbox" id="symptoms_4" name="symptoms" value="4" />  
+                    <label for="sypmtoms_5">Headache</label>
+                    <input type="checkbox" id="symptoms_5" name="symptoms" value="5" /> 
+                    <label for="sypmtoms_6">Diarrhea</label>
+                    <input type="checkbox" id="symptoms_6" name="symptoms" value="6" /> 
+                    <label for="sypmtoms_7">None</label>
+                    <input type="checkbox" id="symptoms_7" name="symptoms" value="7" onclick="clearOtherSymptoms(this)"/>
                     
                     <script>
                     function clearOtherSymptoms(checkbox) {
@@ -87,8 +94,9 @@
               have serious consequences. (Article 171 and 172 of the Revised Penal Code<br>
                of the Philippines.)<br></label>
             <div id="agree" style = "display: block;">
-                <div>
-                    <input type="checkbox" id="agree_1" name="agree" value="1" /> AGREE <br>
+                <div class="grid">
+                    <label for="agree_1">AGREE</label>
+                    <input type="checkbox" id="agree_1" name="agree" value="1" /><br>
                     
                 </div>
             </div>

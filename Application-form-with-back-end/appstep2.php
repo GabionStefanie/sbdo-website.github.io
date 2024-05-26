@@ -38,7 +38,7 @@
             <div class="input-group">
                 <label for="complaint">CHIEF COMPLAINT</label>
                 <div>
-                    <textarea id="complaint" name="complaint" rows="4" cols="50" placeholder="Provide details of the chief complaint (history of pain, etc.)" required></textarea>
+                    <textarea id="complaint" name="complaint" rows="4" cols="50" placeholder="Provide the primary symptom felt." required></textarea>
                 </div>
             </div>
 

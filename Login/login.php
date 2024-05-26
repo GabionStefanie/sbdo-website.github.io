@@ -24,20 +24,22 @@
                 </p>
 
                 <p><label>Password:</label><br>
-                    <input type="password" id="passwordInput" name="password">
-                    <button type="button" onclick="togglePasswordVisibility('passwordInput')">Toggle</button>
+                <input type="password" id="passwordInput" name="password"><br>
+                <input id="checkbox-pass" type="checkbox" onclick="togglePasswordVisibility('passwordInput')" />
+                <label for="checkbox-pass"> Show Password</label><br>
                 <p class="forgotPS_link"><a href="../Forgot Password/forgot_PS.php">Forgot password?</a></p>
                 </p>
 
                 <div class="button-container">
                     <input type="submit" value="LOGIN">
                 </div>
-                <p class="Lorem_ipsum">Don't have an account?</p>
-                <p class="Signup_link"><a href="signup_page.html">Signup</a></p>
+                <p class="text">Don't have an account?</p>
+                <p class="Signup_link"><a href="../sign-up/signup-page.php">Signup</a></p>
 
             </form>
         </div>
     </div>
+    <?php include '../header-footer/footer.php' ?>
     <script>
         function togglePasswordVisibility(inputId) {
             var passwordInput = document.getElementById(inputId);
