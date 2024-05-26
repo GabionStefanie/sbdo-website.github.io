@@ -1,6 +1,6 @@
 <?php
 
-if (empty($_POST["dentalpain"])) {
+if (empty($_POST["diabetes"])) {
     die("Dental Pain status is required");
 }
 
