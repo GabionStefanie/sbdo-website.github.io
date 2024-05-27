@@ -105,7 +105,6 @@
         </div>
     </div>
 </div>
-
         <div class="button-group">
             <button type="reset">RESET INFO</button>
             <button type="submit">NEXT</button>

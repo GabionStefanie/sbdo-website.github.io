@@ -53,7 +53,7 @@ if ($result->num_rows == 1) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Contact Us | Sulit & Bagasan Dental Office</title>
-	<link rel="stylesheet" type="text/css" href="account-dashboard-css.css">
+	<link rel="stylesheet" type="text/css" href="css/account-dashboard-css.css">
 	<script src="account-dashboard-jscript.js"></script>
 </head>
 

@@ -21,11 +21,9 @@ body {
 .profile-container {
 	background-color: #ffffff;
 	padding: 5rem;
-	margin: 5rem 20rem;
+	margin: 7rem;
 	font-family: Inter;
-	justify-content: center;
 }
-
 
 .profile-info {
 	display: flex;
@@ -42,8 +40,8 @@ body {
 }
 
 .profile-picture {
-	width: 28rem;
-	height: 28rem;
+	width: 30rem;
+	height: 30rem;
 	border-radius: 50%;
 	background-color: #ccc;
 	position: relative;
@@ -55,19 +53,19 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 2rem;
+	font-size: 3.5rem;
 	text-align: center;
 }
 
 .profile-name,
 .profile-email,
 .profile-number {
-	font-size: 2.5rem;
-	margin-bottom: 4rem;
+	font-size:calc(0.5vw + 1rem);
+	margin-bottom: 2rem;
 }
 
 .edit-profile {
-	font-size: 2.5rem;
+	font-size: 1.5rem;
 	padding: 2rem auto;
 	margin-top: 20px;
 	display: inline-block;
@@ -84,8 +82,8 @@ body {
 
 .buttons-transac-appoint {
 	display: flex;
-	justify-content: space-between;
-	font-size: 2.5rem;
+	justify-content: flex-start;
+	gap: 1rem;
 	font-family: Lexend Deca;
 }
 
@@ -93,7 +91,7 @@ body {
 	color: white;
 	background-color: #000000;
 	border: none;
-	padding: 2rem 6rem;
+	padding: 1rem 3rem;
 	text-decoration: none;
 	border-radius: 5rem;
 }
