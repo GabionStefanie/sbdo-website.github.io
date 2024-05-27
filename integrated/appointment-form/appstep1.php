@@ -19,11 +19,7 @@
 </head>
 
 <body>
-
-    <div class="wrapper">
-
-        <?php include "../header-footer/header.php"; ?>
-        <div id="loginModal" class="modal">
+<div id="loginModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
@@ -31,12 +27,15 @@
                 </div>
                 <div class="modal-body">
                     <p>It seems that you are not yet logged in.</p>
-                    <p>Please log in to be able to submit a review.</p>
+                    <p>Please log in to be able to book an appointment.</p>
 
                     <a href="../Login/login.php"><button>LOG IN</button></a>
                 </div>
             </div>
         </div>
+    <div class="wrapper">
+        <?php include "../header-footer/header.php"; ?>
+        
         <div class="title">
             <div class="film"></div>
             <img class="contactImg" src="images/contactImg.png" alt="featured image: inside of the dental office" />

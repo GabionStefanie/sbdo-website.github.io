@@ -18,7 +18,7 @@ html {
 	justify-content: center;
 	align-items: center;
 	position: fixed;
-	z-index: 1;
+	z-index: 10;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
@@ -46,6 +46,21 @@ html {
 	font-size: 2.3rem;
 	padding: 1.2rem;
   }
+  
+#loginModal button {
+	border: 2px solid;
+  padding: 1rem 1.5rem;
+  background-color: black;
+  color: white;
+  width: 21rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2.5rem;
+  margin: 1.2rem 0;
+  border-radius: 2.5rem;
+  cursor: pointer;
+}
   
   span.close {
 	align-self: flex-end;
@@ -253,7 +268,7 @@ html {
     gap: 1rem;
 }
 
-.button-group button {
+.button-group button, .button-group input {
     padding: 1rem 2rem;
     border: none;
     border-radius: 5px;
@@ -268,7 +283,7 @@ html {
     font-family: "Josefin Sans", sans-serif;
 }
 
-.button-group button[type="submit"], input[type="submit"] {
+.button-group button[type="submit"], .button-group input[type="button"] {
     background: #000000;
     color: white;
 	border-radius: 2rem;
