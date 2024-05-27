@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $UserID = null;
         $UserName = "Anonymous";
     } else {
-        $UserID = $_SESSION["User_ID"];
+        $UserID = $_COOKIE["User_ID"];
         $sql = "SELECT Username 
         FROM account
         LEFT JOIN reviews USING (User_ID)
