@@ -88,8 +88,8 @@ if ($result->num_rows == 1) {
 				<div class="divider"></div>
 				<div class="row">
 					<div class="buttons-transac-appoint">
-						<a href="transactions-html.html" class="btn btn-primary">TRANSACTION</a>
-						<a href="upcoming-announcements-html.html" class="btn btn-primary">APPOINTMENTS</a>
+						<a href="transactions-page.php" class="btn btn-primary">TRANSACTION</a>
+						<a href="upcoming-announcements-page.php" class="btn btn-primary">APPOINTMENTS</a>
 					</div>
 				</div>
 			</div>
