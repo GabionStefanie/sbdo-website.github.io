@@ -21,7 +21,7 @@
                 <p>It seems that you are not yet logged in.</p>
                 <p>Please log in to be able to submit a review.</p>
                 
-                <a href="../login-forgot-password/login.php"><button>LOG IN</button></a>
+                <a href="../Login/login.php"><button>LOG IN</button></a>
             </div>
         </div>
     </div>

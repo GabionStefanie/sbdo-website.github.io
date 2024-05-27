@@ -23,7 +23,20 @@
     <div class="wrapper">
 
         <?php include "../header-footer/header.php"; ?>
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Login to Proceed</h2>
+                </div>
+                <div class="modal-body">
+                    <p>It seems that you are not yet logged in.</p>
+                    <p>Please log in to be able to submit a review.</p>
 
+                    <a href="../Login/login.php"><button>LOG IN</button></a>
+                </div>
+            </div>
+        </div>
         <div class="title">
             <div class="film"></div>
             <img class="contactImg" src="images/contactImg.png" alt="featured image: inside of the dental office" />
@@ -105,7 +118,12 @@
                 </div>
                 <div class="button-group">
                     <button type="reset">RESET INFO</button>
-                    <button type="submit">NEXT</button>
+                    <?php if (isset($_COOKIE['User_ID'])) {
+                    ?>
+                        <input type="submit" value="NEXT" id="submit-comment">
+                    <?php } else { ?>
+                        <input type="button" id="login-button" value="SUBMIT">
+                    <?php } ?>
                 </div>
             </form>
         </div>
@@ -141,6 +159,25 @@
 
         <?php include "../header-footer/footer.php"; ?>
     </div>
+    <script>
+        var modal = document.getElementById("loginModal");
+        var btn = document.getElementById("login-button");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "flex";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
