@@ -1,3 +1,4 @@
+<?php include '../header-footer/header.php' ?>  
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +13,7 @@
 </head>
 
 <body>
-    <?php include '../header-footer/header.php' ?>
+    
     <div class="wrapper">
         <div class="form">
             <form action="process_login.php" method="post" onsubmit="return validateForm()">
