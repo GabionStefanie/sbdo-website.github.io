@@ -128,7 +128,7 @@ if ($result->num_rows == 1) {
 								<li>
 									<div class="password">
 										<div>Password: <input type="password" readonly id = "showPassword" value="<?php echo $user["Password"] ?>"></div>
-										<div><input type="checkbox" name="" id="show-password" style="display: block" onclick = "showPassword('showPassword')"> <span><pre>  Show Password<pre></pre></span> </div> 
+										<div><input type="checkbox" name="" id="show-password" style="display: block" onclick = "showPassword('showPassword')"><label for="show-password"> <pre>  Show Password</pre></label> </div> 
 									</div>
 									<button onclick="showModal('password')">Change</button>
 								</li>
@@ -201,7 +201,7 @@ if ($result->num_rows == 1) {
 							<input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
 							<div class="text-24hrs">It may take 24 hours for changes to take effect. <br>You will need to login with your new password.</div>
 							<span class="forgot-password" onclick="showForgotPasswordModal()">Forgot Password?</span>
-							<BR>
+							<br>
 							<input type="submit" value="SUBMIT">
 						</form>
 					</div>

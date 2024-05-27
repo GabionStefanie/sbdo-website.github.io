@@ -114,9 +114,10 @@ xhr.onload = function () {
 xhr.send(formData);
 }
 
-const changePasswordForm = document.getElementById('formPassword');
 function submitPassword(event) {
-    event.preventDefault();    
+    // event.preventDefault();    
+    const changePasswordForm = document.getElementById('formPassword');
+
     const newPasswordData = new FormData(changePasswordForm);
 
     // Send an AJAX request to the server
@@ -190,6 +191,7 @@ function submitForgotPassword(event) {
     // Fetch the form data
     const forgotPasswordForm = document.getElementById('forgotPasswordForm');
     let forgotPasswordData = new FormData(forgotPasswordForm);
+    // console.log(forgotPasswordForm)
 
     // Send an AJAX request to the server
     fetch('changePassword.php', {
