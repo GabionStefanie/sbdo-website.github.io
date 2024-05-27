@@ -1,5 +1,7 @@
 <html>
-<?php include  '../header-footer/header.php'; ?>
+<?php 
+session_start();
+include  '../header-footer/header.php'; ?>
 <style>
 	<?php include '../header-footer/header-footer.css' ?>
 </style>
