@@ -491,20 +491,22 @@ function submitResetPassword(event) {
     })
     .then(response => {
         console.log(response.text());   
-        response.json()
+        return response.json();
     })
     .then(data => {
         if (data.success) {
             // Password reset successfully
-            console.log('Password reset successfully');
+            document.getElementById('Forgotmessage').textContent = 'Password reset successfully';
+            Forgotmessage.style.color = 'green';
             reloadPage();
         } else {
             // Handle error
-            console.error(data.message);
-            
+            document.getElementById('Forgotmessage').textContent = 'Failed to reset password. Please try again.';
+            Forgotmessage.style.color = 'red';
         }
     })
     .catch(error => {
         console.error('Error:', error);
+        document.getElementById('Forgotmessage').textContent = 'An error occurred while resetting your password. Please try again.';
     });
 }
