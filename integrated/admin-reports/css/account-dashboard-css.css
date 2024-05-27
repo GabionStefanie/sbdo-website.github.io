@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
 
-html {
+
+.html{
 	font-size: 62.5%;
 }
 
@@ -14,15 +15,21 @@ html {
 	padding: 0;
 }
 
+
 body {
 	background-color: #DADADA;
+	
+}
+main{
+	margin-bottom: 3rem;
 }
 
 .profile-container {
 	background-color: #ffffff;
 	padding: 5rem;
-	margin: 7rem;
+	margin-inline: 7rem;
 	font-family: Inter;
+	margin-top: 3rem;
 }
 
 .profile-info {
@@ -107,305 +114,14 @@ body {
 	background-color: #343434;
 }
 
-.upcoming-appointments {
-	margin: 5rem 7rem;
-	background-color: white;
-	padding-bottom: 2rem;
-
-}
-
-.upcoming-appointments p {
-	color: #0946FF;
-	font-size: 4rem;
-	padding-top: 4rem;
-	padding-left: 3rem;
-	font-family: Inter;
-	font-weight: 600;
-}
-
-.line1 {
-	height: 2px;
-	background-color: #ccc;
-	margin: 1rem auto;
-}
-
-table {
-	border-collapse: collapse;
-	width: 100%;
-	margin: 3rem 4rem;
-}
-
-th {
-	border: none;
-	padding-bottom: 1rem;
-
-	text-align: left;
-	font-size: 1.5rem;
-	font-family: Lexend Deca;
-}
-
-td {
-	border: none;
-	padding-bottom: 3rem;
-
-	text-align: left;
-	font-size: 1.5rem;
-	font-family: Lexend Deca;
-}
-
-tr:nth-child(even) {
-	background-color: transparent;
-}
-
-tr:hover {
-	background-color: transparent;
-}
-
-.colspan2 {
-	background-color: transparent;
-}
-
-.resched-cancel-wrapper {
-	margin: 3rem 4rem;
-
-}
-
-.text-resched {
-	margin-top: 1.3rem;
-	font-size: 1.5rem;
-	font-family: Lexend Deca;
-	color: #FF0000;
-}
-
-.text-cancel {
-	font-size: 1.5rem;
-	margin-top: 2rem;
-	font-family: Lexend Deca;
-	color: #FF0000;
-}
-
-.text-resched+input[type="submit"] {
-	background-color: #FFA800;
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 25px;
-	cursor: pointer;
-	font-family: Lexend Deca;
-	font-size: 1.5rem !important;
-	margin-top: 1rem;
-}
-
-.text-resched+input[type="submit"]:hover {
-	background-color: #ec9d00;
-}
-
-.text-cancel+input[type="submit"] {
-	background-color: #FF0000;
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 25px;
-	cursor: pointer;
-	font-family: Lexend Deca;
-	font-size: 1.5rem !important;
-	margin-top: 1rem;
-}
-
-.text-cancel+input[type="submit"]:hover {
-	background-color: #cc0000;
-}
-
-.modal-container {
-	display: none;
-	position: fixed;
-	z-index: 999;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.5);
-
-}
-
-.modal-container h3 {
-	color: #ffffff;
-	font-size: 3rem;
-	font-family: Inter;
-	font-weight: 800;
-	background-color: #1E316A;
-	padding: 4rem 2rem 1rem !important;
-	margin: 0;
-
-}
-
-.modal-content {
-	background-color: #fff;
-	margin: 8% auto;
-	border: 1px solid #888;
-	width: 50%;
-}
-
-/*STYLE FOR MESSAGE FOR No upcoming-appointments */
-.no-appointments {
-    font-size: 1.8rem;
-    color: #888;
-    font-style: italic;
-    margin-top: 20px;
-	font-family: Montserrat;
-}
-
-.resched-form .form-group {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 1rem;
-
-}
-
-.resched-form .submit-container {
-	display: flex;
-	justify-content: flex-end;
-	margin-top: 1rem;
-
-}
-
-.resched-form input[type="date"],
-.resched-form input[type="time"] {
-	font-size: 2rem;
-
-	font-family: inherit;
-
-	padding: 1rem 2rem;
-	width: 75%;
-}
-
-.resched-form label {
-	font-size: 2rem;
-
-	font-family: Lexend Deca;
-	font-weight: 600;
-}
-
-.resched-form input[type="submit"] {
-	color: #fff;
-	padding: 10px 50px;
-	border: none;
-	border-radius: 25px;
-	cursor: pointer;
-	font-family: Lexend Deca;
-	font-size: 2rem !important;
-	margin-top: 2rem;
-	margin-left: 2rem;
-}
-
-.cancel-btn {
-	background-color: #FF0000;
-
-	color: #FFFFFF;
-
-}
-
-.confirm-btn {
-	background-color: #0946FF;
-
-	color: #ffffff;
-
-}
-
-.reschedule-contents {
-	padding: 2rem 3rem;
-}
-
-.modal-container P {
-	font-size: 2rem;
-	color: #ff0000;
-	font-family: Montserrat;
-	margin-bottom: 2rem;
-}
-
-#cancel-modal-container {
-	display: none;
-	position: fixed;
-	z-index: 999;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.5);
-
-}
-
-#cancel-modal-container h3 {
-	color: #ffffff;
-	font-size: 3rem;
-	font-family: Inter;
-	font-weight: 800;
-	background-color: #ff0000;
-	padding: 4rem 2rem 1rem !important;
-	margin: 0;
-
-}
-
-.cancel-form .cancel-contents {
-	padding: 2rem 3rem;
-}
-
-.cancel-form label {
-	font-size: 2rem;
-	font-weight: 700;
-	font-family: Lexend Deca;
-}
-
-.cancel-form #agree {
-	transform: scale(2);
-
-	margin-left: 10px;
-
-}
-
-.cancel-form input[type="submit"] {
-	color: #fff;
-	padding: 10px 50px;
-	border: none;
-	border-radius: 25px;
-	cursor: pointer;
-	font-family: Lexend Deca;
-	font-size: 2rem !important;
-	margin-top: 2rem;
-	margin-left: 2rem;
-}
-
-.submit-container {
-	display: flex;
-	justify-content: flex-end;
-
-	margin-top: 2rem;
-
-}
-
-.cancel-form .no-btn {
-	background-color: #FF0000;
-
-	color: #FFFFFF;
-
-}
-
-.cancel-form .yes-btn {
-	background-color: #0946FF;
-
-	color: #ffffff;
-
-}
-
 .settings-title {
 	color: #000000;
-	font-size: 5rem;
+	font-size: 3.5rem;
 	font-weight: 800;
 	background-color: #ffffff;
 	padding: 5rem;
-	margin: 7rem;
+	margin-top: 3rem;
+	margin-inline: 7rem;
 	font-family: Inter;
 	display: flex;
 	justify-content: space-between;
@@ -414,36 +130,34 @@ tr:hover {
 
 .settings-title2 {
 	color: #000000;
-	font-size: 5rem;
+	font-size: 3.5rem;
 	font-weight: 800;
 	background-color: #ffffff;
 	padding: 0;
-	margin-bottom: 2REM;
 	font-family: Inter;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 2rem;
+	
 }
 
 .content3 {
 	display: flex;
 	flex-direction: column;
-
 	color: #000000;
 	font-size: 5rem;
 	background-color: #ffffff;
-	margin: 7rem;
+	margin-inline: 7rem;
+	margin-bottom: 3rem;
 	padding: 0;
 	font-family: Inter;
 	justify-content: space-between;
-
 	align-items: center;
 }
 
 .content {
 	width: 100%;
-
-	margin-top: 2rem;
 }
 
 .account-settings {
@@ -454,7 +168,7 @@ tr:hover {
 .settings-title img,
 .settings-title2 img,
 .account-settings img {
-	width: 5rem;
+	width: 3rem;
 	height: auto;
 }
 
@@ -469,35 +183,23 @@ tr:hover {
 	margin-left: auto;
 	width: 5rem;
 	height: auto;
-	padding: 5rem0;
+	padding: 5rem;
 }
 
-.datas {
-	font-weight: 500;
-	font-size: 10rem;
-	margin-left: 5rem;
-	width: 100%;
-
-}
 
 .username,
 .password,
 .emailadd {
-	font-size: 3.5rem;
+	margin-left: 2rem;
+	font-weight: 500;
 	margin-bottom: 4rem;
+	margin-top: 2rem;
 }
 
-.datas ul {
-	list-style: none;
-	padding: 0;
-	margin-top: 2rem;
-	font-weight: 500;
-	font-size: 3.5rem;
-}
 
 .datas li {
 	display: flex;
-	margin-top: 2rem;
+	justify-content: space-between;
 	font-weight: 500;
 }
 
@@ -507,7 +209,7 @@ tr:hover {
 	color: #ff0000 !important;
 	cursor: pointer;
 	text-decoration: none !important;
-	font-size: 3.5rem;
+	font-size: 3rem;
 	font-family: inherit;
 }
 
@@ -515,20 +217,20 @@ tr:hover {
 	background-color: rgb(0, 0, 0);
 	color: white;
 	border: none;
-	padding: 2rem 5rem;
+	padding: 1rem 5rem;
 	cursor: pointer;
 	border-radius: 10rem;
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: 500;
 	font-family: Lexend Deca;
 	display: inline-block;
 	width: auto;
-	margin-bottom: 1REM;
 	margin-left: auto;
+	margin-top: 10vh;
 
 }
 
-.logout-button:hover {
+.logout-button:hover{
 	background-color: #333;
 }
 
@@ -561,6 +263,36 @@ tr:hover {
 	font-size: inherit;
 	font-family: inherit;
 }
+
+#showPassword{
+	pointer-events: none; 
+	border: none;
+	width: fit-content;
+	font-size: 1.6rem;
+	font-family: Inter;
+	font-weight: 500;
+}
+
+
+.password{
+	display:flex;
+	align-items: baseline;
+	height: fit-content;
+	flex-direction: column;
+}
+
+.password>div{
+	display: flex;
+	align-items: baseline;
+	/* gap: 1rem */
+}
+pre{
+	font-size: 1.6rem;
+	font-family: Inter;
+	font-weight: 500;
+}
+
+
 
 .modal {
 	position: fixed;
@@ -627,7 +359,7 @@ tr:hover {
 	font-family: Inter;
 }
 
-label {
+form label {
 	color: #000000;
 	font-size: 2rem;
 	cursor: pointer;
@@ -686,7 +418,21 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background-color: #3d3d3d;
 }
+input[type="button"], button {
+    background-color: #000000;
+    color: #fff;
+    padding: 1.5rem 3rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: Lexend Deca;
+    font-size: 1.5rem !important;
+    margin-top: 2rem;
+}
 
+input[type="button"]:hover, button:hover {
+    background-color: #3d3d3d;
+}
 .text-24hrs {
 	font-size: 2rem;
 	margin-top: 2rem;
@@ -779,38 +525,6 @@ input[type="submit"]:hover {
 
 
 
-@media screen and (max-width: 768px) {
-	.contactText {
-		font-size: 6rem;
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-}
-
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-	.contactText {
-		font-size: 8rem;
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-
-	.film2,
-	.film3 {
-		height: auto;
-	}
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-	.film2,
-	.film3 {
-		height: auto;
-	}
-}
-
 footer {
 	display: flex;
 	justify-content: space-evenly;
@@ -893,15 +607,11 @@ footer {
 }
 
 @media only screen and (min-width: 1800px) {
-	html {
-		font-size: 16px;
-	}
+
 }
 
 @media only screen and (max-width: 1375px) {
-	html {
-		font-size: 56.25%;
-	}
+
 
 	.container {
 		display: grid;
@@ -916,9 +626,7 @@ footer {
 }
 
 @media only screen and (max-width: 1060px) {
-	html {
-		font-size: 50%;
-	}
+
 
 	.service__logo {
 		margin-left: 2.5rem;
@@ -963,9 +671,7 @@ footer {
 }
 
 @media only screen and (max-width: 680px) {
-	html {
-		font-size: 38%;
-	}
+
 
 	.service__logo {
 		margin-left: 2.5rem;
@@ -979,9 +685,7 @@ footer {
 }
 
 @media only screen and (max-width: 530px) {
-	html {
-		font-size: 37.5%;
-	}
+
 
 	.container {
 		display: grid;
@@ -1033,14 +737,6 @@ footer {
 		width: 25vw;
 		font-size: 2rem;
 	}
-
-	.LOREM_IPSUM {
-		font-size: 1.4rem;
-	}
 }
 
-@media only screen and (max-width: 415px) {
-	html {
-		font-size: 30%;
-	}
-}
+
