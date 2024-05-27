@@ -501,7 +501,7 @@ function submitResetPassword(event) {
         } else {
             // Handle error
             console.error(data.message);
-            reloadPage
+            
         }
     })
     .catch(error => {
