@@ -44,6 +44,7 @@ if ($result->num_rows == 1) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,6 +53,8 @@ if ($result->num_rows == 1) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Contact Us | Sulit & Bagasan Dental Office</title>
 	<link rel="stylesheet" type="text/css" href="css/account-dashboard-css.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -137,10 +140,8 @@ if ($result->num_rows == 1) {
 								</li>
 							</ul>
 						</div>
-						<form action="" method="post">
-							<input type="submit" value="LOGOUT" class="logout-button" name="logout">
-						</form>
-						<!-- <div class="logout-button" onclick="logout()">LOGOUT</div> -->
+						
+							<button type="button" class="logout-button" id = "logout">LOGOUT </button>
 					</div>
 				</div>
 				<!-- Overlay -->
@@ -314,13 +315,23 @@ if ($result->num_rows == 1) {
 
 	<?php include '../header-footer/footer.php'    ?>
 <script src="account-dashboard-jscript.js"></script>
+<script>
+	
+
+var logout = document.getElementById('logout')	
+logout.addEventListener("click", ()=> {
+
+	$.ajax({
+		url: "logout.php",
+		type: "post",
+		data: {logout: "logout"},
+		success: function(data){
+			location.replace('../static-home-page/index.php')
+		}
+	})
+})
+		
+</script>
 </body>
 
 </html>
-
-<?php
-	if (isset($_POST["logout"])) {
-		session_destroy();
-		header("Location: ../static-home-page/index.php");
-	}
-?>
