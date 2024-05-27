@@ -46,10 +46,18 @@
             <p>Appointment Form</p>
         </div>
 
-        <div class="APPOINTMENT-FORM-container">
+        <div class="APPOINTMENT-FORM-container" id = "appointment">
             <form action="backend/process-appstep1.php" method="post" id="appstep1" novalidate style="text-align: left;">
                 <div class="input-group">
                     <div class="patient-information">Patient Information</div>
+
+                    <?php if (isset($_GET['error'])){ ?>
+
+                    <div class="error-message" style = "color: red" > Error: <?php echo $_GET['error']?> </div>
+
+               <?php } ?>
+
+
                     <div class="flex-group">
                         <label>Name</label>
                         <input type="text" id="fname" name="fname" placeholder="First Name" required>
@@ -106,7 +114,7 @@
                                 $conn = new mysqli("localhost", "root", "", "sbdoDatabase");
                                 $query = "SELECT scheduleDateTime FROM schedule WHERE status = 'available'";
                                 $result = mysqli_query($conn, $query);
-                                while ($row = mysqli_fetch_assoc($result)) {
+                                while ($row = mysqli_fetch_assoc($result)) {    
                                     $scheduleDate = $row["scheduleDateTime"];
                                     echo "<option value='$scheduleDate'>$scheduleDate</option>";
                                 }
@@ -126,9 +134,6 @@
                 </div>
             </form>
         </div>
-
-
-
         <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.775095013898!2d121.00472617494823!3d14.5548499859261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c96d86c62c73%3A0xe913d861b4f9bb63!2sSulit%20%26%20Bagasan%20Dental%20Office!5e0!3m2!1sen!2sph!4v1701731077552!5m2!1sen!2sph" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
