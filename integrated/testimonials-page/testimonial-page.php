@@ -26,8 +26,7 @@
         </div>
     </div>
     <?php include '../header-footer/header.php';
-    $User_ID = 1;
-    $_SESSION["User_ID"] =  $User_ID; // remove once cookie is functional
+  
     ?>
     <div class="wrapper">
         <div class="title">
