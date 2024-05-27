@@ -28,7 +28,7 @@ try {
         $password = $_POST["password"];
         
         // Prepare SQL statement to prevent SQL injection
-        $sql = "SELECT User_ID, Account_Type, Email, Password FROM ACCOUNT WHERE BINARY Username = ?";
+        $sql = "SELECT User_ID, Account_Type, Email, `Password` FROM ACCOUNT WHERE BINARY Username = ?";
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
             throw new Exception("Preparation failed: " . $conn->error);
