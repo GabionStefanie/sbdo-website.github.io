@@ -212,11 +212,18 @@ html {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.patient-information {
+.patient-information{
     font-family: "Josefin Sans", sans-serif;
     font-size: 2rem;
     color: #ffffff;
     margin-bottom: 1rem;
+}
+
+.error-message{
+    font-size: 1.5rem;
+	font-family: "Josefin Sans", sans-serif;
+	color: red;
+	margin-bottom: 1rem;
 }
 
 .input-group {

@@ -1,35 +1,53 @@
 <?php
 
-if (empty($_POST["fname"])) {
-    die("First name is required");
+if (empty ($_POST["fname"])) {
+    header("Location: ../appstep1.php?error=First Name is required");
+    return;
 }
 
-if (empty($_POST["lname"])) {
-    die("Last name is required");
+else if (empty($_POST["lname"])) {
+    header("Location: ../appstep1.php?error=Last Name is required");
+    return;
+
 }
 
-if (empty($_POST["pnum"])) {
-    die("Phone number is required");
+else if (empty($_POST["pnum"])) {
+    header("Location: ../appstep1.php?error=Phone Number is required");
+    return;
+
 }
 
-if (empty($_POST["email"])) {
-    die("Email is required");
+else if (empty($_POST["email"])) {
+    header("Location: ../appstep1.php?error=Email is required");
+    return;
+
 }
 
-if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    die("Valid email is required");
+else if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    header("Location: ../appstep1.php?error=Enter a Valid Email");
+    return;
+
 }
 
-if (empty($_POST["gender"])) {
-    die("Gender is required");
+else if (empty($_POST["gender"])) {
+    header("Location: ../appstep1.php?error=Gender is required");
+
+    return;
+
 }
 
-if (empty($_POST["apptype"])) {
-    die("Type of appointment is required");
+else if (empty($_POST["apptype"])) {
+    header("Location: ../appstep1.php?error=Appointment type is required");
+
+    return;
+
 }
 
-if (empty($_POST["date"])) {
-    die("Date is required");
+else if (empty($_POST["date"])) {
+    header("Location: ../appstep1.php?error=Enter a date");
+
+    return;
+
 }
 
 $mysqli = new mysqli("localhost", "root", "", "sbdoDatabase");
