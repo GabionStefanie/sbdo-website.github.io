@@ -60,7 +60,7 @@ function sendEmailForOTP($to, $subject, $message) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // GET USER DATA
-    $user_id = $_SESSION['userID']; // Assuming the user ID is stored in the session
+    $user_id = $_COOKIE['userID']; // Assuming the user ID is stored in the session
     $stmt = $conn->prepare("SELECT email FROM ACCOUNT WHERE user_id = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();

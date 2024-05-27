@@ -18,20 +18,18 @@
             <form id="changePasswordForm" action="backend/change_password.php" method="post">
                 <h1 class="title">FORGOT PASSWORD</h1>
                 <hr>
-                <!-- <p> -->
                 <div style="display: flex; flex-direction: column; align-items:baseline">
                     <label>New Password</label><br>
                     <input type="password" name="password" id="password" required>
 
-                    <!-- </p> -->
                     <div>
                         <input id="checkbox-pass1" type="checkbox" onclick="togglePasswordVisibility('password')" />
                         <label for="checkbox-pass1">Show Password</label><br>
                     </div>
-                    <!-- <p> -->
+                   
                     <label>Confirm Password</label><br>
                     <input type="password" name="confirm_password" id="confirm_password" required>
-                    <!-- </p> -->
+                 
                     <div>
                         <input id="checkbox-pass2" type="checkbox" onclick="togglePasswordVisibility('confirm_password')" />
                         <label for="checkbox-pass2"> Show Password</label>

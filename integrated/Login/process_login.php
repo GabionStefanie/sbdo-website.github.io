@@ -47,8 +47,6 @@ try {
             
             // Verify the password
             if (password_verify($password, $user["Password"])) {
-                // Set the session variable
-                $_SESSION["userID"] = $user['User_ID'];
 
                 // Set cookies for User_ID and Account_Type
                 setcookie("User_ID", $user["User_ID"], time() + (86400 * 30), "/"); // 86400 = 1 day
@@ -60,7 +58,7 @@ try {
                 // Send verification code email
                 $to = $user["Email"]; // Send verification code email to the email associated with the username
                 $subject = "Login Verification Code";
-                $message = "We have received your request for a single-use code to log in to your Sulit and Bagasan Dental Office Patient account.\n\nYour single-use code is: $verificationCode\n\nIf you didn't request this code, please contact us immediately.\n\nCordially yours,\n\nSulit and Bagasan Dental Office\n\n[This is an automated email. Do not reply. For inquiries, contact: email]";
+                $message = "We have received your request for a single-use code to log in to your Sulit and Bagasan Dental Office Patient account.\n\nYour single-use code is: $verificationCode\n\nIf you didn't request this code, please contact us immediately.\n\nCordially yours,\n\nSulit and Bagasan Dental Office\n\n[This is an automated email. Do not reply.]";
 
                 // Create a new PHPMailer instance
                 $mail = new PHPMailer(true);

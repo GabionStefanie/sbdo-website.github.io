@@ -118,7 +118,7 @@ function showCancelConfirmationModal() {
 
 // Get references to elements
 const rescheduleBtn = document.getElementById('rescheduleBtn');
-const cancelBtn = document.getElementById('cancelBtn');
+var cancelBtn = document.getElementById('cancelBtn');
 
 // Event listener for reschedule button click
 rescheduleBtn.addEventListener('click', function() {
@@ -191,7 +191,6 @@ function cancelAppointment() {
 const rescheduleForm = document.getElementById('rescheduleForm');
 const newDateInput = document.getElementById('newDate');
 const newTimeInput = document.getElementById('newTime');
-const cancelBtn = document.getElementById('cancelBtn');
 
 // Event listener for reschedule form submission
 rescheduleForm.addEventListener('submit', function(event) {
