@@ -75,8 +75,7 @@
         </div>
 
     </div>
-    <?php include '../header-footer/footer.php'
-    ?>
+    <?php include '../header-footer/footer.php'    ?>
 
     <script>
         document.getElementById("testimonialForm").addEventListener("submit", function(event) {

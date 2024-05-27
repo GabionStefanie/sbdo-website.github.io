@@ -1,6 +1,5 @@
 <?php
-
-require __DIR__ . "/database.php";
+$conn = new mysqli("localhost", "root", "", "sbdodatabase");
 
 $email = $_GET["email"] ?? "";
 
