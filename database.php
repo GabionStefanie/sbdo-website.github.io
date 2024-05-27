@@ -121,7 +121,7 @@ mysqli_query($conn, $createPxPainLevelTable);
 
 $createAccountTable = "CREATE TABLE IF NOT EXISTS `ACCOUNT` (
         `User_ID` INT AUTO_INCREMENT,
-        `Username` VARCHAR (20) NOT NULL,
+        `Username` VARCHAR (255) NOT NULL,
         `Password` VARCHAR (255) NOT NULL,
         `Email` VARCHAR (30) NOT NULL,
         `ProfilePicture` BLOB NOT NULL,
