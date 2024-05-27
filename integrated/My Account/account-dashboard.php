@@ -21,7 +21,6 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-session_start();
 // Prepare SQL statement to fetch the user data
 $sql = "SELECT * FROM ACCOUNT WHERE User_ID = ?";
 $stmt = $conn->prepare($sql);
