@@ -52,6 +52,13 @@ body {
 	margin-left: 2rem;
 }
 
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	border-radius: 50%;
+}
+
 .profile-label {
 	position: absolute;
 	top: 50%;
@@ -596,15 +603,11 @@ footer {
 }
 
 @media only screen and (min-width: 1800px) {
-	html {
-		/* font-size: 16px; */
-	}
+
 }
 
 @media only screen and (max-width: 1375px) {
-	html {
-		/* font-size: 56.25%; */
-	}
+
 
 	.container {
 		display: grid;
@@ -619,9 +622,7 @@ footer {
 }
 
 @media only screen and (max-width: 1060px) {
-	html {
-		/* font-size: 50%; */
-	}
+
 
 	.service__logo {
 		margin-left: 2.5rem;
@@ -666,9 +667,7 @@ footer {
 }
 
 @media only screen and (max-width: 680px) {
-	html {
-		/* font-size: 38%; */
-	}
+
 
 	.service__logo {
 		margin-left: 2.5rem;
@@ -682,9 +681,7 @@ footer {
 }
 
 @media only screen and (max-width: 530px) {
-	html {
-		/* font-size: 37.5%; */
-	}
+
 
 	.container {
 		display: grid;
@@ -743,9 +740,4 @@ footer {
 		/* font-size: 30%; */
 	}
 }
-.profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-	border-radius: 50%;
-}
+
