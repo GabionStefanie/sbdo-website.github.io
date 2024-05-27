@@ -15,7 +15,7 @@
     <?php include '../header-footer/header.php' ?>
     <div class="wrapper">
         <div class="form">
-            <form id="forgotForm" action="backend/process_forgot.php" method="post" onsubmit="return appendUsername(event)">
+            <form id="forgotForm" action="../backend/process_forgot.php" method="post" onsubmit="return appendUsername(event)">
                 <h1 class="title">FORGOT PASSWORD</h1>
                 <hr>
                 <p>
