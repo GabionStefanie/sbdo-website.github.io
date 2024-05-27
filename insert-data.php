@@ -44,9 +44,13 @@ VALUES
 ('2024-05-01 8:00', 'Available'),
 ('2024-05-02 8:00', 'Available');";
 
-$insertAccount = "INSERT INTO `ACCOUNT` (`Username`, `Password`, `Email`, `Account_Type`)
-VALUES
-      ('Arvie', 'arviearvie', 'sgabion.k12148528@umak.edu.ph', 'Admin');";
+      $password = "sulitandbagasan00";
+      $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+
+      $insertAccount = "INSERT INTO `ACCOUNT` (`Username`, `Password`, `Email`, `Account_Type`)
+      VALUES
+            ('Arvie', '$password_hash', 'sgabion.k12148528@umak.edu.ph', 'Admin');";
 
 $insertPatient = "INSERT INTO PATIENT (Name, email, phone) VALUES
 ('JohnDoe', 'john.doe@example.com', '123-456-7890'),
