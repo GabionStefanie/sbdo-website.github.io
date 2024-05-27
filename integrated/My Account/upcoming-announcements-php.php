@@ -15,10 +15,9 @@ if ($conn->connect_error) {
 // SQL query to select upcoming appointments
 $sql = "SELECT 
     a.Appointment_ID,
-    a.Appointment_Note,
+    a.Service_ID AS `Appointment Type`,
     a.Time_Created AS `Time Created`,
-    s.scheduleDate AS `Appointment Date`,
-    s.scheduleTime AS `Appointment Time`,
+    s.scheduleDateTime AS `Appointment Date`,
     patient.Name AS `Patient Name`,
     patient.Phone AS `Patient Phone`,
     patient.Email AS `Patient Email`,
@@ -34,9 +33,9 @@ JOIN
 JOIN
     PAYMENT p ON r.PaymentDetails_ID = p.PaymentDetails_ID
 WHERE 
-    s.scheduleDate >= CURDATE()
+    s.scheduleDateTime >= CURDATE()
 ORDER BY 
-    s.scheduleDate ASC";
+    s.scheduleDateTime ASC";
 
 $result = $conn->query($sql);
 
@@ -54,7 +53,7 @@ if ($result->num_rows > 0) {
         
         // Output appointment details within table cells
         echo "<td>" . $row["Patient Name"] . "</td>";
-        echo "<td>" . $row["Appointment_Note"] . "</td>";
+        echo "<td>" . $row["Appointment Type"] . "</td>";
         echo "<td>" . date("m/d/Y", strtotime($row["Time Created"])) . "</td>";
         echo "<td>" . date("m/d/Y", strtotime($row["Appointment Date"])) . "</td>";
         echo "<td>" . $row["Amount"] . "</td>";

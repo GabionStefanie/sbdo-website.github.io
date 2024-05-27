@@ -6,11 +6,7 @@
 		<title>Contact Us | Sulit & Bagasan Dental Office</title>
 		<link rel="stylesheet" type="text/css" href="css/admin--reports [clients]-css.css">
 		<style>
-    		<?php include '../header-footer/header-footer.css';
-			setcookie("User_ID", "1", time() + 86400, "/");
-			setcookie("User_Type", "Admin", time() + 86400, "/");
-			
-			?>
+    		<?php include '../header-footer/header-footer.css';?>
 			
 		</style>
 	</head>
