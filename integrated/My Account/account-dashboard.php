@@ -1,5 +1,7 @@
 <html>
-<?php include  '../header-footer/header.php'; ?>
+<?php 
+session_start();
+include  '../header-footer/header.php'; ?>
 <style>
 	<?php include '../header-footer/header-footer.css' ?>
 </style>
@@ -240,7 +242,7 @@ if ($result->num_rows == 1) {
 								<input type="password" name="newPassword" required> <!-- Changed ID and name -->
 								<label for="confirmNewPassword">Confirm New Password:</label>
 								<input type="password" name="confirmNewPassword" required> <!-- Changed ID and name -->
-								<div id="otpUsernameMessage" style="color: red; font-size: 14px;"></div>
+								<div id="Forgotmessage" style="color: red; font-size: 14px;"></div>
 								<input type="submit" value="SUBMIT">
 							</form>
 						</div>
