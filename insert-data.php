@@ -37,7 +37,7 @@ VALUES
 ('Prosthodontic'), ('Removable Applicables'), ('Orthodontics'), ('Root Canal Treatment'),
 ('Pediatric Dentistry'), ('Bleaching'), ('Emergency Treatment'), ('Retainers')";
 
-$insertSchedule = "INSERT INTO SCHEDULE (scheduleDate,`Status`)
+$insertSchedule = "INSERT INTO SCHEDULE (scheduleDateTime,`Status`)
 VALUES 
 ('2024-05-30 8:00', 'Available'),
 ('2024-05-31 8:00', 'Available'),

@@ -12,6 +12,7 @@ $conne->close();
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+
 $createPaymentTable = "CREATE TABLE IF NOT EXISTS PAYMENT (
         `PaymentDetails_ID` INT AUTO_INCREMENT,
         `Amount` INT (10) NOT NULL,
@@ -47,7 +48,7 @@ mysqli_query($conn, $createPxHealthSymptomsTable);
 
 $createScheduleTable = "CREATE TABLE IF NOT EXISTS SCHEDULE (
   Schedule_ID INT AUTO_INCREMENT,
-  scheduleDate DATETIME NOT NULL,
+  scheduleDateTime DATETIME NOT NULL,
   Status VARCHAR (15) NOT NULL,
   CONSTRAINT PK_ScheduleID PRIMARY KEY (Schedule_ID),
   CONSTRAINT CHK_Status CHECK (Status IN ('Available', 'Not Available')));";
@@ -121,11 +122,11 @@ mysqli_query($conn, $createPxPainLevelTable);
 $createAccountTable = "CREATE TABLE IF NOT EXISTS `ACCOUNT` (
         `User_ID` INT AUTO_INCREMENT,
         `Username` VARCHAR (20) NOT NULL,
-        `Password` VARCHAR (25) NOT NULL,
+        `Password` VARCHAR (255) NOT NULL,
         `Email` VARCHAR (30) NOT NULL,
         `ProfilePicture` BLOB NOT NULL,
         `Account_Type` VARCHAR (10) NOT NULL,
-        `account_activation_hash` VARCHAR (64), 
+        `account_activation_hash` VARCHAR (255), 
         `activation_expiry` DATETIME,
         CONSTRAINT PK_UserPatientID PRIMARY KEY (`User_ID`)
       )";

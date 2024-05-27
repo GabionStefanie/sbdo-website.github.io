@@ -14,25 +14,29 @@ if ($conn->connect_error) {
 
 // SQL query to select upcoming appointments
 $sql = "SELECT 
-    appointment.Appointment_ID,
-    appointment.Appointment_Note,
-    appointment.Time_Created,
-    schedule.scheduleDate AS Appointment_Date,
-    appointment.Appointment_Time,
-    patient.Name AS Patient_Name,
-    patient.Phone AS Patient_Phone,
-    patient.Email AS Patient_Email,
-    appointment.Amount
+    a.Appointment_ID,
+    a.Appointment_Note,
+    a.Time_Created AS `Time Created`,
+    s.scheduleDate AS `Appointment Date`,
+    s.scheduleTime AS `Appointment Time`,
+    patient.Name AS `Patient Name`,
+    patient.Phone AS `Patient Phone`,
+    patient.Email AS `Patient Email`,
+    p.Amount AS `Amount`
 FROM 
-    appointment
+    appointment a
 JOIN 
-    patient ON appointment.Patient_ID = patient.Patient_ID
+    PATIENT ON a.Patient_ID = patient.Patient_ID
 JOIN 
-    schedule ON appointment.Schedule_ID = schedule.Schedule_ID
+    SCHEDULE s ON a.Schedule_ID = s.Schedule_ID
+JOIN 
+    RECORD r ON a.Appointment_ID = r.Appointment_ID
+JOIN
+    PAYMENT p ON r.PaymentDetails_ID = p.PaymentDetails_ID
 WHERE 
-    schedule.scheduleDate >= CURDATE()
+    s.scheduleDate >= CURDATE()
 ORDER BY 
-    schedule.scheduleDate ASC";
+    s.scheduleDate ASC";
 
 $result = $conn->query($sql);
 
@@ -49,10 +53,10 @@ if ($result->num_rows > 0) {
         echo "<tr>";
         
         // Output appointment details within table cells
-        echo "<td>" . $row["Patient_Name"] . "</td>";
+        echo "<td>" . $row["Patient Name"] . "</td>";
         echo "<td>" . $row["Appointment_Note"] . "</td>";
-        echo "<td>" . date("m/d/Y", strtotime($row["Time_Created"])) . "</td>";
-        echo "<td>" . date("m/d/Y", strtotime($row["Appointment_Date"])) . "</td>";
+        echo "<td>" . date("m/d/Y", strtotime($row["Time Created"])) . "</td>";
+        echo "<td>" . date("m/d/Y", strtotime($row["Appointment Date"])) . "</td>";
         echo "<td>" . $row["Amount"] . "</td>";
         
         // End table row
