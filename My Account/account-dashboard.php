@@ -6,8 +6,6 @@
 
 </html>
 
-
-
 <?php
 // $_SESSION["userID"] = 1;
 $servername = "localhost";
@@ -84,14 +82,13 @@ if ($result->num_rows == 1) {
 						<p class="profile-name"><b>USERNAME:</b> <?php echo $user["Username"]; ?></p>
 						<p class="profile-email"><b>EMAIL:</b> <?php echo $user["Email"]; ?></p>
 						<a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
-
 					</div>
 				</div>
 				<div class="divider"></div>
 				<div class="row">
 					<div class="buttons-transac-appoint">
-						<a href="transactions-html.html" class="btn btn-primary">TRANSACTION</a>
-						<a href="upcoming-announcements-html.html" class="btn btn-primary">APPOINTMENTS</a>
+						<a href="transactions-page.php" class="btn btn-primary">TRANSACTION</a>
+						<a href="upcoming-announcements-page.php" class="btn btn-primary">APPOINTMENTS</a>
 					</div>
 				</div>
 			</div>
@@ -129,12 +126,10 @@ if ($result->num_rows == 1) {
 									<button onclick="showModal('username')">Change</button>
 								</li>
 								<li>
-
 									<div class="password">
 										<div>Password: <input type="password" readonly id = "showPassword" value="<?php echo $user["Password"] ?>"></div>
 										<div><input type="checkbox" name="" id="show-password" style="display: block" onclick = "showPassword('showPassword')"> <span><pre>  Show Password<pre></pre></span> </div> 
 									</div>
-
 									<button onclick="showModal('password')">Change</button>
 								</li>
 								<li>
