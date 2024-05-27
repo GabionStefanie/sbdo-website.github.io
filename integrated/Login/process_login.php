@@ -13,7 +13,7 @@ $username = "root";
 $password = "";
 $dbname = "sbdoDatabase";
 
-try {
+// try {
     // Create a connection to the database
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -53,48 +53,48 @@ try {
                 setcookie("Account_Type", $user["Account_Type"], time() + (86400 * 30), "/");
                 
                 // Generate verification code
-                $verificationCode = generateVerificationCode();
+                // $verificationCode = generateVerificationCode();
                 
                 // Send verification code email
-                $to = $user["Email"]; // Send verification code email to the email associated with the username
-                $subject = "Login Verification Code";
-                $message = "We have received your request for a single-use code to log in to your Sulit and Bagasan Dental Office Patient account.\n\nYour single-use code is: $verificationCode\n\nIf you didn't request this code, please contact us immediately.\n\nCordially yours,\n\nSulit and Bagasan Dental Office\n\n[This is an automated email. Do not reply.]";
+                // $to = $user["Email"]; // Send verification code email to the email associated with the username
+                // $subject = "Login Verification Code";
+                // $message = "We have received your request for a single-use code to log in to your Sulit and Bagasan Dental Office Patient account.\n\nYour single-use code is: $verificationCode\n\nIf you didn't request this code, please contact us immediately.\n\nCordially yours,\n\nSulit and Bagasan Dental Office\n\n[This is an automated email. Do not reply.]";
 
                 // Create a new PHPMailer instance
-                $mail = new PHPMailer(true);
-                try {
+                // $mail = new PHPMailer(true);
+                // try {
                     // Server settings
-                    $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';
-                    $mail->SMTPAuth = true;
-                    $mail->Username = 'no.reply.sulitandbagasan@gmail.com'; // Your Gmail email address
-                    $mail->Password = 'pkxnihmyrjsmfuwq'; // Your Gmail App Password
-                    $mail->SMTPSecure = 'tls'; // Use TLS encryption
-                    $mail->Port = 587; // Set the SMTP port to 587
+                    // $mail->isSMTP();
+                    // $mail->Host = 'smtp.gmail.com';
+                    // $mail->SMTPAuth = true;
+                    // $mail->Username = 'no.reply.sulitandbagasan@gmail.com'; // Your Gmail email address
+                    // $mail->Password = 'pkxnihmyrjsmfuwq'; // Your Gmail App Password
+                    // $mail->SMTPSecure = 'tls'; // Use TLS encryption
+                    // $mail->Port = 587; // Set the SMTP port to 587
                     
                     // Recipients
-                    $mail->setFrom('no.reply.sulitandbagasan@gmail.com', 'Sulit and Bagasan Dental Office');
-                    $mail->addAddress($to);
+                    // $mail->setFrom('no.reply.sulitandbagasan@gmail.com', 'Sulit and Bagasan Dental Office');
+                    // $mail->addAddress($to);
                     
-                    // Content
-                    $mail->isHTML(false); // Set to false to send as plain text
-                    $mail->Subject = $subject;
-                    $mail->Body = $message;
+                    // // Content
+                    // $mail->isHTML(false); // Set to false to send as plain text
+                    // $mail->Subject = $subject;
+                    // $mail->Body = $message;
                     
-                    // Send the email
-                    $mail->send();
+                    // // Send the email
+                    // $mail->send();
                     
-                    // Store verification code in session
-                    $_SESSION["verification_code"] = $verificationCode;
+                    // // Store verification code in session
+                    // $_SESSION["verification_code"] = $verificationCode;
                     
                     // Redirect to verification page
                     header("Location: ../My Account/account-dashboard.php");
                     exit;
-                } catch (Exception $e) {
+                // } catch (Exception $e) {
                     // Display error message if email sending fails
-                    echo "<div class='error'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</div>";
+                    // echo "<div class='error'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</div>";
                 }
-            } else {
+            // } else {
                 // Incorrect password
                 echo "<div class='error'>Incorrect password</div>";
             }
@@ -106,13 +106,13 @@ try {
         // Close the statement and connection
         $stmt->close();
         $conn->close();
-    }
-} catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
-}
+    // }
+// } catch (Exception $e) {
+//     echo 'Caught exception: ',  $e->getMessage(), "\n";
+// }
 
 // Function to generate a random verification code
-function generateVerificationCode() {
-    return rand(100000, 999999); // Generate a random 6-digit number
-}
+// function generateVerificationCode() {
+//     return rand(100000, 999999); // Generate a random 6-digit number
+// }
 ?>
