@@ -72,7 +72,7 @@ $stmt->execute();
                 
     <h1>Account Activation</h1>
 
-<p> Account activated successfully. You can now <a href = "../login-forgot-password/login.php"> log in </a>.</p>
+<p> Account activated successfully. You can now <a href = "../Login/login.php"> log in </a>.</p>
 
 
 
