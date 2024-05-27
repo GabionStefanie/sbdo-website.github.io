@@ -16,7 +16,7 @@ $profileframe = "";
 if ($Account_Type === 'Patient') {
     $profileframe = '<a href="../My Account/account-dashboard.php" class="nav__link"><div class="profile-frame"></div></a>';
 } elseif ($Account_Type === 'Admin') {
-    $profileframe = '<a href="../admin-reports/admin--reports [clients]-page.php" class="nav__link"><div class="profile-frame"></div></a>';
+    $profileframe = '<a href="../admin-reports/account-dashboard.php" class="nav__link"><div class="profile-frame"></div></a>';
 } else {
     $profileframe = '<a href="../Login/login.php" class="nav__link"><div class="profile-frame"></div></a>';
 }
