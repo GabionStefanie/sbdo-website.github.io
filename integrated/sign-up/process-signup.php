@@ -8,7 +8,7 @@ if (empty($_POST["email"])) {
     die("Email is required");
 }
 
-if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     die("Valid email is required");
 }
 
@@ -16,11 +16,11 @@ if (strlen($_POST["password"]) < 8) {
     die("Password must be at least 8 characters");
 }
 
-if ( ! preg_match("/[a-z]/i", $_POST["password"])) {
+if (!preg_match("/[a-z]/i", $_POST["password"])) {
     die("Password must contain at least one letter");
 }
 
-if ( ! preg_match("/[0-9]/", $_POST["password"])) {
+if (!preg_match("/[0-9]/", $_POST["password"])) {
     die("Password must contain at least one number");
 }
 
@@ -34,7 +34,7 @@ $activation_token = bin2hex(random_bytes(16));
 
 $activation_token_hash = hash("sha256", $activation_token);
 
-$activation_expiry = date("Y-m-d H:i:s", time()+ 60 * 30);
+$activation_expiry = date("Y-m-d H:i:s", time() + 60 * 30);
 
 $mysqli = new mysqli("localhost", "root", "", "sbdodatabase");
 
@@ -53,26 +53,28 @@ $query = mysqli_query($mysqli, $SelectEmailSQL);
 $result = mysqli_fetch_assoc($query);
 
 if (mysqli_num_rows($query) > 0) {
-    die("Email already taken"); 
+    die("Email already taken");
 }
 
 $sql = "INSERT INTO account (username, email, password, account_type, account_activation_hash, activation_expiry)
         VALUES (?, ?, ?, ?, ?,?)";
-        
+
 $stmt = $mysqli->stmt_init();
 
-if ( ! $stmt->prepare($sql)) {
+if (!$stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
 $Account_Type = 'Patient';
-$stmt->bind_param("ssssss",
-                  $username,
-                  $email, // Email should come before gender
-                  $password_hash,
-                  $Account_Type,
-                  $activation_token_hash,
-                  $activation_expiry);
+$stmt->bind_param(
+    "ssssss",
+    $username,
+    $email, // Email should come before gender
+    $password_hash,
+    $Account_Type,
+    $activation_token_hash,
+    $activation_expiry
+);
 
 if ($stmt->execute()) {
 
@@ -91,7 +93,6 @@ if ($stmt->execute()) {
     try {
 
         $mail->send();
-
     } catch (Exception $e) {
 
         echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
@@ -100,5 +101,4 @@ if ($stmt->execute()) {
 
     header("Location: signup-success.php");
     exit;
-    
-} 
+}

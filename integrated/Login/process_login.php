@@ -92,15 +92,16 @@ try {
                     exit;
                 } catch (Exception $e) {
                     // Display error message if email sending fails
-                    echo "<div class='error'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</div>";
+                    header("Location: login.php?error={$mail->ErrorInfo}");
                 }
             } else {
                 // Incorrect password
-                echo "<div class='error'>Incorrect password</div>";
+                header("Location: login.php?error=Incorrect Password");
+
             }
         } else {
             // User not found
-            echo "<div class='error'>User not found</div>";
+            header("Location: login.php?error=User Not Found");
         }
         
         // Close the statement and connection

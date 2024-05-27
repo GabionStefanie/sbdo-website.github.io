@@ -1,4 +1,4 @@
-<?php include '../header-footer/header.php' ?>  
+<?php include '../header-footer/header.php' ?>
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    
+
     <div class="wrapper">
         <div class="form">
             <form action="process_login.php" method="post" onsubmit="return validateForm()">
@@ -25,17 +25,26 @@
                 </p>
 
                 <p><label>Password:</label><br>
-                <input type="password" id="passwordInput" name="password"><br>
-                <input id="checkbox-pass" type="checkbox" onclick="togglePasswordVisibility('passwordInput')" />
-                <label for="checkbox-pass"> Show Password</label><br>
+                    <input type="password" id="passwordInput" name="password"><br>
+                    <input id="checkbox-pass" type="checkbox" onclick="togglePasswordVisibility('passwordInput')" />
+                    <label for="checkbox-pass"> Show Password</label><br>
+
+                    <?php if (isset($_GET['error'])) { ?>
+                    <p class="text" style = "color: red"> Error: <?php echo $_GET['error'] ?></p>
+
+                <?php } ?>
+
                 <p class="forgotPS_link"><a href="../Forgot Password/forgot_PS.php">Forgot password?</a></p>
                 </p>
-
                 <div class="button-container">
                     <input type="submit" value="LOGIN">
                 </div>
                 <p class="text">Don't have an account?</p>
                 <p class="Signup_link"><a href="../sign-up/signup-page.php">Signup</a></p>
+
+
+
+
 
             </form>
         </div>
