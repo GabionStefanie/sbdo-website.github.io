@@ -1,3 +1,4 @@
+account-dashboard-jscript.js
 function toggleContent() {
     var content = document.getElementById('content');
     if (content.style.display === 'none' || content.style.display === '') {
@@ -11,6 +12,7 @@ function showModal(modalType) {
     var overlay = document.getElementById('overlay');
     var modal = document.getElementById('modal' + modalType.charAt(0).toUpperCase() + modalType.slice(1)); // Capitalize first letter
 
+    console.log(modal);
     // Close all modals first
     closeModal();
 
@@ -186,7 +188,7 @@ function submitForgotPassword(event) {
     event.preventDefault(); // Prevent default form submission
 
     // Fetch the form data
-    const forgotPasswordForm = document.getElementById('formForgotPassword');
+    const forgotPasswordForm = document.getElementById('forgotPasswordForm');
     let forgotPasswordData = new FormData(forgotPasswordForm);
 
     // Send an AJAX request to the server
@@ -196,11 +198,8 @@ function submitForgotPassword(event) {
     })
     .then(response => response.json())
     .then(data => {
-        // Handle the response data
-        console.log(data);
-
         // Show the additional modal after form submission
-        showModal('modalAdditionalForgotPassword');
+        showModal('resetPassword');
     })
     .catch(error => {
         // Handle the error
@@ -312,31 +311,6 @@ function submitOTPUsername(event) {
 
 
 // Function to handle submission of the forgot password form
-function submitForgotPassword(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Fetch the form data
-    const forgotPasswordForm = document.getElementById('forgotPasswordForm');
-    const forgotPasswordData = new FormData(forgotPasswordForm);
-
-    // Send an AJAX request to the server
-    fetch('changePassword.php', {
-        method: 'POST',
-        body: forgotPasswordData
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Handle the response data
-        console.log(data);
-
-        // Show the additional modal after form submission
-        showModal('additionalPassword');
-    })
-    .catch(error => {
-        // Handle the error
-        console.error('Error:', error);
-    });
-}
 
 function submitEmail(event) {
     event.preventDefault(); // Prevent default form submission
@@ -489,4 +463,32 @@ function showForgotPasswordModal() {
 
     changePasswordModal.style.display = 'none';
     forgotPasswordModal.style.display = 'block'; 
+}
+
+function submitResetPassword(event) {
+    event.preventDefault();
+
+    const resetPasswordForm = document.getElementById('resetPasswordForm');
+    const resetPasswordData = new FormData(resetPasswordForm);
+
+    fetch('changePassword.php', {
+        method: 'POST',
+        body: resetPasswordData
+    })
+    .then(response => {
+        console.log(response.text());   
+        response.json()
+    })
+    .then(data => {
+        if (data.success) {
+            // Password reset successfully
+            console.log('Password reset successfully');
+        } else {
+            // Handle error
+            console.error(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
