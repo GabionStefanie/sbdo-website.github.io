@@ -32,7 +32,7 @@
           <br />
           Check out our wide range of services for your dental needs.
         </div>
-        <a href="../services-page/services.php" class="learn_more_link"> LEARN MORE </a>
+        <a href="../static-services-page/services.php" class="learn_more_link"> LEARN MORE </a>
       </div>
     </div>
 

@@ -351,6 +351,6 @@ if ($result->num_rows == 1) {
 	if (isset($_POST["logout"])) {
 		session_destroy();
 		// PALITAN KUNG SAAN DAPAT MAPUNTA AFTER LOGOUT
-		header("Location: ../index.php");
+		header("Location: ../static-home-page/index.php");
 	}
 ?>
