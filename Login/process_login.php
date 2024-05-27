@@ -90,7 +90,7 @@ try {
                     $_SESSION["verification_code"] = $verificationCode;
                     
                     // Redirect to verification page
-                    header("Location: ../My Account/account-dashboard-html.php");
+                    header("Location: ../My Account/account-dashboard.php");
                     exit;
                 } catch (Exception $e) {
                     // Display error message if email sending fails
