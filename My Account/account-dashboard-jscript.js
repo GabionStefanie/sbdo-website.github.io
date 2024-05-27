@@ -112,88 +112,71 @@ xhr.onload = function () {
 xhr.send(formData);
 }
 
+const changePasswordForm = document.getElementById('formPassword');
 function submitPassword(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Fetch the form data
-    var form = document.getElementById('formPassword');
-    if (!form) {
-        console.error('Form not found');
-        return;
-    }
-
-    var formData = new FormData(form);
+    event.preventDefault();    
+    const newPasswordData = new FormData(changePasswordForm);
 
     // Send an AJAX request to the server
     fetch('changePassword.php', {
         method: 'POST',
-        body: formData
+        body: newPasswordData
     })
-    .then(response => response.json())
+    .then(response => {
+        // console.log(response.text());   
+        return response.json();
+    })
     .then(data => {
         if (data.success) {
             // Hide the first modal
-            var firstModal = document.getElementById('modalPassword');
-            if (firstModal) {
-                firstModal.style.display = 'none'; 
-            } else {
-                console.error('First modal not found');
-            }
-        
-            // Show the OTP verification modal
-            var secondModal = document.getElementById('modalAdditionalPassword');
-            if (secondModal) {
-                secondModal.style.display = 'block'; 
-            } else {
-                console.error('Second modal not found');
-            }
-        }
-    }
-)}
+            const firstModal = document.getElementById('modalPassword');
+            const secondModal = document.getElementById('modalAdditionalPassword');
 
+            firstModal.style.display = 'none';
+            secondModal.style.display = 'block'; 
+        } else {
+            // Handle error
+            console.error(data.message);
+        }
+    });
+}
+
+const submitPasswordOtpForm = document.getElementById('formOTPPassword');
 function submitOTPPassword(event) {
     event.preventDefault();
 
-    var otpInput = document.getElementById('otpPassword');
-    var newPasswordInput = document.getElementById('newPassword');
-    if (!otpInput.value || !newPasswordInput.value) {
-        // OTP or new password not entered
-        alert('Please enter the OTP and new password');
-        return;
-    }
+    let newPasswordOtpData = new FormData(submitPasswordOtpForm);
 
-    var formData = new FormData();
-    formData.append('otpResetPassword', otpInput.value);
-    formData.append('newPassword', newPasswordInput.value);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'changePassword.php', true); // Replace with the URL of your server script
-    xhr.onload = function () {
-        var otpPasswordMessage = document.getElementById('otpPasswordMessage');
-        if (xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            if (response.success) {
-                // OTP validated and password updated successfully
-                // Display a success message
-                if (otpPasswordMessage) {
-                    otpPasswordMessage.textContent = response.message;
-                    otpPasswordMessage.style.color = 'green';
-                }
-
-            } else {
-                // An error occurred while validating the OTP or updating the password
-                handleErrorMessage(otpPasswordMessage, response.message);
-            }
+    fetch('changePassword.php', {
+        method: 'POST',
+        body: newPasswordOtpData
+    })
+    .then(response => {
+        console.log(response.text());
+        if (response.ok) {
+            return response.json();
         } else {
-            // An error occurred while making the HTTP request
-            handleErrorMessage(otpPasswordMessage, 'An error occurred while making the HTTP request.');
+            throw new Error('An error occurred while making the HTTP request.');
         }
-    };
-    xhr.onerror = function () {
+    })
+    .then(data => {
+        if (data.success) {
+            // OTP validated and password updated successfully
+            // Display a success message
+            const otpPasswordMessage = document.getElementById('otpPasswordMessage');
+            otpPasswordMessage.textContent = data.message;
+            otpPasswordMessage.style.color = 'green';
+        } else {
+            // An error occurred while validating the OTP or updating the password
+            const otpPasswordMessage = document.getElementById('otpPasswordMessage');
+            // handleErrorMessage(otpPasswordMessage, data.message);
+        }
+    })
+    .catch(error => {
         // An error occurred during the HTTP request
-        handleErrorMessage(otpPasswordMessage, 'An error occurred during the HTTP request.');
-    };
-    xhr.send(formData);
+        var otpPasswordMessage = document.getElementById('otpPasswordMessage');
+        // handleErrorMessage(otpPasswordMessage, error.message);
+    });
 }
 
 
@@ -203,13 +186,13 @@ function submitForgotPassword(event) {
     event.preventDefault(); // Prevent default form submission
 
     // Fetch the form data
-    var form = document.getElementById('formForgotPassword');
-    var formData = new FormData(form);
+    const forgotPasswordForm = document.getElementById('formForgotPassword');
+    let forgotPasswordData = new FormData(forgotPasswordForm);
 
     // Send an AJAX request to the server
     fetch('changePassword.php', {
         method: 'POST',
-        body: formData
+        body: forgotPasswordData
     })
     .then(response => response.json())
     .then(data => {
@@ -333,13 +316,13 @@ function submitForgotPassword(event) {
     event.preventDefault(); // Prevent default form submission
 
     // Fetch the form data
-    var form = document.getElementById('formForgotPassword');
-    var formData = new FormData(form);
+    const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+    const forgotPasswordData = new FormData(forgotPasswordForm);
 
     // Send an AJAX request to the server
     fetch('changePassword.php', {
         method: 'POST',
-        body: formData
+        body: forgotPasswordData
     })
     .then(response => response.json())
     .then(data => {
@@ -347,7 +330,7 @@ function submitForgotPassword(event) {
         console.log(data);
 
         // Show the additional modal after form submission
-        showModal('additionalForgotPassword');
+        showModal('additionalPassword');
     })
     .catch(error => {
         // Handle the error
@@ -451,6 +434,27 @@ function submitOTPEmail(event) {
     xhr.send(formData);
 }
 
+function resendPasswordOtp(event) {
+    event.preventDefault(); // Prevent default form submission
+    let resendPasswordData = new FormData();
+    resendPasswordData.append('resend', true);
+    
+    fetch('changePassword.php', {
+        method: 'POST',
+        body: resendPasswordData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // OTP sent successfully
+            console.log('OTP sent successfully');
+        } else {
+            // Handle error
+            console.error(data.message);
+        }
+    })
+}
+
 function resendOTP(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -476,4 +480,13 @@ function resendOTP(event) {
     .catch(error => {
         console.error('Error:', error);
     });
+}
+
+function showForgotPasswordModal() {
+    // Hide the first modal
+    const changePasswordModal = document.getElementById('modalPassword');
+    const forgotPasswordModal = document.getElementById('modalForgotPassword');
+
+    changePasswordModal.style.display = 'none';
+    forgotPasswordModal.style.display = 'block'; 
 }
