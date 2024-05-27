@@ -1,31 +1,44 @@
 <?php
 
 if (empty($_POST["username"])) {
-    die("Username is required");
+    header("Location: signup-page.php?error=Username is required");
+    return;
 }
 
-if (empty($_POST["email"])) {
-    die("Email is required");
+else if (empty($_POST["email"])) {
+    header("Location: signup-page.php?error=Email is required");
+    return;
 }
 
-if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    die("Valid email is required");
+else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+
+    header("Location: signup-page.php?error=Valid email is required");
+
+    return;
+
 }
 
-if (strlen($_POST["password"]) < 8) {
-    die("Password must be at least 8 characters");
+else if (strlen($_POST["password"]) < 8) {
+    header("Location: signup-page.php?error=Password must be at least 8 characters");
+    return;
 }
 
-if (!preg_match("/[a-z]/i", $_POST["password"])) {
-    die("Password must contain at least one letter");
+else if (!preg_match("/[a-z]/i", $_POST["password"])) {
+    header("Location: signup-page.php?error=Password must contain at least one letter");
+    return;
+
 }
 
-if (!preg_match("/[0-9]/", $_POST["password"])) {
-    die("Password must contain at least one number");
+else if (!preg_match("/[0-9]/", $_POST["password"])) {
+
+    header("Location: signup-page.php?error=Password must contain at least one number");
+    return;
+
 }
 
-if ($_POST["password"] !== $_POST["password_confirmation"]) {
-    die("Passwords must match");
+else if ($_POST["password"] !== $_POST["password_confirmation"]) {
+    header("Location: signup-page.php?error=Password must match");
+    return;
 }
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
@@ -53,7 +66,8 @@ $query = mysqli_query($mysqli, $SelectEmailSQL);
 $result = mysqli_fetch_assoc($query);
 
 if (mysqli_num_rows($query) > 0) {
-    die("Email already taken");
+    header("Location: signup-page.php?error=Email already taken");
+    return;
 }
 
 $sql = "INSERT INTO account (username, email, password, account_type, account_activation_hash, activation_expiry)
@@ -94,8 +108,7 @@ if ($stmt->execute()) {
 
         $mail->send();
     } catch (Exception $e) {
-
-        echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+        header("Location: signup-page.php?error=Message could not be sent. Mailer error: {$mail->ErrorInfo}");
         exit;
     }
 

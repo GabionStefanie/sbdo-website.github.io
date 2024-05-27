@@ -38,7 +38,13 @@
                 <label>Confirm Password:</label><br>
                 <input type="password" id="password_confirmation" name="password_confirmation">
                 <input id="checkbox-pass2" type="checkbox" onclick="togglePasswordVisibility('password_confirmation')" />
-                <label for="checkbox-pass2"> Show Password</label>
+                <label for="checkbox-pass2"> Show Password</label><br>
+                <?php    
+                    if(isset($_GET['error'])){
+                ?>
+                <p class = "error-message"> Error: <?php echo $_GET['error']?> </p>
+
+                <?php  } ?>
 
                 <div class="button-container">
                     <button>Sign up</button>
