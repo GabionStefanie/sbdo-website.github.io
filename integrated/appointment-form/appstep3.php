@@ -5,8 +5,8 @@
     <title>Step 3</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/appstep3-css.css" />
-    <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src="jscript/appstep3-validation.js" defer></script> -->
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="jscript/appstep3-validation.js" defer></script>
     <style>
         .just-validate-error-label {
             margin-top: 5px;
@@ -66,27 +66,27 @@
                 <div id="medallergen" style="display: block;">
                     <div class="grid">
                         <label for="medallergen_1">Mefenamic Acid</label>
-                        <input type="checkbox" id="medallergen_1" name="medallergen" value="1">
+                        <input type="checkbox" id="medallergen_1" name="medallergen[]" value="1">
                         <label for="medallergen_2">Ibuprofen</label>
-                        <input type="checkbox" id="medallergen_2" name="medallergen" value="2">
+                        <input type="checkbox" id="medallergen_2" name="medallergen[]" value="2">
                         <label for="medallergen_3">Aspirin</label>
-                        <input type="checkbox" id="medallergen_3" name="medallergen" value="3">
+                        <input type="checkbox" id="medallergen_3" name="medallergen[]" value="3">
                         <label for="medallergen_4">Naproxen Sodium</label>
-                        <input type="checkbox" id="medallergen_4" name="medallergen" value="4">
+                        <input type="checkbox" id="medallergen_4" name="medallergen[]" value="4">
                         <label for="medallergen_5">Paracetamol</label>
-                        <input type="checkbox" id="medallergen_5" name="medallergen" value="5">
+                        <input type="checkbox" id="medallergen_5" name="medallergen[]" value="5">
                         <label for="medallergen_6">Amoxicillin/Other type of Penicillin</label>
-                        <input type="checkbox" id="medallergen_6" name="medallergen" value="6">
+                        <input type="checkbox" id="medallergen_6" name="medallergen[]" value="6">
                         <label for="medallergen_7">Others</label>
-                        <input type="checkbox" id="medallergen_7" name="medallergen" value="7">
+                        <input type="checkbox" id="medallergen_7" name="medallergen[]" value="7">
                         <label for="medallergen_8">None that I know of</label>
-                        <input type="checkbox" id="medallergen_8" name="medallergen" value="8" onclick="clearOtherAllergies(this)">
+                        <input type="checkbox" id="medallergen_8" name="medallergen[]" value="8" onclick="clearOtherAllergies(this)">
 
                         <script>
                             function clearOtherAllergies(checkbox) {
                                 if (checkbox.checked) {
                                     // Get all the checkboxes with the name "medallergen"
-                                    var checkboxes = document.getElementsByName("medallergen");
+                                    var checkboxes = document.getElementsByName("medallergen[]");
 
                                     // Loop through the checkboxes and uncheck the ones that are not "None that I know of"
                                     for (var i = 0; i < checkboxes.length; i++) {
@@ -97,7 +97,7 @@
                                     }
                                 } else {
                                     // Enable all the checkboxes when "None that I know of" is not checked
-                                    var checkboxes = document.getElementsByName("medallergen");
+                                    var checkboxes = document.getElementsByName("medallergen[]");
                                     for (var i = 0; i < checkboxes.length; i++) {
                                         if (checkboxes[i].value !== "8") {
                                             checkboxes[i].disabled = false;

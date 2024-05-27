@@ -16,7 +16,7 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Save form inputs in session
     $_SESSION["covid"] = $_POST["covid"];
-    $_SESSION["symptoms"] = $_POST["symptoms"];
+    $_SESSION["symptoms"] = array_values($_POST["symptoms"]);
     header('Location: ../payments.php');
 }
 
