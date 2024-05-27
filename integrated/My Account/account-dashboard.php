@@ -111,15 +111,12 @@ if ($result->num_rows == 1) {
 			</div>
 			<div class="settings-title">
 				<P>ACCOUNT SETTINGS</P>
-				<img src="images/settings-photo.png" alt="settings-icon">
+				<img src="images/settings-photo.png" alt="settings-icon" style ="cursor: pointer;" onclick="showDropdown('settings-dropdown')">
 			</div>
-			<div class="content3">
-				<div id="content" class="content">
-					<div class="account-settings">
-						<div class="settings-title2">
-							<P>ACCOUNT SETTINGS</P>
-							<img src="images/settings-photo.png" alt="settings-icon">
-						</div>
+			<div class="content3" id="settings-dropdown" style = "display:none">
+
+				<div id="content" class="content" >
+					<div class="account-settings" >
 						<div class="datas">
 							<ul>
 								<li>
@@ -144,6 +141,8 @@ if ($result->num_rows == 1) {
 							<button type="button" class="logout-button" id = "logout">LOGOUT </button>
 					</div>
 				</div>
+
+
 				<!-- Overlay -->
 				<div id="overlay" class="overlay"></div>
 				<!-- Modal for changing username -->
@@ -247,6 +246,7 @@ if ($result->num_rows == 1) {
 						</div>
 					</div>
 				</div>
+
 				<!-- Modal for changing email address -->
 				<div id="modalEmail" class="modal">
 					<!-- Close button -->
@@ -330,6 +330,12 @@ logout.addEventListener("click", ()=> {
 		}
 	})
 })
+
+function showDropdown(element){
+	var dropdown = $("#"+ element)
+	dropdown.toggle()
+
+}
 		
 </script>
 </body>
