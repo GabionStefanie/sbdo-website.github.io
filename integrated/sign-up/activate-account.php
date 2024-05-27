@@ -64,21 +64,21 @@ $stmt->execute();
     <div class="wrapper">
         <div class="form">
 
-                <h1 class="title">SIGN UP</h1>
-                <hr>
-
-        
-
-                
-    <h1>Account Activation</h1>
-
-<p> Account activated successfully. You can now <a href = "../Login/login.php"> log in </a>.</p>
+            <h1 class="title">SIGN UP</h1>
+            <hr>
 
 
 
-                </div>
-            </form>
+
+            <h1>Account Activation</h1>
+
+            <p> Account activated successfully. You can now <a href="../Login/login.php"> log in </a>.</p>
+
+
+
         </div>
+        </form>
+    </div>
 
     </div>
 
