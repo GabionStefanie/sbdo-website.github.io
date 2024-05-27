@@ -49,12 +49,8 @@ if ($result->num_rows == 1) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Account Dashboard | Sulit & Bagasan Dental Office</title>
-	<link rel="stylesheet" type="text/css" href="css/account-dashboard-css.css">
-	<script src="account-dashboard-jscript.js"></script>
-	<style>
-        <?php include '../header-footer/header-footer.css' ?>
-    </style>
+	<title>Contact Us | Sulit & Bagasan Dental Office</title>
+	<link rel="stylesheet" type="text/css" href="../account-dashboard-css.css">
 </head>
 
 <body>
@@ -82,13 +78,14 @@ if ($result->num_rows == 1) {
 						<p class="profile-name"><b>USERNAME:</b> <?php echo $user["Username"]; ?></p>
 						<p class="profile-email"><b>EMAIL:</b> <?php echo $user["Email"]; ?></p>
 						<a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
+
 					</div>
 				</div>
 				<div class="divider"></div>
 				<div class="row">
 					<div class="buttons-transac-appoint">
-						<a href="transactions-page.php" class="btn btn-primary">TRANSACTION</a>
-						<a href="upcoming-announcements-page.php" class="btn btn-primary">APPOINTMENTS</a>
+						<a href="transactions-html.html" class="btn btn-primary">TRANSACTION</a>
+						<a href="upcoming-announcements-html.html" class="btn btn-primary">APPOINTMENTS</a>
 					</div>
 				</div>
 			</div>
@@ -126,9 +123,12 @@ if ($result->num_rows == 1) {
 									<button onclick="showModal('username')">Change</button>
 								</li>
 								<li>
+
 									<div class="password">
-										<div>Password: <input type="password" readonly id="showPassword" value="<?php echo $user["Password"] ?>"></div>
+										<div>Password: <input type="password" readonly id = "showPassword" value="<?php echo $user["Password"] ?>"></div>
+										<div><input type="checkbox" name="" id="show-password" style="display: block" onclick = "showPassword('showPassword')"> <span><pre>  Show Password<pre></pre></span> </div> 
 									</div>
+
 									<button onclick="showModal('password')">Change</button>
 								</li>
 								<li>
@@ -137,7 +137,10 @@ if ($result->num_rows == 1) {
 								</li>
 							</ul>
 						</div>
-						<div class="logout-button" onclick="logout()">LOGOUT</div>
+						<form action="" method="post">
+							<input type="submit" value="LOGOUT" class="logout-button" name="logout">
+						</form>
+						<!-- <div class="logout-button" onclick="logout()">LOGOUT</div> -->
 					</div>
 				</div>
 				<!-- Overlay -->
@@ -193,14 +196,14 @@ if ($result->num_rows == 1) {
 						</div>
 						<form id="formPassword" onsubmit="submitPassword(event)">
 							<label for="oldPassword">Old Password:</label>
-							<input type="password" id="oldPassword" name="oldPassword" required>
+							<input type="password" name="oldPassword" required>
 							<label for="newPassword">New Password:</label>
-							<input type="password" id="newPassword" name="newPassword" required>
+							<input type="password" name="newPassword" required>
 							<label for="confirmNewPassword">Confirm New Password:</label>
-							<input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+							<input type="password" name="confirmNewPassword" required>
 							<div class="text-24hrs">It may take 24 hours for changes to take effect. <br>You will need to login with your new password.</div>
 							<span class="forgot-password" onclick="showForgotPasswordModal()">Forgot Password?</span>
-							<br>
+							<BR>
 							<input type="submit" value="SUBMIT">
 						</form>
 					</div>
@@ -211,7 +214,7 @@ if ($result->num_rows == 1) {
 					<span class="close-btn" onclick="closeModal()">X</span>
 					<div class="container">
 						<div class="forgot-password-modal">
-							<h2>CHANGE PASSWORD</h2>
+							<h2>RESET PASSWORD</h2>
 							<form id="forgotPasswordForm" onsubmit="submitForgotPassword(event)">
 								<label for="forgotPasswordEmail">Email Address:</label>
 								<input type="email" id="forgotPasswordEmail" name="forgotPasswordEmail" required>
@@ -234,9 +237,9 @@ if ($result->num_rows == 1) {
 								<label for="otpResetPassword">OTP:</label>
 								<input type="text" id="otpResetPassword" name="otpResetPassword" required> <!-- Changed ID and name -->
 								<label for="newPassword">New Password:</label>
-								<input type="password" id="newPassword" name="newPassword" required> <!-- Changed ID and name -->
+								<input type="password" name="newPassword" required> <!-- Changed ID and name -->
 								<label for="confirmNewPassword">Confirm New Password:</label>
-								<input type="password" id="confirmNewPassword" name="confirmNewPassword" required> <!-- Changed ID and name -->
+								<input type="password" name="confirmNewPassword" required> <!-- Changed ID and name -->
 								<div id="otpUsernameMessage" style="color: red; font-size: 14px;"></div>
 								<input type="submit" value="SUBMIT">
 							</form>
@@ -278,8 +281,8 @@ if ($result->num_rows == 1) {
 								<input type="text" id="otpPassword" name="otpPassword" required>
 								<label for="newPassword">New Password</label>
 								<div id="otpUsernameMessage" style="color: red; font-size: 14px;"></div>
-								<input type="text" id="newPassword" name="newPassword" required>
-								<input type="submit" value="RESEND OTP">
+								<input type="text" name="newPassword" required>
+								<input type="button" value="RESEND OTP" onclick="resendPasswordOtp(event)">
 								<input type="submit" value="SUBMIT">
 							</form>
 						</div>
@@ -309,8 +312,45 @@ if ($result->num_rows == 1) {
 		</main>
 	</div>
 
-	<?php include '../header-footer/footer.php' ?>
-
+	<footer>
+		<div class="operating_hrs">
+			OPERATING HOURS
+			<p class="LOREM_IPSUM">MONDAY-SUNDAYS</p>
+			<p class="LOREM_IPSUM">11 AM</p>
+			<p class="LOREM_IPSUM">5 PM</p>
+		</div>
+		<div class="footer_list">
+			<div class="company_logo">
+				<img class="footer_logo" src="images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
+			</div>
+			<div class="company_name_footer">Sulit & Bagasan Dental Office</div>
+			<div class="footer_buttons">
+				<a href="contacts.html">
+					<img class="icon_link phone" src="images/phone-icon.png" alt="phone icon" />
+				</a>
+				<a href="contacts.html">
+					<img class="icon_link mail" src="images/mail-icon.png" alt="mail icon" />
+				</a>
+				<a href="contacts.html">
+					<img class="icon_link location" src="images/location-icon.png" alt="location pin icon" />
+				</a>
+			</div>
+		</div>
+		<div class="contact_details">
+			CONTACT DETAILS
+			<p class="LOREM_IPSUM NUMBER">0917 110 3983 / 0999 884 0454</p>
+			<p class="LOREM_IPSUM EMAIL">sulitandbagasan@gmail.com</p>
+		</div>
+	</footer>
+<script src="account-dashboard-jscript.js"></script>
 </body>
 
 </html>
+
+<?php
+	if (isset($_POST["logout"])) {
+		session_destroy();
+		// PALITAN KUNG SAAN DAPAT MAPUNTA AFTER LOGOUT
+		header("Location: ../index.php");
+	}
+?>
