@@ -5,8 +5,8 @@
     <title>Appointment Form</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/appstep1-css.css" />
-    <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script> -->
-    <!-- <script src="jscript/appstep1-validation.js" defer></script> -->
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="jscript/appstep1-validation.js" defer></script>
     <style>
         .just-validate-error-label {
             margin-top: 5px;

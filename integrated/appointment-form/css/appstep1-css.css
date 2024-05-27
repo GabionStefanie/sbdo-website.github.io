@@ -276,19 +276,13 @@ html {
     cursor: pointer;
 }
 
-.button-group button[type="reset"] {
+.button-group button[type="reset"], .button-group input[type="submit"], .button-group input[type="button"] {
     background: #000000;
     color: white;
 	border-radius: 2rem;
     font-family: "Josefin Sans", sans-serif;
 }
 
-.button-group button[type="submit"], .button-group input[type="button"] {
-    background: #000000;
-    color: white;
-	border-radius: 2rem;
-	font-family: "Josefin Sans", sans-serif;
-}
 
 .map {
     margin-top: 5rem;
