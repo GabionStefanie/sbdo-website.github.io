@@ -52,9 +52,12 @@ if ($result->num_rows == 1) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contact Us | Sulit & Bagasan Dental Office</title>
+	<title>Account Dashboard | Sulit & Bagasan Dental Office</title>
 	<link rel="stylesheet" type="text/css" href="css/account-dashboard-css.css">
 	<script src="account-dashboard-jscript.js"></script>
+	<style>
+        <?php include '../header-footer/header-footer.css' ?>
+    </style>
 </head>
 
 <body>
@@ -127,8 +130,7 @@ if ($result->num_rows == 1) {
 								</li>
 								<li>
 									<div class="password">
-										<div>Password: <input type="password" readonly id = "showPassword" value="<?php echo $user["Password"] ?>"></div>
-										<div><input type="checkbox" name="" id="show-password" style="display: block" onclick = "showPassword('showPassword')"><label for="show-password"> <pre>  Show Password</pre></label> </div> 
+										<div>Password: <input type="password" readonly id="showPassword" value="<?php echo $user["Password"] ?>"></div>
 									</div>
 									<button onclick="showModal('password')">Change</button>
 								</li>
@@ -310,50 +312,8 @@ if ($result->num_rows == 1) {
 		</main>
 	</div>
 
-	<footer>
-		<div class="operating_hrs">
-			OPERATING HOURS
-			<p class="LOREM_IPSUM">MONDAY-SUNDAYS</p>
-			<p class="LOREM_IPSUM">11 AM</p>
-			<p class="LOREM_IPSUM">5 PM</p>
-		</div>
-		<div class="footer_list">
-			<div class="company_logo">
-				<img class="footer_logo" src="images/sbdo-logo.jpeg" alt="sulit and bagasan dental office logo" />
-			</div>
-			<div class="company_name_footer">Sulit & Bagasan Dental Office</div>
-			<div class="footer_buttons">
-				<a href="contacts.html">
-					<img class="icon_link phone" src="images/phone-icon.png" alt="phone icon" />
-				</a>
-				<a href="contacts.html">
-					<img class="icon_link mail" src="images/mail-icon.png" alt="mail icon" />
-				</a>
-				<a href="contacts.html">
-					<img class="icon_link location" src="images/location-icon.png" alt="location pin icon" />
-				</a>
-			</div>
-		</div>
-		<div class="contact_details">
-			CONTACT DETAILS
-			<p class="LOREM_IPSUM NUMBER">0917 110 3983 / 0999 884 0454</p>
-			<p class="LOREM_IPSUM EMAIL">sulitandbagasan@gmail.com</p>
-		</div>
-	</footer>
+	<?php include '../header-footer/footer.php' ?>
 
-<script>
-	function showPassword(inputID){
-		var pw = document.getElementById(inputID);
-			if(pw.type === "password"){
-				pw.type = "text";
-			}else{
-				pw.type = "password";
-			}
-
-	}
-
-
-</script>
 </body>
 
 </html>
