@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["diabetes"] = $_POST["diabetes"];
     $_SESSION["heartconditions"] = $_POST["heartconditions"];
     $_SESSION["hypertension"] = $_POST["hypertension"];
-    $_SESSION["medallergen"] = $_POST["medallergen"];
+    $_SESSION["medallergen"] = array_values($_POST["medallergen"]);
     $_SESSION["maintenance"] = $_POST["maintenance"];
     $_SESSION["systolicpressure"] = $_POST["systolicpressure"];
     $_SESSION["diastolicpressure"] = $_POST["diastolicpressure"];

@@ -4,8 +4,8 @@
     <title>Step 4</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/appstep4-css.css" />
-    <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src="jscript/appstep4-validation.js" defer></script> -->
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="jscript/appstep4-validation.js" defer></script>
     <style>
         .just-validate-error-label {
           margin-top: 5px;
@@ -44,25 +44,25 @@
             <div id="symptoms" style = "display: block;">
                 <div class="grid">
                     <label for="sypmtoms_1">Fever</label>
-                    <input type="checkbox" id="symptoms_1" name="symptoms" value="1" /> 
+                    <input type="checkbox" id="symptoms_1" name="symptoms[]" value="1" /> 
                     <label for="sypmtoms_2">Colds</label>
-                    <input type="checkbox" id="symptoms_2" name="symptoms" value="2" /> 
+                    <input type="checkbox" id="symptoms_2" name="symptoms[]" value="2" /> 
                     <label for="sypmtoms_3">Cough</label>
-                    <input type="checkbox" id="symptoms_3" name="symptoms" value="3" /> 
+                    <input type="checkbox" id="symptoms_3" name="symptoms[]" value="3" /> 
                     <label for="sypmtoms_4">Sore Throat</label>
-                    <input type="checkbox" id="symptoms_4" name="symptoms" value="4" />  
+                    <input type="checkbox" id="symptoms_4" name="symptoms[]" value="4" />  
                     <label for="sypmtoms_5">Headache</label>
-                    <input type="checkbox" id="symptoms_5" name="symptoms" value="5" /> 
+                    <input type="checkbox" id="symptoms_5" name="symptoms[]" value="5" /> 
                     <label for="sypmtoms_6">Diarrhea</label>
-                    <input type="checkbox" id="symptoms_6" name="symptoms" value="6" /> 
+                    <input type="checkbox" id="symptoms_6" name="symptoms[]" value="6" /> 
                     <label for="sypmtoms_7">None</label>
-                    <input type="checkbox" id="symptoms_7" name="symptoms" value="7" onclick="clearOtherSymptoms(this)"/>
+                    <input type="checkbox" id="symptoms_7" name="symptoms[]" value="7" onclick="clearOtherSymptoms(this)"/>
                     
                     <script>
                     function clearOtherSymptoms(checkbox) {
                     if (checkbox.checked) {
                         // Get all the checkboxes with the name "medallergen"
-                        var checkboxes = document.getElementsByName("symptoms");
+                        var checkboxes = document.getElementsByName("symptoms[]");
 
                         // Loop through the checkboxes and uncheck the ones that are not "None that I know of"
                         for (var i = 0; i < checkboxes.length; i++) {
@@ -73,7 +73,7 @@
                         }
                     } else {
                         // Enable all the checkboxes when "None that I know of" is not checked
-                        var checkboxes = document.getElementsByName("symptoms");
+                        var checkboxes = document.getElementsByName("symptoms[]");
                         for (var i = 0; i < checkboxes.length; i++) {
                             if (checkboxes[i].value !== "7") {
                                 checkboxes[i].disabled = false;
