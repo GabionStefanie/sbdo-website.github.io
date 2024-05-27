@@ -76,7 +76,6 @@ if ($result->num_rows == 1) {
 					<a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
 				</div>
             </div>
-            <a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">CHANGE</a>
             <div class="divider"></div>
             <div class="row">
                 <div class="buttons-transac-appoint">
@@ -92,7 +91,7 @@ if ($result->num_rows == 1) {
                 <div class="change-profile-picture-modal">
                     <h2>CHANGE PROFILE PICTURE</h2>
                 </div>
-                <form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)">
+                <form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)" method="POST" enctype="multipart/form-data" action="myaccounts.php"">
                     <label for="profilePicture">Please upload your new profile picture:</label>
                     <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
                     <input type="submit" value="UPLOAD">
