@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Sulit & Bagasan Dental Office</title>
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <!-- <script src="validation.js" defer></script> -->
+    <script src="validation.js" defer></script>
     <link rel="stylesheet" type="text/css" href="style_signup.css">
     <style>
         <?php include '../header-footer/header-footer.css' ?>
@@ -44,7 +44,7 @@
                     <button>Sign up</button>
                 </div>
                 <p class="account-login-label">Already have an account?</p>
-                <a class="login-link" href="../login-forgot-password/login.php">Login</a>
+                <a class="login-link" href="../Login/login.php">Login</a>
             </form>
         </div>
 
