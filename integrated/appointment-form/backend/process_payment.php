@@ -1,7 +1,5 @@
 <?php
 session_start();
-ini_set('mysql.connect_timeout', 300);
-ini_set('default_socket_timeout', 300);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["referenceNo"])) {
@@ -12,7 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Proof of Payment required");
     }
 
-    $mysqli = new mysqli("localhost", "root", "", "sbdoDatabase");
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "sbdoDatabase";
+
+    $mysqli = new mysqli($servername, $username, $password, $dbname);
+
+    $stmt = $mysqli->stmt_init();
 
     $_SESSION["referenceNo"] = $_POST["referenceNo"];
     $file = $_FILES['proofOfPayment'];
@@ -24,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if file is an image
     if (strpos($file_type, 'image') === false) {
         echo "<script>alert('File is not an image.');</script>";
-        echo "<script>window.location.replace('payments.php');</script>";
+        echo "<script>window.location.replace('payments-html.php');</script>";
         exit;
     }
 
@@ -32,21 +37,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mysqli->begin_transaction();
 
-    try {
+    
         // Insert into patient table
-        $sql = "INSERT INTO patient (name, phone, email, gender, patient_status) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO patient (name, phone, email, gender, patient_status) VALUES ( ?, ?, ?, ?, ?)";
         $stmt = $mysqli->prepare($sql);
         if (!$stmt) {
             throw new Exception("SQL error: " . $mysqli->error);
         }
-        $_status = "Pending";
-        $stmt->bind_param("sssss", $_SESSION["name"], $_SESSION["pnum"], $_SESSION["email"], $_SESSION["gender"], $_status);
+        $status = "Upcoming";
+        $stmt->bind_param("sssss", $_SESSION["name"], $_SESSION["pnum"], $_SESSION["email"], $_SESSION["gender"],$status);
         $stmt->execute();
 
 
-        // Get the patient_id of the last inserted patient
-        $patient_id = $mysqli->insert_id;
+         // Get the patient_id of the last inserted patient
+         $patient_id = $mysqli->insert_id;
 
+    
         // Get schedule_id
         $sql = "SELECT schedule_id FROM schedule WHERE scheduleDateTime = ?";
         $stmt = $mysqli->prepare($sql);
@@ -69,16 +75,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $stmt->close();
 
-        // Insert into appointment table
-        $sql = "INSERT INTO appointment (patient_id, service_id, schedule_id) VALUES (?, ?, ?)";
-        $stmt = $mysqli->prepare($sql);
-        if (!$stmt) {
-            throw new Exception("SQL error: " . $mysqli->error);
-        }
-        $stmt->bind_param("iii", $patient_id, $_SESSION["apptype"], $schedule_id);
-        $stmt->execute();
-        $appointment_id = $mysqli->insert_id;
-        $stmt->close();
+         // Insert into appointment table
+         $sql = "INSERT INTO appointment (patient_id, service_id, schedule_id) VALUES (?, ?, ?)";
+         $stmt = $mysqli->prepare($sql);
+         if (!$stmt) {
+             throw new Exception("SQL error: " . $mysqli->error);
+         }
+         $stmt->bind_param("iii", $patient_id, $_SESSION["apptype"], $schedule_id);
+         $stmt->execute();
+         $appointment_id = $mysqli->insert_id;
+         $stmt->close();
 
 
         // Insert into chief_complaint table
@@ -109,11 +115,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $medical_history_id = $stmt->insert_id; // Retrieve the medical_history_id value
         $stmt->close();
-
+        
         // Insert allergen data into the patient_medical_allergens table
         $stmt = $mysqli->prepare("INSERT INTO patient_medical_allergens (med_allergen_id, medical_history_id) VALUES (?, ?)");
 
-
+        
         // Loop through the $_SESSION["medallergen"] array and execute an INSERT statement for each value
         foreach ($_SESSION["medallergen"] as $value) {
             $stmt->bind_param("ii", $value, $medical_history_id);
@@ -135,21 +141,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insert into patient_health_declaration table
         $sql = "INSERT INTO patient_health_symptoms (health_declaration_id, healthsymptoms_id) VALUES (?, ?)";
         $stmt = $mysqli->prepare($sql);
-
+       
         foreach ($_SESSION["symptoms"] as $sympvalue) {
-            $stmt->bind_param("ii", $health_declaration_id, $sympvalue);
+            $stmt->bind_param("ii", $health_declaration_id , $sympvalue);
             $stmt->execute();
         }
         $stmt->close();
 
+
         // Insert into payment table
-        $sql = "INSERT INTO payment ( referenceno, proofofpayment) VALUES ( ?, ?)";
-        $stmt = $mysqli->prepare($sql);
+
+        $sql = "INSERT INTO payment (referenceno, proofofpayment, image_filename) VALUES (?, ?, ?)";
+$stmt = $mysqli->prepare($sql);
    
-        $stmt->bind_param("ss", $_SESSION["referenceNo"], $Image);
-        $stmt->execute();
-        $payment_id = $mysqli->insert_id;
-        $stmt->close();
+$target_dir = "images/";
+$target_file = $target_dir . basename($_FILES["proofOfPayment"]["name"]);
+move_uploaded_file($_FILES["proofOfPayment"]["tmp_name"], $target_file);
+$image_filename = basename($target_file);
+
+$stmt->bind_param("sss", $_SESSION["referenceNo"], $Image, $image_filename);
+$stmt->execute();
+$payment_id = $mysqli->insert_id;
+$stmt->close();
 
         // Insert into record table
         $sql = "INSERT INTO record (Appointment_ID, Chief_Complaint_ID, Medical_History_ID, Health_Declaration_ID, 	PaymentDetails_ID) VALUES (?, ?,?,?,?)";
@@ -159,14 +172,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $stmt->close();
 
-        // Commit transaction
         $mysqli->commit();
-    } catch (Exception $e) {
-        $mysqli->rollback();
-        die("Transaction failed: " . $e->getMessage());
-    }
-
-    header('Location: ../appconfirm.php');
+    } 
+    header('Location: appconfirm.php');
 
     $mysqli->close();
-}
+?>
