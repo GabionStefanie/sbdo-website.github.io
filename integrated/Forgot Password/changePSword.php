@@ -15,7 +15,7 @@
     <?php include '../header-footer/header.php' ?>
     <div class="wrapper">
         <div class="form">
-            <form id="changePasswordForm" action="backend/change_password.php" method="post">
+            <form id="changePasswordForm" action="../backend/change_password.php" method="post">
                 <h1 class="title">FORGOT PASSWORD</h1>
                 <hr>
                 <div style="display: flex; flex-direction: column; align-items:baseline">
@@ -44,54 +44,49 @@
     </div>
     <?php include '../header-footer/footer.php' ?>
     <script>
-        function togglePasswordVisibility(inputId) {
-            var passwordInput = document.getElementById(inputId);
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-            } else {
-                passwordInput.type = "password";
-            }
+    function togglePasswordVisibility(inputId) {
+        var passwordInput = document.getElementById(inputId);
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
         }
+    }
 
-        document.getElementById("changePasswordForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
-            var form = this;
-            var formData = new FormData(form);
-            fetch("change_password.php", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    var messageElement = document.getElementById("message");
-                    messageElement.textContent = data.message;
+    document.getElementById("changePasswordForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        var form = this;
+        var formData = new FormData(form);
 
-                    if (data.success) {
-                        messageElement.style.color = "green";
-                        // Wait 3 seconds before redirecting to allow user to read the message
-                        setTimeout(function() {
-                            window.location.href = "../Login/login.php";
-                        }, 3000);
-                    } else {
-                        messageElement.style.color = "red";
-                        // Reload the page after displaying the error message
-                        setTimeout(function() {
-                            location.reload();
-                        }, 3000);
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    var messageElement = document.getElementById("message");
-                    messageElement.textContent = "An unexpected error occurred.";
-                    messageElement.style.color = "red";
-                    // Reload the page after displaying the error message
+        fetch("backend/change_password.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // Log the response data for debugging
+                var messageElement = document.getElementById("message");
+                messageElement.textContent = data.message;
+
+                if (data.success) {
+                    messageElement.style.color = "green";
+                    // Wait 3 seconds before redirecting to allow user to read the message
                     setTimeout(function() {
-                        location.reload();
+                        window.location.href = "../Login/login.php";
                     }, 3000);
-                });
-        });
-    </script>
+                } else {
+                    messageElement.style.color = "red";
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                var messageElement = document.getElementById("message");
+                messageElement.textContent = "An unexpected error occurred.";
+                messageElement.style.color = "red";
+            });
+    });
+</script>
+
 </body>
 
 </html>

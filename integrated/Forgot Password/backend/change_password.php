@@ -6,6 +6,8 @@ $username = "root";
 $password = "";
 $dbname = "sbdoDatabase";
 
+header('Content-Type: application/json'); // Ensure the response is JSON
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["password"], $_POST["confirm_password"], $_SESSION["email"])) {
         $newPassword = $_POST["password"];
@@ -23,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-        // Check if the provided password matches the current password in the database
         $sql = "SELECT Password FROM ACCOUNT WHERE Email = ?";
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
@@ -39,14 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_result($currentPassword);
             $stmt->fetch();
 
-            // Verify if the provided password matches the current password
             if (password_verify($newPassword, $currentPassword)) {
                 echo json_encode(['success' => false, 'message' => 'The new password cannot be the same as the current password']);
             } else {
-                // Passwords don't match, proceed with updating
                 $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                
-                // Update the password in the database
+
                 $sqlUpdate = "UPDATE ACCOUNT SET Password = ? WHERE Email = ?";
                 $stmtUpdate = $conn->prepare($sqlUpdate);
                 if (!$stmtUpdate) {
