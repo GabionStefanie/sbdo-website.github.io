@@ -33,7 +33,7 @@
 			</div>
 			<div class="contact_details">
 				<span>CONTACT DETAILS</span>
-				<p>0917 110 3983 / 0999 884 0454</p>
+				<p>+63 917 110 3983 / +63 999 884 0454</p>
 				<p>sulitandbagasan@gmail.com</p>
 			</div>
 		</footer>
