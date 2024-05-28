@@ -66,11 +66,13 @@ if ($result->num_rows == 1) {
 					<div class="profile-picture">
 						<p class="profile-label"></p>
 						<?php
-						if (isset($user["ProfilePicture"])) {
-							$profilePicture = $user["ProfilePicture"];
+						if (isset($user['ProfilePicture'])) {
+							$profilePicture = $user['ProfilePicture'];
 							if (file_exists($profilePicture) && is_readable($profilePicture)) {
 								echo "<img src='$profilePicture' alt='Profile Picture'>";
+
 							} else {
+
 								echo "The image file does not exist or is not readable";
 							}
 						} else {
