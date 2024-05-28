@@ -89,7 +89,9 @@ if ($result->num_rows == 1) {
 				<div class="row">
 					<div class="buttons-transac-appoint">
 						<a href="admin--reports [clients]-page.php" class="btn btn-primary">REPORTS</a>
-						<a href="#" class="btn btn-primary">APPOINTMENTS</a>
+						<a href="admin-appointments[upcoming]-page.php" class="btn btn-primary">APPOINTMENTS</a>
+						<a href="admin-add[account]-page.php" class="btn btn-primary">ADD ACCOUNT</a>
+						<a href="admin-add[schedule]-page.php" class="btn btn-primary">ADD RECORD</a>
 					</div>
 				</div>
 			</div>
@@ -101,7 +103,7 @@ if ($result->num_rows == 1) {
 						<h2>CHANGE PROFILE PICTURE</h2>
 					</div>
 					<!-- Inside the "change-profile-picture-modal" div -->
-					<form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)" method="POST" enctype="multipart/form-data" action="myaccounts.php">
+					<form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)" method="POST" enctype="multipart/form-data" action="uploadPFPs.php">
 						<label for="profilePicture">Please upload your new profile picture:</label>
 						<input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
 						<input type="hidden" name="formName" value="uploadForm">

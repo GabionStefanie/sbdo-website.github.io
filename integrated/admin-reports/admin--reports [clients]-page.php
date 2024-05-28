@@ -13,7 +13,7 @@
 	<body>
 	<div class="wrapper">
 		<?php include '../header-footer/header.php' ?>
-		<?php include 'reportfetching.php' ?>
+		<?php include 'backend/reportfetching.php' ?>
 		<div class="reports-title">REPORTS</div>
 		<div class="container-clients-services">
 			<div class="undercolor"></div>

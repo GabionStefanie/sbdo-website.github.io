@@ -91,7 +91,7 @@ if ($result->num_rows == 1) {
                 <div class="change-profile-picture-modal">
                     <h2>CHANGE PROFILE PICTURE</h2>
                 </div>
-                <form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)" method="POST" enctype="multipart/form-data" action="myaccounts.php"">
+                <form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)" method="POST" enctype="multipart/form-data" action="uploadPFPs.php"">
                     <label for="profilePicture">Please upload your new profile picture:</label>
                     <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
                     <input type="submit" value="UPLOAD">

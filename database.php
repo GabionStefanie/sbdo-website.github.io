@@ -1,3 +1,4 @@
+Updates to keyboard shortcuts … On Thursday, August 1, 2024, Drive keyboard shortcuts will be updated to give you first-letters navigation.Learn more
 <?php
 $servername = "localhost";
 $username = "root";
@@ -15,9 +16,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 $createPaymentTable = "CREATE TABLE IF NOT EXISTS PAYMENT (
         `PaymentDetails_ID` INT AUTO_INCREMENT,
-        `Amount` INT (10) NOT NULL,
+        `Amount` INT (10),
         `ReferenceNo` INT (9) NOT NULL,
         `ProofOfPayment` BLOB NOT NULL,
+        `image_filename` VARCHAR (255) NOT NULL,
         CONSTRAINT PK_PaymentDetailsID PRIMARY KEY (`PaymentDetails_ID`)
       )";
 mysqli_query($conn, $createPaymentTable);
@@ -183,7 +185,7 @@ $createAppointmentTable = "CREATE TABLE IF NOT EXISTS `APPOINTMENT` (
 mysqli_query($conn, $createAppointmentTable);
 
 $createRecordTable = "CREATE TABLE IF NOT EXISTS `RECORD` (
-        `Record_ID` INT,
+        `Record_ID` INT AUTO_INCREMENT,
         `Appointment_ID` INT,
         `Chief_Complaint_ID` INT,
         `Medical_History_ID` INT,
