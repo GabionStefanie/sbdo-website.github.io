@@ -13,8 +13,6 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$_SESSION['userID'] = 1;
-
 // Prepare SQL statement to fetch the user data
 $sql = "SELECT * FROM ACCOUNT WHERE User_ID = ?";
 $stmt = $conn->prepare($sql);
@@ -23,7 +21,7 @@ if (!$stmt) {
 }
 
 // Bind the user ID to the SQL statement
-$stmt->bind_param("i", $_SESSION["userID"]);
+$stmt->bind_param("i", $_COOKIE["User_ID"]);
 $stmt->execute();
 
 // Get the result

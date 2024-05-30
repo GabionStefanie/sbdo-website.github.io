@@ -15,6 +15,9 @@ html {
   }
   
 
+  #appconfirm>*{
+	margin: 0 auto;
+  }
   
   .company_name {
 	width: auto;
@@ -47,6 +50,8 @@ table, th, td {
 	border: 0.2rem solid black;
 	background-color: white;
 	border-collapse: collapse;
+	padding: 1.5rem 3rem;
+
   }
 
 
