@@ -10,7 +10,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check the connection
 if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 $_SESSION['userID'] = 1;
@@ -19,7 +19,7 @@ $_SESSION['userID'] = 1;
 $sql = "SELECT * FROM ACCOUNT WHERE User_ID = ?";
 $stmt = $conn->prepare($sql);
 if (!$stmt) {
-	die("Preparation failed: " . $conn->error);
+    die("Preparation failed: " . $conn->error);
 }
 
 // Bind the user ID to the SQL statement
@@ -31,16 +31,17 @@ $result = $stmt->get_result();
 
 // Check if the user exists
 if ($result->num_rows == 1) {
-	// Fetch the user data and assign it to $user
-	$user = $result->fetch_assoc();
+    // Fetch the user data and assign it to $user
+    $user = $result->fetch_assoc();
 } else {
-	echo 'No user found'; // Debug line
+    echo 'No user found'; // Debug line
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,30 +52,34 @@ if ($result->num_rows == 1) {
         <?php include '../header-footer/header-footer.css'; ?>
     </style>
 </head>
+
 <body>
     <div class="wrapper">
         <?php include '../header-footer/header.php'; ?>
         <div class="profile-container">
             <div class="profile-info">
                 <div class="profile-picture">
-						<p class="profile-label"></p>
-						<?php
-						if (isset($user["ProfilePicture"])) {
-							$profilePicture = $user["ProfilePicture"];
-							if (file_exists($profilePicture) && is_readable($profilePicture)) {
-								echo "<img src='$profilePicture' alt='Profile Picture'>";
-							} else {
-								echo "The image file does not exist or is not readable";
-							}
-						} else {
-							echo "Profile picture not set";						}
-					?>
-				</div>
+                    <?php
+                    if (isset($user['ProfilePicture'])) {
+                        $profilePicture = $user['ProfilePicture'];
+                        if (file_exists($profilePicture) && is_readable($profilePicture)) {
+                            echo "<img src='$profilePicture' alt='Profile Picture'>";
+                        } else { ?>
+                            <p class="profile-label">
+                                <?php echo "The image file does not exist or is not readable"; ?>
+                            </p>
+                        <?php }
+                    } else { ?>
+                        <p class="profile-label">
+                            <?php echo "Profile picture not set"; ?>
+                        </p>
+                    <?php } ?>
+                </div>
                 <div class="profile-details">
-					<p class="profile-name"><b>USERNAME:</b> <?php echo $user["Username"]; ?></p>
-					<p class="profile-email"><b>EMAIL:</b> <?php echo $user["Email"]; ?></p>
-					<a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
-				</div>
+                    <p class="profile-name"><b>USERNAME:</b> <?php echo $user["Username"]; ?></p>
+                    <p class="profile-email"><b>EMAIL:</b> <?php echo $user["Email"]; ?></p>
+                    <a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
+                </div>
             </div>
             <div class="divider"></div>
             <div class="row">
@@ -92,7 +97,7 @@ if ($result->num_rows == 1) {
                     <h2>CHANGE PROFILE PICTURE</h2>
                 </div>
                 <form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)" method="POST" enctype="multipart/form-data" action="uploadPFPs.php"">
-                    <label for="profilePicture">Please upload your new profile picture:</label>
+                    <label for=" profilePicture">Please upload your new profile picture:</label>
                     <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
                     <input type="submit" value="UPLOAD">
                 </form>
@@ -189,4 +194,5 @@ if ($result->num_rows == 1) {
     </div>
     
 </body>
+
 </html>

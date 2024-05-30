@@ -146,6 +146,7 @@ table {
   .APPOINTMENT-FORM-container {
     display: flex;
     justify-content: center;
+	align-items: center;
     width: auto; /* Adjust the width as needed */
     margin: 0 auto; /* Center the container horizontally */
     padding: 3rem 0;

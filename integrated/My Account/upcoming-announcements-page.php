@@ -57,19 +57,21 @@ if ($result->num_rows == 1) {
         <div class="profile-container">
             <div class="profile-info">
                 <div class="profile-picture">
-                    <p class="profile-label"></p>
                     <?php
-                    if (isset($user["ProfilePicture"])) {
-                        $profilePicture = $user["ProfilePicture"];
+                    if (isset($user['ProfilePicture'])) {
+                        $profilePicture = $user['ProfilePicture'];
                         if (file_exists($profilePicture) && is_readable($profilePicture)) {
                             echo "<img src='$profilePicture' alt='Profile Picture'>";
-                        } else {
-                            echo "The image file does not exist or is not readable";
-                        }
-                    } else {
-                        echo "Profile picture not set";
-                    }
-                    ?>
+                        } else { ?>
+                            <p class="profile-label">
+                                <?php echo "The image file does not exist or is not readable"; ?>
+                            </p>
+                        <?php }
+                    } else { ?>
+                        <p class="profile-label">
+                            <?php echo "Profile picture not set"; ?>
+                        </p>
+                    <?php } ?>
                 </div>
                 <div class="profile-details">
                     <p class="profile-name"><b>USERNAME:</b> <?php echo $user["Username"]; ?></p>

@@ -1,22 +1,24 @@
 <html>
 
 <style>
-        .just-validate-error-label {
-            margin-top: 5px;
-            margin-left: 10px;
-        }
-        <?php include "../header-footer/header-footer.css"; ?>
-    </style>
+    .just-validate-error-label {
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+    <?php include "../header-footer/header-footer.css"; ?>
+</style>
 <?php include "../header-footer/header.php"; ?>
 
 </html>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Appointment Form</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/appstep1-css.css" />
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <script src="jscript/appstep1-validation.js" defer></script>
@@ -24,19 +26,20 @@
 </head>
 
 <body>
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Login to Proceed</h2>
-            </div>
-            <div class="modal-body">
-                <p>It seems that you are not yet logged in.</p>
-                <p>Please log in to be able to book an appointment.</p>
-                <a href="../Login/login.php"><button>LOG IN</button></a>
+    <div class="wrapper">
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Login to Proceed</h2>
+                </div>
+                <div class="modal-body">
+                    <p>It seems that you are not yet logged in.</p>
+                    <p>Please log in to be able to book an appointment.</p>
+                    <a href="../Login/login.php"><button>LOG IN</button></a>
+                </div>
             </div>
         </div>
-    <div class="wrapper">  
         <div class="title">
             <div class="film"></div>
             <img class="contactImg" src="images/contactImg.png" alt="featured image: inside of the dental office" />
