@@ -53,22 +53,22 @@
                     <div class="patient-information">Patient Information</div>
 
                     <div class="input-group">
-                    <label for="apptype">Type of Appointment</label>
-                    <select id="apptype" name="apptype" required>
-                        <option value="" disabled selected>Select an option</option>
-                        <option value="1">Check Up</option>
-                        <option value="2">Surgery</option>
-                        <option value="3">Prophylaxis and Periodontics</option>
-                        <option value="4">Restorative</option>
-                        <option value="5">Prosthodontic</option>
-                        <option value="6">Removable Applicables</option>
-                        <option value="7">Orthodontics</option>
-                        <option value="8">Root Canal Treatment</option>
-                        <option value="9">Pediatric Dentistry</option>
-                        <option value="10">Bleaching</option>
-                        <option value="11">Retainers</option>
-                    </select>
-                </div>
+                        <label for="apptype">Type of Appointment</label>
+                        <select id="apptype" name="apptype" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="1">Check Up</option>
+                            <option value="2">Surgery</option>
+                            <option value="3">Prophylaxis and Periodontics</option>
+                            <option value="4">Restorative</option>
+                            <option value="5">Prosthodontic</option>
+                            <option value="6">Removable Applicables</option>
+                            <option value="7">Orthodontics</option>
+                            <option value="8">Root Canal Treatment</option>
+                            <option value="9">Pediatric Dentistry</option>
+                            <option value="10">Bleaching</option>
+                            <option value="11">Retainers</option>
+                        </select>
+                    </div>
 
                     <div class="input-group" style="display: flex;">
                         <label for="date">Date: <br></label>
@@ -141,8 +141,6 @@
                             };
                             xhr.send();
                         });
-
-
                     </script>
 
                     <?php
@@ -164,9 +162,9 @@
                     <div class="button-group">
                         <button type="reset">RESET INFO</button>
                         <?php if (isset($_COOKIE['User_ID'])) { ?>
-                        <input type="submit" value="NEXT" id="submit-comment">
+                            <input type="submit" value="NEXT" id="submit-comment">
                         <?php } else { ?>
-                        <input type="button" id="login-button" value="SUBMIT">
+                            <input type="button" id="login-button" value="SUBMIT">
                         <?php } ?>
                     </div>
                 </div>
