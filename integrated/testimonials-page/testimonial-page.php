@@ -38,13 +38,7 @@
         <form id="testimonialForm" action="backend/testimonal.php">
             <div class="comment_form">
                 <div class="card">
-                    <div class="select-stars" id="star-rating-1">
-                        <span onclick="setRating(1, document.getElementById('star-rating-1'))" class="star">★</span>
-                        <span onclick="setRating(2, document.getElementById('star-rating-1'))" class="star">★</span>
-                        <span onclick="setRating(3, document.getElementById('star-rating-1'))" class="star">★</span>
-                        <span onclick="setRating(4, document.getElementById('star-rating-1'))" class="star">★</span>
-                        <span onclick="setRating(5, document.getElementById('star-rating-1'))" class="star">★</span>
-                    </div>
+                    
 
                     <br>
                     <label for="comment"></label>
