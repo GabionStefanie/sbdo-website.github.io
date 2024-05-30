@@ -1,29 +1,42 @@
 <?php
+use pChart\pData; // Add this line
+use pChart\pPie; // Add this line
+use pChart\pCharts; // Add this line
+use pChart\pDraw; // Add this line
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Include the dompdf and pChart libraries
     require_once '../../dompdf/autoload.inc.php';
-    require_once '../../pChart2.0-for-PHP7-master/pChart/pData.php';
-    require_once '../../pChart2.0-for-PHP7-master/pChart/pDraw.php';
-    require_once '../../pChart2.0-for-PHP7-master/pChart/pImage.php';
+    require_once '../../pChart2.0-for-PHP7-master/pChart/pData.php'; // Corrected path
+    require_once '../../pChart2.0-for-PHP7-master/pChart/pDraw.php'; // Corrected path
+    require_once '../../pChart2.0-for-PHP7-master/pChart/pPie.php'; // Corrected path
+    require_once '../../pChart2.0-for-PHP7-master/pChart/pCharts.php'; // Corrected path
     
     // Fetch your data
     include 'backend/reportfetching.php';
-
+    
     // Create a new pChart pData object
     $chartData = new pData();
-
+    
     // Add data to the chart
-    $chartData->addPoints(array(1, 3, 4, 3, 5));
-
-    // Create a new pImage object
-    $image = new pImage(300, 300, $chartData);
-
-    // Draw a line chart
-    $image->drawLineChart();
-
+    $chartData->addPoints(array(1, 3, 4, 3, 5), "SerieName");
+    
+    // Create a new pChart object
+    $chart = new pCharts(300, 300); // Add this line
+    
+    // Draw the background
+    $chart->drawFilledRectangle(0,0,300,300,["R"=>255,"G"=>255,"B"=>255]);
+    
+    // Create a pPie object
+    $draw = new pDraw(300, 300); // Add this line with the desired width and height
+    $pie = new pPie($draw); // Replace $chart with $draw
+    
+    // Draw a 2D pie chart
+    $pie->draw2DPie(150, 150, ["DataGapAngle"=>10,"DataGapRadius"=>10,"Border"=>TRUE]);
+    
     // Save the chart image
     $chartImagePath = "chart.png";
-    $image->render($chartImagePath);
+    $chart->render($chartImagePath);
 
     // Create HTML content for the PDF
     $html = '<!DOCTYPE html>
