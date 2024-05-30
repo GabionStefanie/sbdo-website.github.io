@@ -28,4 +28,3 @@ if ($Account_Type === 'Patient') {
     $profileframe = '<a href="../Login/login.php" class="nav__link"><div class="profile-frame"></div></a>';
 }
 echo $profileframe;
-

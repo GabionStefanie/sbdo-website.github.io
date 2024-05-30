@@ -37,12 +37,12 @@ VALUES
 ('Prosthodontic'), ('Removable Applicables'), ('Orthodontics'), ('Root Canal Treatment'),
 ('Pediatric Dentistry'), ('Bleaching'), ('Emergency Treatment'), ('Retainers')";
 
-$insertSchedule = "INSERT INTO SCHEDULE (scheduleDateTime,`Status`)
+$insertSchedule = "INSERT INTO SCHEDULE (scheduleDate, scheduleTime, `Status`)
 VALUES 
-('2024-05-30 8:00', 'Available'),
-('2024-05-31 8:00', 'Available'),
-('2024-05-01 8:00', 'Available'),
-('2024-05-02 8:00', 'Available');";
+('2024-05-31', '11:00', 'Available'),
+('2024-05-31', '12:00', 'Available'),
+('2024-05-31', '13:00', 'Available'),
+('2024-05-31', '14:00', 'Available');";
 
       $password = "sulitandbagasan00";
       $password_hash = password_hash($password, PASSWORD_DEFAULT);
@@ -50,7 +50,7 @@ VALUES
 
       $insertAccount = "INSERT INTO `ACCOUNT` (`Username`, `Password`, `Email`, `Account_Type`)
       VALUES
-            ('Arvie', '$password_hash', 'sgabion.k12148528@umak.edu.ph', 'Admin');";
+            ('sbdoAdminAcc', '$password_hash', 'sgabion.k12148528@umak.edu.ph', 'Admin');";
 
 $insertPatient = "INSERT INTO PATIENT (Name, email, phone) VALUES
 ('JohnDoe', 'john.doe@example.com', '123-456-7890'),

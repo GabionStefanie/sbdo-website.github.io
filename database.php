@@ -1,4 +1,3 @@
-Updates to keyboard shortcuts … On Thursday, August 1, 2024, Drive keyboard shortcuts will be updated to give you first-letters navigation.Learn more
 <?php
 $servername = "localhost";
 $username = "root";
@@ -50,7 +49,8 @@ mysqli_query($conn, $createPxHealthSymptomsTable);
 
 $createScheduleTable = "CREATE TABLE IF NOT EXISTS SCHEDULE (
   Schedule_ID INT AUTO_INCREMENT,
-  scheduleDateTime DATETIME NOT NULL,
+  scheduleDate DATE NOT NULL,
+  scheduleTime TIME NOT NULL,
   Status VARCHAR (15) NOT NULL,
   CONSTRAINT PK_ScheduleID PRIMARY KEY (Schedule_ID),
   CONSTRAINT CHK_Status CHECK (Status IN ('Available', 'Not Available')));";
@@ -125,6 +125,9 @@ $createAccountTable = "CREATE TABLE IF NOT EXISTS `ACCOUNT` (
         `User_ID` INT AUTO_INCREMENT,
         `Username` VARCHAR (255) NOT NULL,
         `Password` VARCHAR (255) NOT NULL,
+        `Name` VARCHAR (30) NOT NULL,
+        `Phone` VARCHAR (11) NOT NULL,
+        `Gender` VARCHAR (10) NOT NULL,
         `Email` VARCHAR (30) NOT NULL,
         `ProfilePicture` BLOB NOT NULL,
         `Account_Type` VARCHAR (10) NOT NULL,
@@ -137,10 +140,6 @@ mysqli_query($conn, $createAccountTable);
 $createPatientTable = "CREATE TABLE IF NOT EXISTS `PATIENT` (
         `Patient_ID` INT AUTO_INCREMENT,
         `User_ID` INT,
-        `Name` VARCHAR (30) NOT NULL,
-        `Phone` VARCHAR (11) NOT NULL,
-        `Email` VARCHAR (30) NOT NULL,
-        `Gender` VARCHAR (10) NOT NULL,
         `Patient_Status` VARCHAR (10) NOT NULL,
         CONSTRAINT PK_PatientID PRIMARY KEY (`Patient_ID`),
         CONSTRAINT FK_UserID FOREIGN KEY (`User_ID`) REFERENCES `ACCOUNT`(`User_ID`) ON UPDATE CASCADE ON DELETE SET NULL
@@ -150,7 +149,6 @@ mysqli_query($conn, $createPatientTable);
 $createReviewsTable = "CREATE TABLE IF NOT EXISTS `REVIEWS` (
         `Review_ID` INT AUTO_INCREMENT,
         `Review` TEXT NOT NULL,
-        `Stars` INT NOT NULL,
         `User_ID` INT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         CONSTRAINT PK_ReviewID PRIMARY KEY (`Review_ID`),
@@ -158,20 +156,9 @@ $createReviewsTable = "CREATE TABLE IF NOT EXISTS `REVIEWS` (
       )";
 mysqli_query($conn, $createReviewsTable);
 
-$createDentistTable = "CREATE TABLE IF NOT EXISTS `DENTIST` (
-    `Dentist_ID` INT AUTO_INCREMENT,
-    `User_ID` INT,
-    `Dentist_Name` VARCHAR (20) NOT NULL,
-    `Contact_No` VARCHAR (11) NOT NULL,
-    CONSTRAINT PK_DentistID PRIMARY KEY (`Dentist_ID`),
-    CONSTRAINT FK_UserDentistID FOREIGN KEY (`User_ID`) REFERENCES `ACCOUNT`(`User_ID`)  ON UPDATE CASCADE ON DELETE SET NULL
-  )";
-mysqli_query($conn, $createDentistTable);
-
 $createAppointmentTable = "CREATE TABLE IF NOT EXISTS `APPOINTMENT` (
     `Appointment_ID` INT AUTO_INCREMENT,
     `Patient_ID` INT,
-    `Dentist_ID` INT,
     `Service_ID` INT,
     `Schedule_ID` INT,
     `Appointment_Note` VARCHAR (50),
@@ -179,7 +166,6 @@ $createAppointmentTable = "CREATE TABLE IF NOT EXISTS `APPOINTMENT` (
     CONSTRAINT PK_AppointmentID PRIMARY KEY (`Appointment_ID`),
     CONSTRAINT FK_ServiceAppointmentID FOREIGN KEY (`Service_ID`) REFERENCES `SERVICE`(`Service_ID`) ON UPDATE CASCADE ON DELETE RESTRICT,
     CONSTRAINT FK_PatientAppointmentID FOREIGN KEY (`Patient_ID`) REFERENCES `PATIENT`(`Patient_ID`) ON UPDATE CASCADE ON DELETE SET NULL,
-    CONSTRAINT FK_DentistAppointmentID FOREIGN KEY (`Dentist_ID`) REFERENCES `DENTIST`(`Dentist_ID`) ON UPDATE CASCADE ON DELETE RESTRICT,
     CONSTRAINT FK_ScheduleAppointmentID FOREIGN KEY (`Schedule_ID`) REFERENCES `SCHEDULE`(`Schedule_ID`) ON UPDATE CASCADE ON DELETE RESTRICT
   )";
 mysqli_query($conn, $createAppointmentTable);
