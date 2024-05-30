@@ -26,7 +26,7 @@
           </div>
         </div>
         <label for="qrCode">QR Code:</label><br>
-        <img src="qrcode" alt="qrCode" id="qrCode"><br><br>
+        <img src="images/GCashQR.jpg" alt="qrCode" id="qrCode"><br><br>
 
         <div>
           <div>

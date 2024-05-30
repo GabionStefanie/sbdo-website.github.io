@@ -1,3 +1,16 @@
+<html>
+
+<style>
+        .just-validate-error-label {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+        <?php include "../header-footer/header-footer.css"; ?>
+    </style>
+<?php include "../header-footer/header.php"; ?>
+
+</html>
+
 <!DOCTYPE html>
 <html>
 
@@ -7,14 +20,7 @@
     <link rel="stylesheet" type="text/css" href="css/appstep1-css.css" />
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <script src="jscript/appstep1-validation.js" defer></script>
-    <style>
-        .just-validate-error-label {
-            margin-top: 5px;
-            margin-left: 10px;
-        }
 
-        <?php include "../header-footer/header-footer.css"; ?>
-    </style>
 </head>
 
 <body>
@@ -30,11 +36,7 @@
                 <a href="../Login/login.php"><button>LOG IN</button></a>
             </div>
         </div>
-    </div>
-
-    <div class="wrapper">
-        <?php include "../header-footer/header.php"; ?>
-
+    <div class="wrapper">  
         <div class="title">
             <div class="film"></div>
             <img class="contactImg" src="images/contactImg.png" alt="featured image: inside of the dental office" />
@@ -181,7 +183,7 @@
             </div>
             <div class="content2-row2">
                 Location: 2776 Faraday, Makati, 1234 Metro Manila<br />
-                Contact No.: 0917 110 3983 / 0999 884 0454<br />
+                Contact No.: +63 917 110 3983 / +63 999 884 0454<br />
                 E-mail: sulitandbagasan@gmail.com
             </div>
         </div>
@@ -192,10 +194,6 @@
             </div>
             <div class="content3-row3">
                 <p>We are open from Monday to Sunday, 9 AM to 5 PM.</p>
-                <p>
-                    Please call us at 0917 110 3983 / 0999 884 0454 to schedule an
-                    appointment.
-                </p>
             </div>
         </div>
 

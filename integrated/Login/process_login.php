@@ -92,7 +92,7 @@ try {
                     if($user["Account_Type"] === 'Admin'){
                         header("Location: ../admin-reports/account-dashboard.php");
                     }else{
-                        header("Location: ../My Account/account-dashboard.php");
+                        header("Location: ../appointment-form/appstep1.php");
 
                     }
                     exit;
