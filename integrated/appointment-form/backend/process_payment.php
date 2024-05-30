@@ -39,27 +39,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
         // Insert into patient table
-        $sql = "INSERT INTO patient (name, phone, email, gender, patient_status) VALUES ( ?, ?, ?, ?, ?)";
+
+        
+        if(isset($_COOKIE["User_ID"])) {
+            $userid = $_COOKIE["User_ID"];
+            
+        }
+
+        $sql = "INSERT INTO patient (user_id, patient_status) VALUES (?, ?)";
         $stmt = $mysqli->prepare($sql);
         if (!$stmt) {
             throw new Exception("SQL error: " . $mysqli->error);
         }
         $status = "Upcoming";
-        $stmt->bind_param("sssss", $_SESSION["name"], $_SESSION["pnum"], $_SESSION["email"], $_SESSION["gender"],$status);
+        $stmt->bind_param("is", $userid, $status);
         $stmt->execute();
 
-
-         // Get the patient_id of the last inserted patient
-         $patient_id = $mysqli->insert_id;
+        // Get the patient_id of the last inserted patient
+        $patient_id = $mysqli->insert_id;
 
     
         // Get schedule_id
-        $sql = "SELECT schedule_id FROM schedule WHERE scheduleDateTime = ?";
+        $sql = "SELECT schedule_id FROM schedule WHERE scheduleDate = ? AND scheduleTime = ?";
         $stmt = $mysqli->prepare($sql);
         if (!$stmt) {
             throw new Exception("SQL error: " . $mysqli->error);
         }
-        $stmt->bind_param("s", $_SESSION["date"]);
+        $stmt->bind_param("ss", $_SESSION["date"], $_SESSION["time"]);
         $stmt->execute();
         $stmt->bind_result($schedule_id);
         $stmt->fetch();
