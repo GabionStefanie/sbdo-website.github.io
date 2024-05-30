@@ -100,7 +100,7 @@ const data = {
 };
 
 const config = {
-  type: 'bar',
+  type: 'pie',
   data: data,
   options: {
     indexAxis: 'y',
