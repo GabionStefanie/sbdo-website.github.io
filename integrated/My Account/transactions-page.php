@@ -13,6 +13,8 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
+$_SESSION['userID'] = 1;
+
 // Prepare SQL statement to fetch the user data
 $sql = "SELECT * FROM ACCOUNT WHERE User_ID = ?";
 $stmt = $conn->prepare($sql);
@@ -21,7 +23,7 @@ if (!$stmt) {
 }
 
 // Bind the user ID to the SQL statement
-$stmt->bind_param("i", $_COOKIE["User_ID"]);
+$stmt->bind_param("i", $_SESSION["userID"]);
 $stmt->execute();
 
 // Get the result
@@ -99,34 +101,92 @@ if ($result->num_rows == 1) {
         <div class="transac-history">
             <p>TRANSACTION HISTORY</p>
             <div class="line1"></div>
-            <div class="sort">
-                <button class="sortByMonth">SORT BY MONTH</button>
-                <button class="sortByStatus">SORT BY STATUS</button>
-            </div>
+           <!--<div class="sort">
+            <button class="sortByMonth" onclick="sortTableByMonth()">SORT BY MONTH</button>
+                <button class="sortByStatus" onclick="sortTableByStatus()">SORT BY STATUS</button>
+            </div>-->
             <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>DATE</th>
-                            <th>NAME</th>
-                            <th>AMOUNT</th>
-                            <th>STATUS</th>
-                        </tr>
-                    </thead>
-                    <tbody id="transactionHistoryBody">
-                        <!-- Transaction history rows will be dynamically generated here -->
-                    </tbody>
-                </table>
+                 <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "sbdoDatabase";
+
+    $mysqli = new mysqli($servername, $username, $password, $dbname);
+
+    if(isset($_COOKIE["User_ID"])) {
+        $userid = $_COOKIE["User_ID"];
+        
+    } 
+    
+
+    $sql = "SELECT a.appointment_id,  pd.paymentdetails_id,  sc.scheduleDate, sc.scheduleTime, s.service_name,  pd.amount, pd.image_filename, a.appointment_id, p.patient_status
+    FROM account ac
+    JOIN patient p ON ac.user_id = p.user_id
+    JOIN appointment a ON p.patient_id = a.appointment_id
+    JOIN service s ON a.service_id = s.service_id
+    JOIN chief_complaint cc ON a.appointment_id = cc.chief_complaint_id
+    JOIN medical_history mh ON a.appointment_id = mh.medical_history_id
+    JOIN health_declaration hd ON a.appointment_id = hd.health_declaration_id
+    JOIN patient_medical_allergens pma ON a.appointment_id = pma.medical_history_id
+    JOIN medical_allergens_list ma ON pma.med_allergen_id = ma.med_allergen_id
+    JOIN patient_health_symptoms phs ON a.appointment_id = phs.health_declaration_id
+    JOIN health_symptoms hs ON phs.healthsymptoms_id = hs.healthsymptoms_id
+    JOIN patient_pain_level ppl ON a.appointment_id = ppl.chief_complaint_id
+    JOIN pain_level_list pll ON ppl.pain_level_id = pll.pain_level_id
+    LEFT JOIN payment pd ON a.appointment_id = pd.paymentDetails_ID
+    LEFT JOIN schedule sc ON a.schedule_id = sc.schedule_id 
+    where p.user_id = $userid
+    GROUP BY p.patient_id
+    ORDER BY sc.scheduleDate";
+    
+    $result = $mysqli->query($sql);
+    while($row = $result->fetch_assoc()) {
+        $id = uniqid();
+
+        $scheduleDate = $row['scheduleDate'];
+        $scheduleTime = $row['scheduleTime'];
+
+        // Combine and format date and time
+        $datetime = new DateTime("$scheduleDate $scheduleTime");
+        $formattedDatetime = $datetime->format('m/d/Y h:i A');
+        ?>
+                        <div>
+                           
+                            <div>
+                            <table>
+    <tr>
+        <th>Appointment ID:</th>
+        <th>Payment ID:</th>
+        <th>Appointment Schedule:</th>
+        <th>Service:</th>
+        <th>Amount:</th>
+        <th>Status:</th>
+    </tr>
+    <tr>
+        <td><?php echo $row["appointment_id"]; ?></td>
+        <td><?php echo $row["paymentdetails_id"]; ?></td>
+        <td><?php echo $formattedDatetime; ?></td>
+        <td><?php echo $row["service_name"]; ?></td>
+        <td><?php echo $row["amount"]; ?></td>
+        <td><?php echo $row["patient_status"]; ?></td>
+    </tr>
+</table>
+
+
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    $mysqli->close();
+                    ?>
             </div>
-            <div class="page-buttons">
-                <button class="prev">PREV</button>
-                <button class="page-button">1</button>
-                <button class="page-button">2</button>
-                <button class="page-button">3</button>
-                <button class="next">NEXT</button>
-            </div>
+
+
+
         </div>
         <?php include '../header-footer/footer.php'; ?>
     </div>
+    
 </body>
 </html>
