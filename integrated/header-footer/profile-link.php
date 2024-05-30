@@ -21,10 +21,10 @@ $conn->close();
 $profileframe = "";
 
 if ($Account_Type === 'Patient') {
-    $profileframe = '<a href="../My Account/account-dashboard.php" class="nav__link"><div class="profile-frame"></div></a>';
+    $profileframe = '<a href="../My Account/account-dashboard.php" class="nav__link accButton">Account</a>';
 } elseif ($Account_Type === 'Admin') {
-    $profileframe = '<a href="../admin-reports/account-dashboard.php" class="nav__link"><div class="profile-frame"></div></a>';
+    $profileframe = '<a href="../admin-reports/account-dashboard.php" class="nav__link accButton">Account</a>';
 } else {
-    $profileframe = '<a href="../Login/login.php" class="nav__link"><div class="profile-frame"></div></a>';
+    $profileframe = '<a href="../Login/login.php" class="nav__link accButton">Login</a>';
 }
 echo $profileframe;
