@@ -29,12 +29,12 @@
 
         <div class="APPOINTMENT-FORM-container">
 
-            <form action="index.php" method="post" id="appconfirm" novalidate>
+            <form action="../admin-reports/account-dashboard.php" method="post" id="appconfirm" novalidate>
 
                 <table>
                     <tr>
                         <th>Name:</th>
-                        <td><?php session_start();
+                        <td><?php
                             echo $_SESSION["name"]; ?></td>
                     </tr>
                     <tr>
@@ -58,7 +58,6 @@
 
                 <div class="center button">
                     <div class="button-group">
-                        <button type="button">Reject</button>
                         <button type="submit">Confirm</button>
                     </div>
                 </div>

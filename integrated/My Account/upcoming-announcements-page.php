@@ -13,8 +13,6 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$_SESSION['userID'] = 1;
-
 // Prepare SQL statement to fetch the user data
 $sql = "SELECT * FROM ACCOUNT WHERE User_ID = ?";
 $stmt = $conn->prepare($sql);
@@ -23,7 +21,7 @@ if (!$stmt) {
 }
 
 // Bind the user ID to the SQL statement
-$stmt->bind_param("i", $_SESSION["userID"]);
+$stmt->bind_param("i", $_COOKIE["User_ID"]);
 $stmt->execute();
 
 // Get the result
@@ -46,7 +44,7 @@ if ($result->num_rows == 1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Sulit & Bagasan Dental Office</title>
     <link rel="stylesheet" type="text/css" href="css/upcoming-announcements-css.css">
-    <script src="jscript/upcoming-announcements-jscript.js"></script>
+    <script defer src="jscript/upcoming-announcements-jscript.js"></script>
     <style>
         <?php include '../header-footer/header-footer.css'; ?>
     </style>
