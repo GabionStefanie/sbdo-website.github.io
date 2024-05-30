@@ -1,22 +1,22 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Include the dompdf and pChart libraries
-    require_once 'dompdf/autoload.inc.php';
-    require_once 'pChart2.0-for-PHP7-master/class/pData.class.php';
-    require_once 'pChart2.0-for-PHP7-master/class/pDraw.class.php';
-    require_once 'pChart2.0-for-PHP7-master/class/pImage.class.php';
+    require_once '../../dompdf/autoload.inc.php';
+    require_once '../../pChart2.0-for-PHP7-master/pChart/pData.php';
+    require_once '../../pChart2.0-for-PHP7-master/pChart/pDraw.php';
+    require_once '../../pChart2.0-for-PHP7-master/pChart/pImage.php';
     
     // Fetch your data
     include 'backend/reportfetching.php';
 
-    // Create a new pChart object
-    $chart = new pData();
+    // Create a new pChart pData object
+    $chartData = new pData();
 
     // Add data to the chart
-    $chart->addPoints(array(1, 3, 4, 3, 5));
+    $chartData->addPoints(array(1, 3, 4, 3, 5));
 
     // Create a new pImage object
-    $image = new pImage(300, 300, $chart);
+    $image = new pImage(300, 300, $chartData);
 
     // Draw a line chart
     $image->drawLineChart();
