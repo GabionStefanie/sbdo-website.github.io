@@ -99,7 +99,7 @@ if ($stmt->execute()) {
     $mail->Subject = "Account Activation";
     $mail->Body = <<<END
 
-    Click <a href="http://localhost/sbdo-website.github.io/integrated/sign-up/activate-account.php?token=$activation_token">here</a> 
+    Click <a href="http://localhost/sbdo/sbdo-website.github.io/integrated/sign-up/activate-account.php?token=$activation_token">here</a> 
     to activate your account.
 
     END;

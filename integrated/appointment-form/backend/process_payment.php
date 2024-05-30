@@ -39,13 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
         // Insert into patient table
-        $sql = "INSERT INTO patient (name, phone, email, gender, patient_status) VALUES ( ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO patient (User_ID,name, phone, email, gender, patient_status) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $mysqli->prepare($sql);
         if (!$stmt) {
             throw new Exception("SQL error: " . $mysqli->error);
         }
         $status = "Upcoming";
-        $stmt->bind_param("sssss", $_SESSION["name"], $_SESSION["pnum"], $_SESSION["email"], $_SESSION["gender"],$status);
+        $stmt->bind_param("isssss",$_COOKIE['User_ID'], $_SESSION["name"], $_SESSION["pnum"], $_SESSION["email"], $_SESSION["gender"],$status);
         $stmt->execute();
 
 
@@ -153,16 +153,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $sql = "INSERT INTO payment (referenceno, proofofpayment, image_filename) VALUES (?, ?, ?)";
 $stmt = $mysqli->prepare($sql);
-   
-$target_dir = "images/";
-$target_file = $target_dir . basename($_FILES["proofOfPayment"]["name"]);
-move_uploaded_file($_FILES["proofOfPayment"]["tmp_name"], $target_file);
-$image_filename = basename($target_file);
 
-$stmt->bind_param("sss", $_SESSION["referenceNo"], $Image, $image_filename);
-$stmt->execute();
-$payment_id = $mysqli->insert_id;
-$stmt->close();
+// Define the target directory for uploads
+$target_dir = "images/";
+
+// Generate a unique filename
+$original_filename = basename($_FILES["proofOfPayment"]["name"]);
+$unique_suffix = time() . '-' . bin2hex(random_bytes(5)); // Using current time and random bytes for uniqueness
+$unique_filename = $unique_suffix . '-' . $original_filename;
+
+// Set the full path for the target file
+$target_file = $target_dir . $unique_filename;
+
+// Move the uploaded file to the target directory
+move_uploaded_file($_FILES["proofOfPayment"]["tmp_name"], $target_file);
+    // Bind parameters and execute the statement
+    $stmt->bind_param("sss", $_SESSION["referenceNo"], $_FILES["proofOfPayment"]["name"], $unique_filename);
+    $stmt->execute();
+
+    // Retrieve the last inserted ID
+    $payment_id = $mysqli->insert_id;
+
+    // Close the statement
+    $stmt->close();
+
 
         // Insert into record table
         $sql = "INSERT INTO record (Appointment_ID, Chief_Complaint_ID, Medical_History_ID, Health_Declaration_ID, 	PaymentDetails_ID) VALUES (?, ?,?,?,?)";
@@ -174,7 +188,7 @@ $stmt->close();
 
         $mysqli->commit();
     } 
-    header('Location: appconfirm.php');
+    header('Location: ../appconfirm.php');
 
     $mysqli->close();
 ?>
