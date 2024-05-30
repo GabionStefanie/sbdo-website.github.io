@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $chartData->addPoints(array(1, 3, 4, 3, 5), "SerieName");
     
     // Create a new pChart object
-    $chart = new pCharts(300, 300); // Add this line
+    $draw = new pDraw(300, 300); // Replace $chart with $draw
     
     // Draw the background
-    $chart->drawFilledRectangle(0,0,300,300,["R"=>255,"G"=>255,"B"=>255]);
+    $draw->drawFilledRectangle(0,0,300,300,["R"=>255,"G"=>255,"B"=>255]);
     
     // Create a pPie object
     $draw = new pDraw(300, 300); // Add this line with the desired width and height
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Save the chart image
     $chartImagePath = "chart.png";
-    $chart->render($chartImagePath);
+    $draw->Render($chartImagePath);
 
     // Create HTML content for the PDF
     $html = '<!DOCTYPE html>
