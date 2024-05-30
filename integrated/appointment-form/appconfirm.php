@@ -27,7 +27,7 @@
         </div>
         <div class="APPOINTMENT-FORM-container">
 
-<form action="../admin-reports/account-dashboard" method="post" id="appconfirm" novalidate>
+<form action="../admin-reports/account-dashboard.php" method="post" id="appconfirm" novalidate>
         <?php
 
 // Database connection
