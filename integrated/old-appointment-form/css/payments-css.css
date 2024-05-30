@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono&family=Josefin+Sans:wght@600&family=Jost:wght@700&family=Lexend+Deca&family=Montserrat:wght@400;600;700&display=swap");
+
+.wrapper{
+    margin-block: 5rem; 
+}
+
+.payment-form {
+    background-color: #fff;
+    padding: 2rem 4rem;
+    width: 25%;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.payment-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.payment-form label {
+    font-size: 1rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.payment-form input[type="text"],
+.payment-form input[type="file"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.payment-form input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.payment-form input[type="submit"]:hover {
+    background-color: #343434;
+}
+
+body {
+    background-color: #DADADA;
+}
