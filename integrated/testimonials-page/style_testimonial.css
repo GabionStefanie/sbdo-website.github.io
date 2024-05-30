@@ -31,15 +31,6 @@ div.card {
   background-color: white;
 }
 
-.star {
-  font-size: 2.4rem;
-  color: gray;
-}
-
-.selected {
-  color: gold;
-}
-
 .button-container {
   margin-right: 150vh;
   text-align: center;

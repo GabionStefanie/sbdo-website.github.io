@@ -14,7 +14,6 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stars = $_POST['rating'];
     $review = $_POST['comment'];
 
     if (isset($_POST['anonymous'])) {
@@ -30,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $UserName = $result['Username'];
     }
 
-    $stmt = $conn->prepare("INSERT INTO REVIEWS (Stars, Review, User_ID) VALUES (?, ?, ?)");
-    $stmt->bind_param("isi", $stars, $review, $UserID);
+    $stmt = $conn->prepare("INSERT INTO REVIEWS (Review, User_ID) VALUES (?, ?)");
+    $stmt->bind_param("si", $review, $UserID);
 
     date_default_timezone_set('Asia/Manila');
     $dateTime = new DateTime(date("Y-m-d H:i:s"));
@@ -41,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response = [
             "success" => true,
             "comment" => [
-                "rating" => $stars,
                 "comment" => $review,
                 "anonymous" => $UserName,
                 "created_at" => $formattedDate
@@ -56,5 +54,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $conn->close();
 
-// header('Content-Type: application/json');
 echo json_encode($response);
