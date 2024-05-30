@@ -52,14 +52,9 @@ VALUES
       VALUES
             ('sbdoAdminAcc', '$password_hash', 'sgabion.k12148528@umak.edu.ph', 'Admin');";
 
-$insertPatient = "INSERT INTO PATIENT (Name, email, phone) VALUES
-('JohnDoe', 'john.doe@example.com', '123-456-7890'),
-('JaneDoe', 'jane.doe@example.com', '098-765-4321');";
-
 mysqli_query($conn, $insertHealthSymptoms);
 mysqli_query($conn, $insertPainLevelList);
 mysqli_query($conn, $insertMedAllergenList);
 mysqli_query($conn, $insertServiceList);
 mysqli_query($conn, $insertSchedule);
 mysqli_query($conn, $insertAccount);
-mysqli_query($conn, $insertPatient);
