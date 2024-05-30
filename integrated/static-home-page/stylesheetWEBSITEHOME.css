@@ -48,21 +48,21 @@
   z-index: 2;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .main_title {
     font-size: 6rem;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-}
+} */
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .main_title {
     font-size: 8rem;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-}
+} */
 
 .to_services {
   width: 85%;
@@ -105,7 +105,7 @@
 .to_servicesTitle {
   color: #fff;
   font-family: Inter;
-  font-size: 4.3rem;
+  font-size: 3.3rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -116,7 +116,7 @@
 .to_servicesText {
   color: #fff;
   font-family: Inter;
-  font-size: 3rem;
+  font-size: 2.3rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -172,7 +172,7 @@
   line-height: normal;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .to_services {
     height: auto;
   }
@@ -192,9 +192,9 @@
   .learn_more_link {
     margin-top: 30px;
   }
-}
+} */
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .to_services {
     height: auto;
   }
@@ -215,9 +215,9 @@
   .learn_more_link {
     margin-top: 50px;
   }
-}
+} */
 
-@media only screen and (min-width: 800px) and (max-width: 1500px) {
+/* @media only screen and (min-width: 800px) and (max-width: 1500px) {
   .to_services {
     height: auto;
   }
@@ -227,7 +227,7 @@
   }
 
   .to_servicesTitle {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .to_servicesText {
@@ -238,7 +238,7 @@
     font-size: 2rem;
     margin-top: 50px;
   }
-}
+} */
 
 .services_text p {
   color: #fff;
@@ -266,7 +266,7 @@
 .beforeTitle {
   color: #fff;
   font-family: Inter;
-  font-size: 5.2rem;
+  font-size: 4.3rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -335,7 +335,7 @@
 .testimonials h1 {
   color: white;
   font-family: inter;
-  font-size: 4.7rem;
+  font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
 }
@@ -354,7 +354,7 @@
   width: 60%;
   color: white;
   font-family: Lexend Deca;
-  font-size: 2.9rem;
+  font-size: 2.3rem;
   margin-bottom: 2rem;
 }
 
@@ -368,7 +368,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   border-radius: 2.5rem;
   cursor: pointer;
 }
@@ -379,7 +379,7 @@ span {
   justify-content: flex-end;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .beforeBG {
     height: auto;
   }
@@ -397,9 +397,9 @@ span {
     margin-top: 30px;
     margin-bottom: 30px;
   }
-}
+} */
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .beforeBG {
     height: auto;
   }
@@ -417,7 +417,7 @@ span {
     margin-top: 30px;
     margin-bottom: 30px;
   }
-}
+} */
 
 .infoBG {
   width: 100%;
@@ -439,7 +439,7 @@ span {
 .infoTitle {
   color: #feeb6b;
   font-family: Inter;
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -455,22 +455,20 @@ span {
 .infoText {
   color: #fff;
   font-family: Inter;
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 
-  margin-bottom: 10px;
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  text-align: center;
+  text-align: justify;
   align-items: center;
-  z-index: 2;
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .infoBG {
     height: auto;
   }
@@ -486,9 +484,9 @@ span {
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
-}
+} */
 
-@media only screen and (min-width: 300px) and (max-width: 1024px) {
+/* @media only screen and (min-width: 300px) and (max-width: 1024px) {
   .infoBG {
     height: auto;
   }
@@ -504,9 +502,9 @@ span {
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
-}
+} */
 
-@media only screen and (min-width: 800px) and (max-width: 1280px) {
+/* @media only screen and (min-width: 800px) and (max-width: 1280px) {
   .infoBG {
     height: auto;
   }
@@ -530,19 +528,18 @@ span {
   .infoBG {
     padding-block: 5rem;
   }
-}
+} */
 
-@media only screen and (min-width: 1800px) {
+/* @media only screen and (min-width: 1800px) {
   html {
     font-size: 16px;
   }
-}
+} */
 
 /* TABLET-LANDSCAPE   */
-@media only screen and (max-width: 1375px) {
+/* @media only screen and (max-width: 1375px) {
   html {
     font-size: 56.25%;
-    /* 1rem = 9px; 9px/16px = 56.25% */
   }
 
   .container {
@@ -556,13 +553,12 @@ span {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
   }
-}
+} */
 
 /* TABLET-PORTRAIT */
-@media only screen and (max-width: 1060px) {
+/* @media only screen and (max-width: 1060px) {
   html {
     font-size: 50%;
-    /* 1rem = 8px; 8px/16px = 50% */
   }
 
   .service__logo {
@@ -606,12 +602,12 @@ span {
     width: 6rem;
     height: 6rem;
   }
-}
+} */
 
-@media only screen and (max-width: 680px) {
+/* @media only screen and (max-width: 680px) {
   html {
     font-size: 38%;
-    /* 1rem = 8px; 8px/16px = 50% */
+  
   }
 
   .service__logo {
@@ -623,13 +619,13 @@ span {
   .text__container p {
     margin-bottom: 1rem;
   }
-}
+} */
 
 /* PHONE */
-@media only screen and (max-width: 530px) {
+/* @media only screen and (max-width: 530px) {
   html {
     font-size: 37.5%;
-    /* 1rem = 6px; 6px/16px = 37.5% */
+  
   }
 
   .container {
@@ -687,4 +683,4 @@ span {
   html {
     font-size: 30%;
   }
-}
+} */

@@ -146,6 +146,7 @@ footer div.operating_hrs > span,
 	font-size: 2.5rem;
 	text-align: center;
 	margin-bottom: 1rem;
+  display: inline;
 }
 
 footer div.operating_hrs > p, .contact_details > p  {
