@@ -216,6 +216,15 @@ tr:hover {
 	background-color: #cc0000;
 }
 
+.canceling-text-area {
+	min-width: 98%;
+	max-width: 98%;
+	min-height: 5rem;
+	font-size: 2rem;
+	font-family: Montserrat;
+	padding: 1rem;
+}
+
 .modal-container {
 	display: none;
 	position: fixed;
@@ -365,7 +374,7 @@ tr:hover {
 
 }
 
-.cancel-form input[type="submit"] {
+.cancel-form input[type="submit"], .cancel-form input[type="button"] {
 	color: #fff;
 	padding: 10px 50px;
 	border: none;
@@ -387,7 +396,6 @@ tr:hover {
 
 .cancel-form .no-btn {
 	background-color: #FF0000;
-
 	color: #FFFFFF;
 
 }
