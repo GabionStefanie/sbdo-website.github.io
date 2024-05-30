@@ -21,7 +21,7 @@ if (!$stmt) {
 }
 
 // Bind the user ID to the SQL statement
-$stmt->bind_param("i", $_COOKIE["userID"]);
+$stmt->bind_param("i", $_COOKIE["User_ID"]);
 $stmt->execute();
 
 // Get the result
