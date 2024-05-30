@@ -86,22 +86,55 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="apptype">Type of Appointment</label>
-                    <select id="apptype" name="apptype" required>
-                        <option value="" disabled selected>Select an option</option>
-                        <option value="1">Check Up</option>
-                        <option value="2">Surgery</option>
-                        <option value="3">Prophylaxis and Periodontics</option>
-                        <option value="4">Restorative</option>
-                        <option value="5">Prosthodontic</option>
-                        <option value="6">Removable Applicables</option>
-                        <option value="7">Orthodontics</option>
-                        <option value="8">Root Canal Treatment</option>
-                        <option value="9">Pediatric Dentistry</option>
-                        <option value="10">Bleaching</option>
-                        <option value="11">Retainers</option>
-                    </select>
-                </div>
+    <label for="apptype">Type of Appointment</label>
+    <div id="apptype">
+        <div>
+            <input type="checkbox" id="apptype1" name="apptype[]" value="Check Up">
+            <label for="apptype1">Check Up</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype2" name="apptype[]" value="Surgery">
+            <label for="apptype2">Surgery</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype3" name="apptype[]" value="Prophylaxis and Periodontics">
+            <label for="apptype3">Prophylaxis and Periodontics</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype4" name="apptype[]" value="Restorative">
+            <label for="apptype4">Restorative</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype5" name="apptype[]" value="Prosthodontic">
+            <label for="apptype5">Prosthodontic</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype6" name="apptype[]" value="Removable Applicables">
+            <label for="apptype6">Removable Applicables</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype7" name="apptype[]" value="Orthodontics">
+            <label for="apptype7">Orthodontics</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype8" name="apptype[]" value="Root Canal Treatment">
+            <label for="apptype8">Root Canal Treatment</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype9" name="apptype[]" value="Pediatric Dentistry">
+            <label for="apptype9">Pediatric Dentistry</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype10" name="apptype[]" value="Bleaching">
+            <label for="apptype10">Bleaching</label>
+        </div>
+        <div>
+            <input type="checkbox" id="apptype11" name="apptype[]" value="Retainers">
+            <label for="apptype11">Retainers</label>
+        </div>
+    </div>
+</div>
+
 
                 <div class="input-group" style="display: flex;">
                     <label for="date" font-family: "Josefin Sans" , "sans-serif" ;>Date: <br></label>
