@@ -31,6 +31,11 @@ session_start();
                     <li class="nav__item">
                         <a class="nav__link" href="../appointment-form/appstep1.php">Contact Us</a>
                     </li>
+					<li class="nav__item">
+                        <?php if(isset($_SESSION['username'])) { ?>
+                            <a class="nav__link" href="../logout.php">Logout</a>
+                        <?php } ?>
+                    </li>
                     <li class="nav__item">
                         <?php include 'profile-link.php'; ?>
                     </li>
