@@ -103,26 +103,25 @@ if ($result->num_rows == 1) {
         <div class="transac-history">
             <p>TRANSACTION HISTORY</p>
             <div class="line1"></div>
-           <!--<div class="sort">
+            <!--<div class="sort">
             <button class="sortByMonth" onclick="sortTableByMonth()">SORT BY MONTH</button>
                 <button class="sortByStatus" onclick="sortTableByStatus()">SORT BY STATUS</button>
             </div>-->
             <div class="table-container">
-                 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "sbdoDatabase";
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "sbdoDatabase";
 
-    $mysqli = new mysqli($servername, $username, $password, $dbname);
+                $mysqli = new mysqli($servername, $username, $password, $dbname);
 
-    if(isset($_COOKIE["User_ID"])) {
-        $userid = $_COOKIE["User_ID"];
-        
-    } 
-    
+                if (isset($_COOKIE["User_ID"])) {
+                    $userid = $_COOKIE["User_ID"];
+                }
 
-    $sql = "SELECT a.appointment_id,  pd.paymentdetails_id,  sc.scheduleDate, sc.scheduleTime, s.service_name,  pd.amount, pd.image_filename, a.appointment_id, p.patient_status
+
+                $sql = "SELECT a.appointment_id,  pd.paymentdetails_id,  sc.scheduleDate, sc.scheduleTime, s.service_name,  pd.amount, pd.image_filename, a.appointment_id, p.patient_status
     FROM account ac
     JOIN patient p ON ac.user_id = p.user_id
     JOIN appointment a ON p.patient_id = a.appointment_id
@@ -141,47 +140,47 @@ if ($result->num_rows == 1) {
     where p.user_id = $userid
     GROUP BY p.patient_id
     ORDER BY sc.scheduleDate";
-    
-    $result = $mysqli->query($sql);
-    while($row = $result->fetch_assoc()) {
-        $id = uniqid();
 
-        $scheduleDate = $row['scheduleDate'];
-        $scheduleTime = $row['scheduleTime'];
+                $result = $mysqli->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    $id = uniqid();
 
-        // Combine and format date and time
-        $datetime = new DateTime("$scheduleDate $scheduleTime");
-        $formattedDatetime = $datetime->format('m/d/Y h:i A');
-        ?>
+                    $scheduleDate = $row['scheduleDate'];
+                    $scheduleTime = $row['scheduleTime'];
+
+                    // Combine and format date and time
+                    $datetime = new DateTime("$scheduleDate $scheduleTime");
+                    $formattedDatetime = $datetime->format('m/d/Y h:i A');
+                ?>
+                    <div>
+
                         <div>
-                           
-                            <div>
                             <table>
-    <tr>
-        <th>Appointment ID:</th>
-        <th>Payment ID:</th>
-        <th>Appointment Schedule:</th>
-        <th>Service:</th>
-        <th>Amount:</th>
-        <th>Status:</th>
-    </tr>
-    <tr>
-        <td><?php echo $row["appointment_id"]; ?></td>
-        <td><?php echo $row["paymentdetails_id"]; ?></td>
-        <td><?php echo $formattedDatetime; ?></td>
-        <td><?php echo $row["service_name"]; ?></td>
-        <td><?php echo $row["amount"]; ?></td>
-        <td><?php echo $row["patient_status"]; ?></td>
-    </tr>
-</table>
+                                <tr>
+                                    <th>Appointment ID</th>
+                                    <th>Payment ID</th>
+                                    <th>Appointment Schedule</th>
+                                    <th>Service</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td><?php echo $row["appointment_id"]; ?></td>
+                                    <td><?php echo $row["paymentdetails_id"]; ?></td>
+                                    <td><?php echo $formattedDatetime; ?></td>
+                                    <td><?php echo $row["service_name"]; ?></td>
+                                    <td><?php echo $row["amount"]; ?></td>
+                                    <td><?php echo $row["patient_status"]; ?></td>
+                                </tr>
+                            </table>
 
 
-                            </div>
                         </div>
-                        <?php
-                    }
-                    $mysqli->close();
-                    ?>
+                    </div>
+                <?php
+                }
+                $mysqli->close();
+                ?>
             </div>
 
 
@@ -189,7 +188,7 @@ if ($result->num_rows == 1) {
         </div>
         <?php include '../header-footer/footer.php'; ?>
     </div>
-    
+
 </body>
 
 </html>

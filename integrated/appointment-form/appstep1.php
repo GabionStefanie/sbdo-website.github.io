@@ -194,7 +194,7 @@
                 <p>WHEN ARE WE AVAILABLE</p>
             </div>
             <div class="content3-row3">
-                <p>We are open from Monday to Sunday, 9 AM to 5 PM.</p>
+                <p>We are open from Monday to Sunday, 11 AM to 5 PM.</p>
             </div>
         </div>
 
