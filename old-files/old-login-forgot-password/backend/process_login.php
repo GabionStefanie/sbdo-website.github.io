@@ -52,8 +52,6 @@ try {
             
 
             if (password_verify($password, $user["Password"])) {
-                // Set the session variable
-                $_SESSION["userID"] = $user['User_ID'];
 
                 // Set cookies for User_ID and Account_Type
                 setcookie("User_ID", $user["User_ID"], time() + (86400), "/"); // 86400 = 1 day
