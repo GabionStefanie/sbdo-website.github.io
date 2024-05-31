@@ -20,7 +20,7 @@ if ($mysqli->connect_error) {
 }
 
 $status = "Available";
-$sql = "INSERT INTO schedule (scheduleDateTime, status) VALUES (?, ?)";
+$sql = "INSERT INTO schedule (scheduleDate, scheduleTime, status) VALUES (?, ?, ?)";
         
 $stmt = $mysqli->stmt_init();
 
@@ -30,7 +30,7 @@ if (!$stmt->prepare($sql)) {
 
 foreach ($_POST["appointment_time"] as $time) {
     $scheduleDateTime = $_POST["appointment_date"] . ' ' . $time;
-    $stmt->bind_param("ss", $scheduleDateTime, $status);
+    $stmt->bind_param("sss", $scheduleDate, $scheduleTime, $status);
     $stmt->execute();
 }
 
