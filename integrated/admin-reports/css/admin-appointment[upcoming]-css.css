@@ -77,6 +77,30 @@ h2 {
     /* Move the button to the right side */
 }
 
+.mark-cancelled-button:hover {
+    background-color: #f15e5e; /* Darker green on hover */
+}
+
+.mark-cancelled-button {
+    background-color: #fa1814; /* Green background */
+    border: 0.2rem solid black; /* Remove borders */
+    color: white; /* White text */
+    padding: 1.6rem 3rem; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Get the element to line up nicely */
+    font-size: 1.6rem; /* Increase font size */
+    margin: 1rem 0; /* Some margin */
+	margin-left: 2rem ; /* Some margin *
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 2rem; /* Rounded corners */
+	border-color: black;
+    transition: background-color 0.3s ease; /* Animation */
+	float: right;
+	
+    /* Move the button to the right side */
+}
+
 .mark-done-button:hover {
     background-color: #f6e762; /* Darker green on hover */
 }
