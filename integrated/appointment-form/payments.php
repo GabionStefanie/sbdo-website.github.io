@@ -25,6 +25,8 @@
             <input type="text" id="referenceNo" name="referenceNo" required><br><br>
           </div>
         </div>
+        <label for="qrCode">Amount: P500 </label><br>
+        
         <label for="qrCode">QR Code:</label><br>
         <img src="images/GCashQR.jpg" alt="qrCode" id="qrCode"><br><br>
 
