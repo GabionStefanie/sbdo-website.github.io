@@ -6,7 +6,7 @@ use pChart\pDraw; // Add this line
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Include the dompdf and pChart libraries
-    require_once '../../dompdf/autoload.inc.php';
+    require_once 'dompdf/autoload.inc.php';
     require_once '../../pChart2.0-for-PHP7-master/pChart/pData.php'; // Corrected path
     require_once '../../pChart2.0-for-PHP7-master/pChart/pDraw.php'; // Corrected path
     require_once '../../pChart2.0-for-PHP7-master/pChart/pPie.php'; // Corrected path

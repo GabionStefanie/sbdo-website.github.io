@@ -63,13 +63,13 @@
 </div>
 				</div>
 			</div>
+			<!-- Add the form for downloading the PDF report -->
+		<form method="POST" action="backend/generate_pdf.php">
+        <button type="submit">Download Report as PDF</button>
+    	</form>
 		</div>
 		<?php include '../header-footer/footer.php' ?>
 		</div>
-		<!-- Add the form for downloading the PDF report -->
-		<form method="POST" action="backend/generate_pdf.php">
-        <button type="submit">Download Report as PDF</button>
-    </form>
 	</body>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
