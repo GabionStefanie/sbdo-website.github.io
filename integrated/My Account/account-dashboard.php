@@ -304,7 +304,7 @@ if ($result->num_rows == 1) {
 							<form id="formOTPEmail" onsubmit="submitOTPEmail(event)">
 								<label for="otpEmail">OTP</label>
 								<input type="text" id="otpEmail" name="otpEmail" required>
-								<div id="otpEmailMessage" style="color: red; font-size: 14px;"></div>
+								<div id="PasswordMessage" style="color: red; font-size: 14px;"></div>
 								<input type="button" value="RESEND OTP" onclick="resendOTP(event)">
 								<input type="submit" value="SUBMIT">
 							</form>
