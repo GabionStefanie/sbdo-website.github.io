@@ -52,12 +52,13 @@
       // Update patient status if form is submitted
       if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["appointment_id"])) {
         $appointment_id = $_POST["appointment_id"];
-        $sql = "UPDATE patient 
+        $status = isset($_POST["cancel"]) ? 'Cancelled' : 'Done';
+        $sql = "UPDATE patient
                 JOIN appointment ON patient.patient_id = appointment.patient_id
-                SET patient.patient_status = 'Done' 
+                SET patient.patient_status = ?
                 WHERE appointment.appointment_id = ?";
         $stmt = $mysqli->prepare($sql);
-        $stmt->bind_param("i", $appointment_id);
+        $stmt->bind_param("ss", $status, $appointment_id);
         $stmt->execute();
         $stmt->close();
     }
@@ -128,7 +129,9 @@
                                         <td colspan="2">
                                             <form action="" method="post">
                                                 <input type="hidden" name="appointment_id" value="<?php echo $row["appointment_id"]; ?>">
+                                                <input type="submit" value="Cancel" name="cancel" class="mark-cancelled-button">
                                                 <input type="submit" value="Mark as Done" class="mark-done-button">
+
                                             </form>
                                         </td>
                                 </table>

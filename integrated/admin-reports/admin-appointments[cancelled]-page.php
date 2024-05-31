@@ -111,12 +111,6 @@
 									<tr><th>Proof of Payment</th><td>  <a href="../appointment-form/backend/images/<?php echo $row['image_filename']; ?>" target="_blank">
             <img src="../appointment-form/backend/images/<?php echo $row['image_filename']; ?>" alt="Proof of Payment" style="max-width: 50%; max-height: auto; cursor: pointer;" id="image-<?php echo $row['image_filename']; ?>"></a></td></tr>
                                         <tr>
-                                        <td colspan="2">
-                                            <form action="" method="post">
-                                                <input type="hidden" name="appointment_id" value="<?php echo $row["appointment_id"]; ?>">
-                                                <input type="submit" value="Mark as Done" class="mark-done-button">
-                                            </form>
-                                        </td>
                                 </table>
                             </div>
                         </div>
