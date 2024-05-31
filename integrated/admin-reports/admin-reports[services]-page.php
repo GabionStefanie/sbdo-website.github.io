@@ -62,7 +62,7 @@
 						</div>
 					</div>
 				</div>
-				<button class="print">Download Report as PDF</butto>
+				<button class="print">Download Report as PDF</button>
 			</div>
 			<?php include '../header-footer/footer.php'; ?>
 		</div>
