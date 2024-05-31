@@ -5,7 +5,7 @@ if (empty($_POST["appointment_date"])) {
 }
 
 if (empty($_POST["appointment_time"]) || !is_array($_POST["appointment_time"])) {
-    die("Time is required and must be an array");
+    die("Time is required");
 }
 
 $servername = "localhost";
