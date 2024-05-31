@@ -308,6 +308,15 @@ tr:hover {
 	margin-left: 2rem;
 }
 
+input[type="number"] {
+	width: 98%;
+    font-size: 2rem;
+    font-family: Montserrat;
+    padding: 1rem;
+	margin-bottom: 0.5rem;
+	
+}
+
 .cancel-btn {
 	background-color: #FF0000;
 

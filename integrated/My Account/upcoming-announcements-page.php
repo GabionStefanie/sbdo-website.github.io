@@ -45,6 +45,7 @@ if ($result->num_rows == 1) {
     <title>Contact Us | Sulit & Bagasan Dental Office</title>
     <link rel="stylesheet" type="text/css" href="css/upcoming-announcements-css.css">
     <script defer src="jscript/upcoming-announcements-jscript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         <?php include '../header-footer/header-footer.css'; ?>
     </style>
@@ -123,31 +124,33 @@ if ($result->num_rows == 1) {
                             you cannot alter the type of appointment you wish to schedule.
                         </P>
                         <div class="form-group">
+                            <Label>Input the appointment ID to cancel:</Label>
+                            <input type="number" name="ApptID" id="ApptID" min="1">
                             <label for="date">DATE</label>
                             <input type="date" id="date" name="date" required>
                         </div>
                         <div class="form-group">
                             <label for="time">TIME</label>
                             <select id="date" name="date" style="font-family: 'Inter', sans-serif; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; margin-left: 2rem;">
-                                    <option value="" disabled selected>Select schedule</option>
-                                    <?php
-                                    $conn = new mysqli("localhost", "root", "", "sbdoDatabase");
-                                    $query = "SELECT DISTINCT scheduleDate FROM schedule WHERE status = 'available'";
-                                    $result = mysqli_query($conn, $query);
+                                <option value="" disabled selected>Select schedule</option>
+                                <?php
+                                $conn = new mysqli("localhost", "root", "", "sbdoDatabase");
+                                $query = "SELECT DISTINCT scheduleDate FROM schedule WHERE status = 'available'";
+                                $result = mysqli_query($conn, $query);
 
-                                    $dates = array();
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        $dates[] = $row["scheduleDate"];
-                                    }
+                                $dates = array();
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $dates[] = $row["scheduleDate"];
+                                }
 
-                                    // Remove duplicate dates
-                                    $uniqueDates = array_unique($dates);
+                                // Remove duplicate dates
+                                $uniqueDates = array_unique($dates);
 
-                                    foreach ($uniqueDates as $date) {
-                                        echo "<option value='$date'>$date</option>";
-                                    }
-                                    ?>
-                                </select>
+                                foreach ($uniqueDates as $date) {
+                                    echo "<option value='$date'>$date</option>";
+                                }
+                                ?>
+                            </select>
                         </div>
                         <div class="submit-container">
                             <input type="submit" value="CONFIRM" class="confirm-btn">
@@ -168,7 +171,7 @@ if ($result->num_rows == 1) {
                             Are you sure you want to cancel your appointment?
                         </p>
                         <Label>Input the appointment ID to cancel:</Label>
-                        <input type="number" name="ApptID" id="ApptID">
+                        <input type="number" name="ApptID" id="ApptID" min="1">
                         <textarea class="canceling-text-area" placeholder="State your reason for cancelling." required></textarea>
                         <form>
                             <label>AGREE
@@ -183,6 +186,26 @@ if ($result->num_rows == 1) {
                 </form>
             </div>
         </div>
+
+        <script>
+            AppointmentID = $("#ApptID").val();
+            checkbox = $("#agree")
+
+            if(checkbox.is(':checked')){
+                $.ajax({
+                    url: 'cancel-upcomingapp.php',
+                    type: "POST",
+                    data: {
+                        agree: "on",
+                        AppointmentID: AppointmentID
+                    },
+                    success:function(data){
+                        
+                    }
+                })
+            }
+            
+        </script>
 
         <?php include '../header-footer/footer.php'; ?>
 
