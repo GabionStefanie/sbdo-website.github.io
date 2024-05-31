@@ -499,6 +499,7 @@ function submitResetPassword(event) {
             document.getElementById('Forgotmessage').textContent = 'Password reset successfully';
             Forgotmessage.style.color = 'green';
             reloadPage();
+
         } else {
             // Handle error
             document.getElementById('Forgotmessage').textContent = 'Failed to reset password. Please try again.';
