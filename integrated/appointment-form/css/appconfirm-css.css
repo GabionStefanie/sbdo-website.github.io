@@ -265,7 +265,10 @@ table {
     background-color: #1c55ff;    
 }
 
-  
+form>* {
+	margin: 0 auto;
+	
+}  
 
 @media screen and (max-width: 768px) {
 

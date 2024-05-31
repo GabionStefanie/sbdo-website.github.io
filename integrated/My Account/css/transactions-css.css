@@ -179,23 +179,35 @@ table {
 	border-bottom: 3px solid #ccc;
 }
 
-td {
-	padding: 2rem;
-	text-align: left;
-	font-weight: 500;
-	border-bottom: 1px solid #ddd;
-	font-family: Inter;
-	font-size: 2rem;
+
+tbody:nth-child(2){
+	display: flex;
+	text-align: center;
 }
 
+
+
+tr:nth-child(2){
+	text-align: center;
+	font-family: Inter;
+	font-size: 2rem;
+	width: 1rem;
+}
+
+tr:nth-child(2) td{
+	width: 1rem;
+	padding: 0.5rem
+}
+
+
 th {
-	background-color: #f2f2f2;
 	padding: 2rem;
 	text-align: left;
 	font-weight: 700;
 	border-bottom: 1px solid #ddd;
 	font-family: Inter;
 	font-size: 2rem;
+	text-align: center;
 }
 
 .page-buttons {

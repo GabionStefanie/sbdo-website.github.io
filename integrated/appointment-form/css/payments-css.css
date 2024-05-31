@@ -55,3 +55,7 @@ body {
 #qrCode {
     width: 100%;
 }
+
+.payment-form p {
+    margin-bottom: 1.7rem;
+}
