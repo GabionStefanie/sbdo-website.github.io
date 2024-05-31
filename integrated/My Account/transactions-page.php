@@ -45,6 +45,7 @@ if ($result->num_rows == 1) {
     <title>Contact Us | Sulit & Bagasan Dental Office</title>
     <link rel="stylesheet" type="text/css" href="css/transactions-css.css">
     <script src="jscript/transactions-jscript.js"></script>
+    <script defer src="account-dashboard.js"></script>
     <style>
         <?php include '../header-footer/header-footer.css'; ?>
     </style>
@@ -75,7 +76,6 @@ if ($result->num_rows == 1) {
                 <div class="profile-details">
                     <p class="profile-name"><b>USERNAME:</b> <?php echo $user["Username"]; ?></p>
                     <p class="profile-email"><b>EMAIL:</b> <?php echo $user["Email"]; ?></p>
-                    <a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
                 </div>
             </div>
             <div class="divider"></div>
@@ -84,20 +84,6 @@ if ($result->num_rows == 1) {
                     <a href="transactions-page.php" class="btn btn-primary">TRANSACTION</a>
                     <a href="upcoming-announcements-page.php" class="btn btn-primary">APPOINTMENTS</a>
                 </div>
-            </div>
-        </div>
-        <div id="overlay" class="overlay"></div>
-        <div id="modalChangeProfilePicture" class="modal">
-            <span class="close-btn2" onclick="closeModal()">X</span>
-            <div class="container">
-                <div class="change-profile-picture-modal">
-                    <h2>CHANGE PROFILE PICTURE</h2>
-                </div>
-                <form id="formChangeProfilePicture" onsubmit="submitProfilePicture(event)" method="POST" enctype="multipart/form-data" action="uploadPFPs.php"">
-                    <label for=" profilePicture">Please upload your new profile picture:</label>
-                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br>
-                    <input type="submit" value="UPLOAD">
-                </form>
             </div>
         </div>
         <div class="transac-history">

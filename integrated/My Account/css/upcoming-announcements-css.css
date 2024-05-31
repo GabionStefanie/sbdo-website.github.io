@@ -60,7 +60,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 3.5rem;
+	font-size: 1.5rem;
 	text-align: center;
 }
 
@@ -315,6 +315,18 @@ tr:hover {
 
 }
 
+.cancel-form input[type="submit"], .cancel-form input[type="button"], .cancel-form input[type="reset"] {
+	color: #fff;
+	padding: 10px 50px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	font-family: Lexend Deca;
+	font-size: 2rem !important;
+	margin-top: 2rem;
+	margin-left: 2rem;
+}
+
 .confirm-btn {
 	background-color: #0946FF;
 
@@ -374,17 +386,7 @@ tr:hover {
 
 }
 
-.cancel-form input[type="submit"], .cancel-form input[type="button"] {
-	color: #fff;
-	padding: 10px 50px;
-	border: none;
-	border-radius: 25px;
-	cursor: pointer;
-	font-family: Lexend Deca;
-	font-size: 2rem !important;
-	margin-top: 2rem;
-	margin-left: 2rem;
-}
+
 
 .submit-container {
 	display: flex;

@@ -158,14 +158,14 @@ mysqli_query($conn, $createReviewsTable);
 
 $createAppointmentTable = "CREATE TABLE IF NOT EXISTS `APPOINTMENT` (
     `Appointment_ID` INT AUTO_INCREMENT,
-    `Patient_ID` INT,
+    `User_ID` INT,
     `Service_ID` INT,
     `Schedule_ID` INT,
     `Appointment_Note` VARCHAR (50),
     `Time_Created` TIMESTAMP,
     CONSTRAINT PK_AppointmentID PRIMARY KEY (`Appointment_ID`),
     CONSTRAINT FK_ServiceAppointmentID FOREIGN KEY (`Service_ID`) REFERENCES `SERVICE`(`Service_ID`) ON UPDATE CASCADE ON DELETE RESTRICT,
-    CONSTRAINT FK_PatientAppointmentID FOREIGN KEY (`Patient_ID`) REFERENCES `PATIENT`(`Patient_ID`) ON UPDATE CASCADE ON DELETE SET NULL,
+    CONSTRAINT FK_UserAppointmentID FOREIGN KEY (`User_ID`) REFERENCES `ACCOUNT`(`User_ID`) ON UPDATE CASCADE ON DELETE SET NULL,
     CONSTRAINT FK_ScheduleAppointmentID FOREIGN KEY (`Schedule_ID`) REFERENCES `SCHEDULE`(`Schedule_ID`) ON UPDATE CASCADE ON DELETE RESTRICT
   )";
 mysqli_query($conn, $createAppointmentTable);

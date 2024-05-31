@@ -72,8 +72,8 @@ if (mysqli_num_rows($query) > 0) {
     die("Email already taken");
 }
 
-$sql = "INSERT INTO account (username, email, password, account_type, account_activation_hash, activation_expiry)
-        VALUES (?, ?, ?, ?, ?,?)";
+$sql = "INSERT INTO account (username, email, password, account_type, account_activation_hash, activation_expiry, Name, Phone, Gender)
+        VALUES (?, ?, ?, ?, ?,?,?,?,?)";
 $stmt = $mysqli->stmt_init();
 
 if (!$stmt->prepare($sql)) {
@@ -82,13 +82,16 @@ if (!$stmt->prepare($sql)) {
 
 $Account_Type = 'Patient';
 $stmt->bind_param(
-    "ssssss",
+    "sssssssss",
     $username,
     $email,
     $password_hash,
     $Account_Type,
     $activation_token_hash,
-    $activation_expiry
+    $activation_expiry,
+    $name,
+    $pnum,
+    $gender
 );
 
 if ($stmt->execute()) {
@@ -111,4 +114,3 @@ if ($stmt->execute()) {
     header("Location: signup-success.php");
     exit;
 }
-?>

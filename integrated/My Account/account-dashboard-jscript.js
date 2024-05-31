@@ -44,7 +44,7 @@ function submitProfilePicture(event) {
     var formData = new FormData(form);
 
     // Send an AJAX request to the server
-    fetch('uploadPFP.php', {
+    fetch('../My Account/uploadPFP.php', {
         method: 'POST',
         body: formData
     })

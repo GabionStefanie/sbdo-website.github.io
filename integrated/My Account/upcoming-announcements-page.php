@@ -75,7 +75,6 @@ if ($result->num_rows == 1) {
                 <div class="profile-details">
                     <p class="profile-name"><b>USERNAME:</b> <?php echo $user["Username"]; ?></p>
                     <p class="profile-email"><b>EMAIL:</b> <?php echo $user["Email"]; ?></p>
-                    <a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
                 </div>
             </div>
             <div class="divider"></div>
@@ -129,10 +128,28 @@ if ($result->num_rows == 1) {
                         </div>
                         <div class="form-group">
                             <label for="time">TIME</label>
-                            <input type="time" id="time" name="time" required>
+                            <select id="date" name="date" style="font-family: 'Inter', sans-serif; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; margin-left: 2rem;">
+                                    <option value="" disabled selected>Select schedule</option>
+                                    <?php
+                                    $conn = new mysqli("localhost", "root", "", "sbdoDatabase");
+                                    $query = "SELECT DISTINCT scheduleDate FROM schedule WHERE status = 'available'";
+                                    $result = mysqli_query($conn, $query);
+
+                                    $dates = array();
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $dates[] = $row["scheduleDate"];
+                                    }
+
+                                    // Remove duplicate dates
+                                    $uniqueDates = array_unique($dates);
+
+                                    foreach ($uniqueDates as $date) {
+                                        echo "<option value='$date'>$date</option>";
+                                    }
+                                    ?>
+                                </select>
                         </div>
                         <div class="submit-container">
-                            <input type="submit" value="CANCEL" class="cancel-btn">
                             <input type="submit" value="CONFIRM" class="confirm-btn">
                         </div>
                     </div>
@@ -150,6 +167,8 @@ if ($result->num_rows == 1) {
                             <br><br>
                             Are you sure you want to cancel your appointment?
                         </p>
+                        <Label>Input the appointment ID to cancel:</Label>
+                        <input type="number" name="ApptID" id="ApptID">
                         <textarea class="canceling-text-area" placeholder="State your reason for cancelling." required></textarea>
                         <form>
                             <label>AGREE
