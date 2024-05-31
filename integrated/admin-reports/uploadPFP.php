@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profilePicture'])) {
 $sql = "SELECT ProfilePicture FROM ACCOUNT WHERE User_ID = ?";
 $stmt = $conn->prepare($sql);
 if ($stmt) {
-    $stmt->bind_param("i", $_SESSION["userID"]);
+    $stmt->bind_param("i", $_COOKIE["userID"]);
     if ($stmt->execute()) {
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {

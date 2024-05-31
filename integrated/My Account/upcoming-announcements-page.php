@@ -1,5 +1,4 @@
 <?php
-// $_SESSION["userID"] = 1;
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -79,7 +78,6 @@ if ($result->num_rows == 1) {
                     <a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">Change profile picture</a>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary edit-profile" onclick="showChangeProfilePictureModal()">CHANGE</a>
             <div class="divider"></div>
             <div class="row">
                 <div class="buttons-transac-appoint">
