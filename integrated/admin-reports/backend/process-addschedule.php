@@ -5,7 +5,7 @@ if (empty($_POST["appointment_date"])) {
 }
 
 if (empty($_POST["appointment_time"])) {
-    die("time is required");
+    die("Time is required");
 }
 
 $servername = "localhost";
@@ -15,20 +15,28 @@ $dbname = "sbdoDatabase";
 
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+
 $status = "Available";
-$sql = "INSERT INTO schedule (scheduleDate, scheduleTime, status)
-        VALUES (?, ?, ?)";
+$sql = "INSERT INTO schedule (scheduleDateTime, status) VALUES (?, ?)";
         
 $stmt = $mysqli->stmt_init();
 
-if (! $stmt->prepare($sql)) {
-    die("SQL error: ". $mysqli->error);
+if (!$stmt->prepare($sql)) {
+    die("SQL error: " . $mysqli->error);
 }
 
-foreach (array_values($_POST["appointment_time"]) as $time) {
-    $stmt->bind_param("sss", $_POST["appointment_date"], $time, $status);
+foreach ($_POST["appointment_time"] as $time) {
+    $scheduleDateTime = $_POST["appointment_date"] . ' ' . $time;
+    $stmt->bind_param("ss", $scheduleDateTime, $status);
     $stmt->execute();
 }
 
-header("Location:../addschedule-success.php");
+$stmt->close();
+$mysqli->close();
+
+header("Location: ../addschedule-success.php");
 exit;
+?>
