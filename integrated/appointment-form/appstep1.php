@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="input-group" style="display: flex;">
-                        <label for="date">Date: <br></label>
+                        <label for="date">Date: </label>
                         <div style="display: flex;">
                             <div>
                                 <select id="date" name="date" style="font-family: 'Inter', sans-serif; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; margin-left: 2rem;">
@@ -102,14 +102,14 @@
                     </div>
 
                     <div class="input-group">
-                        <label for="time">Time: <br></label>
+                        <label for="time">Time: </label>
                         <div style="display: flex;">
-                            <div>
+                            <!-- <div> -->
                                 <select id="time" name="time">
                                     <option value="" disabled selected>Select time</option>
                                     <!-- Time options will be populated here -->
                                 </select>
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
 
